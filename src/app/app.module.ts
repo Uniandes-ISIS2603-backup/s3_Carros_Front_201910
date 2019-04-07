@@ -13,9 +13,8 @@ import { ModalDialogModule } from 'ngx-modal-dialog';
 import {AppComponent} from './app.component';
 import {AppRoutingModule} from './app-routing/app-routing.module';
 import {AuthModule} from './auth/auth.module';
-
-
-
+//Importaciones de modulos carros
+import {PuntoVentaModule} from './punto-venta/punto-venta.module';
 
 
 
@@ -25,6 +24,7 @@ import {AuthModule} from './auth/auth.module';
     ],
     imports: [
         BrowserModule,
+        PuntoVentaModule,
         AppRoutingModule,
         HttpClientModule,
         BrowserAnimationsModule,

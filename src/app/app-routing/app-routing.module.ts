@@ -6,6 +6,9 @@ import {NgxPermissionsGuard} from 'ngx-permissions';
 import { AuthLoginComponent } from '../auth/auth-login/auth-login.component';
 import { AuthSignUpComponent } from '../auth/auth-sign-up/auth-sign-up.component';
 
+import {PuntoVentaListComponent} from '../punto-venta/punto-venta-list/punto-venta-list.component';
+import {PuntoVentaDetailComponent} from '../punto-venta/punto-venta-detail/punto-venta-detail.component';
+
 const routes: Routes = [
 
      {
@@ -40,7 +43,21 @@ const routes: Routes = [
     {
         path: '**',
         redirectTo: 'home',
-    }
+    },
+    {
+    path: 'punto-venta',
+    children:[
+      {
+        path: 'list',
+        component: PuntoVentaListComponent
+      },
+       {
+        path: ':id',
+        component: PuntoVentaDetailComponent,
+        
+      }
+    ]
+  }
 ];
 
 @NgModule({

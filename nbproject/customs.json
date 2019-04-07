@@ -1,0 +1,10 @@
+{
+    "elements": {
+        "app-punto-venta-list": {}
+    },
+    "attributes": {
+        "*ngfor": {
+            "context": "tr"
+        }
+    }
+}
