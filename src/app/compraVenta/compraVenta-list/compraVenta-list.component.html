@@ -1,0 +1,23 @@
+<div class="container-fluid">
+    <div class="col-md-5">
+        <table class="table table-striped">
+            <thead class="thead-dark">
+                <tr>
+                    <th>VentaID</th>  
+                    <th>CalificacionCompra</th>
+                    <th>Fecha</th>
+                    <th>Pagado</th>
+                    <th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor = "let i of compraVentas">
+                <td> {{i.ventaID}} </td>
+                <td> {{i.calificacionCompra}}</td>
+                <td> {{i.fecha}}</td>
+                <td> {{i.pagado}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div> 

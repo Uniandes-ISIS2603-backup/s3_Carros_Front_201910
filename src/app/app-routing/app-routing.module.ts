@@ -18,6 +18,9 @@ import {MarcaDetailComponent} from '../marca/marca-detail/marca-detail.component
 import {AutomovilListComponent} from '../automovil/automovil-list/automovil-list.component';
 import {AutomovilDetailComponent} from '../automovil/automovil-detail/automovil-detail.component';
 
+import (CompraVentaDetailComponent) from '../compraVenta/compraVenta-detail/compraVenta-detail.component';
+import (CompraVentaListComponent) from '../compraVenta/compraVenta-list/compraVenta-list.component';
+
 const routes: Routes = [
 
     {
@@ -72,7 +75,34 @@ const routes: Routes = [
         component: AutomovilDetailComponent 
       }
     ]
-  }
+  },
+    {
+    path: 'compraVenta',
+    children:
+    [
+      {
+        path: 'list',
+        component: CompraVentaListComponent
+      },
+       {
+        path: ':id',
+        component: CompraVentaDetailComponent 
+      }
+    ]
+    },
+    {
+    path: 'factura',
+    children:[
+      {
+        path: 'list',
+        component: FacturaListComponent
+      },
+       {
+        path: ':id',
+        component: FacturaDetailComponent 
+      }
+    ]
+    }
 ];
 
 @NgModule({

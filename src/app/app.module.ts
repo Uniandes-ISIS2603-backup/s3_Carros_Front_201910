@@ -18,7 +18,8 @@ import {PuntoVentaModule} from './punto-venta/punto-venta.module';
 import {ModeloModule} from './modelo/modelo.module';
 import {MarcaModule} from './marca/marca.module';
 import {AutomovilModule} from './automovil/automovil.module';
-
+import (CompraVentaModule) from './compraVenta/compraVenta.module';
+import (FacturaModule) from './Factura/factura.module';
 
 @NgModule({
     declarations: [
