@@ -1,0 +1,21 @@
+<div class="container-fluid">
+    <div class="col-md-5">
+        <table class="table table-striped">
+            <thead class="thead-dark">
+                <tr>
+                    <th>FacturaID</th>  
+                    <th>CuentaOrigen</th>
+                    <th>Fecha</th>
+                    <th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor = "let i of facturas">
+                <td> {{i.facturaID}} </td>
+                <td> {{i.cuentaOrigen}}</td>
+                <td> {{i.fecha}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
