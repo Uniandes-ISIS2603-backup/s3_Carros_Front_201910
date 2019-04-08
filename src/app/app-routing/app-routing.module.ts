@@ -18,8 +18,11 @@ import {MarcaDetailComponent} from '../marca/marca-detail/marca-detail.component
 import {AutomovilListComponent} from '../automovil/automovil-list/automovil-list.component';
 import {AutomovilDetailComponent} from '../automovil/automovil-detail/automovil-detail.component';
 
-import (CompraVentaDetailComponent) from '../compraVenta/compraVenta-detail/compraVenta-detail.component';
-import (CompraVentaListComponent) from '../compraVenta/compraVenta-list/compraVenta-list.component';
+import {CompraVentaDetailComponent} from '../compraVenta/compraVenta-detail/compraVenta-detail.component';
+import {CompraVentaListComponent} from '../compraVenta/compraVenta-list/compraVenta-list.component';
+
+import {FacturaDetailComponent} from '../factura/factura-detail/factura-detail.component';
+import {FacturaListComponent} from '../factura/factura-list/factura-list.component';
 
 const routes: Routes = [
 

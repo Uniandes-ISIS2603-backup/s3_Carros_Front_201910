@@ -6,11 +6,13 @@ import {CompraVentaService} from './compraVenta.service';
 import { FormsModule } from '@angular/forms';
 import { CompraVentaDetailComponent } from './compraVenta-detail/compraVenta-detail.component';
 
+import{AppRoutingModule} from '../app-routing/app-routing.module';
 
 @NgModule({
   imports: [
     CommonModule, 
-    FormsModule
+    FormsModule,
+    AppRoutingModule
   ],
   declarations: [CompraVentaListComponent, CompraVentaDetailComponent],
   exports: [CompraVentaListComponent],

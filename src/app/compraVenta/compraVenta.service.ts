@@ -3,6 +3,8 @@ import {HttpClient} from '@angular/common/http';
 import {CompraVenta} from './compraVenta';
 import {Observable} from 'rxjs';
 
+import {CompraVentaDetail} from './compraVenta-detail';
+
 const API_URL = '../../assets/';
 const compraVentas = 'compraVentas.json';
 
