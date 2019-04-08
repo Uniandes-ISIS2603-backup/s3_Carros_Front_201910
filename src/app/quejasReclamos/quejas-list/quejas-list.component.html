@@ -1,0 +1,18 @@
+<div class="container-fluid">
+	
+		<table class="table table-striped">
+			<thead class="thead-dark">
+				<tr>
+					<th scope="col">Caso ID</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr *ngFor="let q of quejas">
+					<td style="cursor pointer;"> <a class="figure-caption" routerLink='../{{q.id}}'> {{q.casoId}}</a>
+					</td>
+
+				</tr>
+			</tbody>
+		</table>
+	
+</div>

@@ -1,0 +1,19 @@
+<div class="container-fluid">
+	
+		<table class="table table-striped">
+			<thead class="thead-dark">
+				<tr>
+					<th scope="col">ID</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr *ngFor="let r of registros">
+					<td style="cursor pointer;"> <a class="figure-caption" routerLink='../{{r.id}}'> {{r.CompraID}}</a>
+					</td>
+
+				</tr>
+			</tbody>
+		</table>
+	
+</div>
+

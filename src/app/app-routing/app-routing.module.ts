@@ -18,6 +18,12 @@ import {MarcaDetailComponent} from '../marca/marca-detail/marca-detail.component
 import {AutomovilListComponent} from '../automovil/automovil-list/automovil-list.component';
 import {AutomovilDetailComponent} from '../automovil/automovil-detail/automovil-detail.component';
 
+import {RegistrosListComponent} from '../registros/registros-list/registros.component';
+import {RegistrosDetailComponent} from '../registros/registros-detail/registros-detail.component';
+
+import {QuejasListComponent} from '../quejasReclamos/quejas-list/quejas-list.component';
+import {QuejasDetailComponent} from '../quejasReclamos/quejas-detail/quejas-detail.component';
+
 const routes: Routes = [
 
     {
@@ -70,6 +76,32 @@ const routes: Routes = [
        {
         path: ':id',
         component: AutomovilDetailComponent 
+      }
+    ]
+  },
+  {
+    path: 'registros',
+    children:[
+      {
+        path: 'list',
+        component: RegistrosListComponent
+      },
+      {
+        path: ':id',
+        component: RegistrosDetailComponent
+      }
+    ]
+  },
+  {
+    path: 'quejasReclamos',
+    children:[
+      {
+        path: 'list',
+        component: QuejasListComponent
+      },
+      {
+        path: ':id',
+        component: QuejasDetailComponent
       }
     ]
   }

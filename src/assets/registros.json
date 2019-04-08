@@ -1,0 +1,48 @@
+[
+  { 
+    "CompraID": 1,
+    "precioComprado": 26591181,
+    "fechaCompra": "20/09/2018",
+    "nombreVendedor": "Zsazsa Maciunas" ,
+    "automovil": [
+      {
+       "autoID": 1,
+       "disponible": false,
+       "tipo": "",
+       "referencia": "漫妮",
+       "anio": 2004,
+       "color": "Aquamarine",
+       "recorrido": 4688,
+       "idChasis": 1,
+       "matricula": "BCW-131",
+       "cuidadMatricula": "Krajan",
+       "precioVenta": "$583.72M",
+       "puntoVentaID": 62
+      }
+    ]
+  },
+  {
+      "CompraID": 2,
+      "precioComprado": 73602658,
+      "fechaCompra": "06/04/2019",
+      "nombreVendedor": "Leonie Wrintmore" 
+  },
+  { 
+      "CompraID": 3,
+      "precioComprado": 18267049,
+      "fechaCompra": "05/02/2019",
+      "nombreVendedor": "Kristyn Lumox" 
+  },
+  {
+      "CompraID": 4,
+      "precioComprado": 15573625,
+      "fechaCompra": "14/07/2018",
+      "nombreVendedor": "Jocelin Wannan" 
+  },
+  { 
+      "CompraID": 5,
+      "precioComprado": 98010114,
+      "fechaCompra": "16/10/2018",
+      "nombreVendedor": "Gipsy Halstead" 
+  }
+]

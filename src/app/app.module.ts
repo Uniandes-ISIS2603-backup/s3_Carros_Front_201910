@@ -18,6 +18,8 @@ import {PuntoVentaModule} from './punto-venta/punto-venta.module';
 import {ModeloModule} from './modelo/modelo.module';
 import {MarcaModule} from './marca/marca.module';
 import {AutomovilModule} from './automovil/automovil.module';
+import { QuejasReclamosModule } from './quejasReclamos/quejas-reclamos.module';
+import { RegistrosModule } from './registros/registros.module';
 
 
 @NgModule({
@@ -30,6 +32,8 @@ import {AutomovilModule} from './automovil/automovil.module';
         ModeloModule,
         MarcaModule,
         AutomovilModule,
+        QuejasReclamosModule,
+        RegistrosModule,
         AppRoutingModule,
         HttpClientModule,
         BrowserAnimationsModule,
