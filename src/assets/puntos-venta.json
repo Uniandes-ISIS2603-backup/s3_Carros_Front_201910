@@ -1,0 +1,27 @@
+[
+  {
+    "id": 1,
+    "direccion": "0808 Hanover Street",
+    "telefono": "189-507-4694"
+  },
+  {
+    "id": 2,
+    "direccion": "736 Jay Street",
+    "telefono": "741-456-3490"
+  },
+  {
+    "id": 3,
+    "direccion": "395 Gerald Drive",
+    "telefono": "330-601-4450"
+  },
+  {
+    "id": 4,
+    "direccion": "1971 Ilene Court",
+    "telefono": "202-231-1941"
+  },
+  {
+    "id": 5,
+    "direccion": "73 Gerald Street",
+    "telefono": "606-709-7756"
+  }
+]

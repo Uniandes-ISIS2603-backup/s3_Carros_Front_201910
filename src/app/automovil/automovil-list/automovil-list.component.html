@@ -1,0 +1,19 @@
+<div class="container-fluid">
+    <div class="col-md-5">
+        <table class="table table-striped">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Id</th>  
+                    <th>PLaca </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor = "let i of automoviles">
+                <td> {{i.autoID}} </td>
+                <td> {{i.matricula}}</td>
+                
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

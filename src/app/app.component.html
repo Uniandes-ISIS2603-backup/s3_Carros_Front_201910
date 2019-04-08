@@ -1,29 +1,40 @@
 <div class="container-fluid">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">
-            <div class="form-inline">
-                <h2 class="mainTitle">s3_Carros-Front</h2>
-            </div>
-        </a>
-    </nav>
-<p>
-  Puntos de venta de la GoodFellas
-</p>
-<ul class ="nav">
-<li class="nav-item" >
-  <a class= "nav-link active" routerLink="punto-venta/list" routerLinkActive ="active">Punto Venta </a>
-</li>
-</ul>
-<div class="continer-fluid">
-  <div class="border m-5 row">
+	<nav class=" navbar-light bg-light">
+	<div class="row">
     <div class="col">
-      <router-outlet></router-outlet>
+  	<a class="navbar-brand && text-center" href="#"> 
+			<div class="form-inline">
+				<p class="text-center">
+					GoodFellas
+				</p>
+			</div>
+		</a>
     </div>
-  </div>
+	</div>
+</nav>   
 </div>
-<app-punto-venta-create></app-punto-venta-create>
-    
+<div class="container-fluid">
+  <nav class=" navbar-light bg-light">
+   <div class="w-100"></div>
+    <div class="col">
+		    <ul class="nav">
+			  <li class="nav-item">
+				<div class="btn-group" role="group" aria-label="Basic example">
+					<button type="button" class="btn btn-outline-danger && nav-link" routerLink="punto-venta/list" routerLinkActive ="active">Punto venta</button>
+          <button type="button" class="btn btn-outline-danger && nav-link" routerLink="marca/list" routerLinkActive ="active">Marcas</button>
+          <button type="button" class="btn btn-outline-danger && nav-link" routerLink="modelo/list" routerLinkActive ="active">Modelos</button>
+          <button type="button" class="btn btn-outline-danger && nav-link" routerLink="automovil/list" routerLinkActive ="active">Automovil</button>
+        </div>
+        </li>
+        </ul> <br>
+    </div>
+    <div class="w-100"></div>
+   <div class="col">
+      <router-outlet></router-outlet>
+      </div>
+  </nav>
 </div>
+
 
 
 

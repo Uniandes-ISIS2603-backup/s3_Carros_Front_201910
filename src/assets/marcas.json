@@ -1,0 +1,322 @@
+[
+  {
+    "id": 1,
+    "nombre": "Volvo"
+  },
+  {
+    "id": 2,
+    "nombre": "Mazda"
+  },
+  {
+    "id": 3,
+    "nombre": "Hyundai"
+  },
+  {
+    "id": 4,
+    "nombre": "GMC"
+  },
+  {
+    "id": 5,
+    "nombre": "GMC"
+  },
+  {
+    "id": 6,
+    "nombre": "Audi"
+  },
+  {
+    "id": 7,
+    "nombre": "Mazda"
+  },
+  {
+    "id": 8,
+    "nombre": "Volkswagen"
+  },
+  {
+    "id": 9,
+    "nombre": "Hyundai"
+  },
+  {
+    "id": 10,
+    "nombre": "BMW"
+  },
+  {
+    "id": 11,
+    "nombre": "Honda"
+  },
+  {
+    "id": 12,
+    "nombre": "Saab"
+  },
+  {
+    "id": 13,
+    "nombre": "Mercury"
+  },
+  {
+    "id": 14,
+    "nombre": "Toyota"
+  },
+  {
+    "id": 15,
+    "nombre": "Porsche"
+  },
+  {
+    "id": 16,
+    "nombre": "Mazda"
+  },
+  {
+    "id": 17,
+    "nombre": "Mazda"
+  },
+  {
+    "id": 18,
+    "nombre": "Nissan"
+  },
+  {
+    "id": 19,
+    "nombre": "Porsche"
+  },
+  {
+    "id": 20,
+    "nombre": "Ford"
+  },
+  {
+    "id": 21,
+    "nombre": "GMC"
+  },
+  {
+    "id": 22,
+    "nombre": "Mercury"
+  },
+  {
+    "id": 23,
+    "nombre": "Chrysler"
+  },
+  {
+    "id": 24,
+    "nombre": "Chevrolet"
+  },
+  {
+    "id": 25,
+    "nombre": "Ford"
+  },
+  {
+    "id": 26,
+    "nombre": "Suzuki"
+  },
+  {
+    "id": 27,
+    "nombre": "Land Rover"
+  },
+  {
+    "id": 28,
+    "nombre": "Chevrolet"
+  },
+  {
+    "id": 29,
+    "nombre": "Toyota"
+  },
+  {
+    "id": 30,
+    "nombre": "Mitsubishi"
+  },
+  {
+    "id": 31,
+    "nombre": "Ford"
+  },
+  {
+    "id": 32,
+    "nombre": "Buick"
+  },
+  {
+    "id": 33,
+    "nombre": "Hyundai"
+  },
+  {
+    "id": 34,
+    "nombre": "Chevrolet"
+  },
+  {
+    "id": 35,
+    "nombre": "Nissan"
+  },
+  {
+    "id": 36,
+    "nombre": "Subaru"
+  },
+  {
+    "id": 37,
+    "nombre": "Buick"
+  },
+  {
+    "id": 38,
+    "nombre": "Lotus"
+  },
+  {
+    "id": 39,
+    "nombre": "BMW"
+  },
+  {
+    "id": 40,
+    "nombre": "GMC"
+  },
+  {
+    "id": 41,
+    "nombre": "Ford"
+  },
+  {
+    "id": 42,
+    "nombre": "Ford"
+  },
+  {
+    "id": 43,
+    "nombre": "Audi"
+  },
+  {
+    "id": 44,
+    "nombre": "Audi"
+  },
+  {
+    "id": 45,
+    "nombre": "Porsche"
+  },
+  {
+    "id": 46,
+    "nombre": "Porsche"
+  },
+  {
+    "id": 47,
+    "nombre": "Volkswagen"
+  },
+  {
+    "id": 48,
+    "nombre": "Jaguar"
+  },
+  {
+    "id": 49,
+    "nombre": "Dodge"
+  },
+  {
+    "id": 50,
+    "nombre": "Volkswagen"
+  },
+  {
+    "id": 51,
+    "nombre": "Chevrolet"
+  },
+  {
+    "id": 52,
+    "nombre": "Audi"
+  },
+  {
+    "id": 53,
+    "nombre": "Mitsubishi"
+  },
+  {
+    "id": 54,
+    "nombre": "Chrysler"
+  },
+  {
+    "id": 55,
+    "nombre": "Chrysler"
+  },
+  {
+    "id": 56,
+    "nombre": "GMC"
+  },
+  {
+    "id": 57,
+    "nombre": "Toyota"
+  },
+  {
+    "id": 58,
+    "nombre": "Ford"
+  },
+  {
+    "id": 59,
+    "nombre": "Honda"
+  },
+  {
+    "id": 60,
+    "nombre": "Mercedes-Benz"
+  },
+  {
+    "id": 61,
+    "nombre": "Volvo"
+  },
+  {
+    "id": 62,
+    "nombre": "Chevrolet"
+  },
+  {
+    "id": 63,
+    "nombre": "Volvo"
+  },
+  {
+    "id": 64,
+    "nombre": "Mitsubishi"
+  },
+  {
+    "id": 65,
+    "nombre": "Nissan"
+  },
+  {
+    "id": 66,
+    "nombre": "Honda"
+  },
+  {
+    "id": 67,
+    "nombre": "Dodge"
+  },
+  {
+    "id": 68,
+    "nombre": "Audi"
+  },
+  {
+    "id": 69,
+    "nombre": "Plymouth"
+  },
+  {
+    "id": 70,
+    "nombre": "Oldsmobile"
+  },
+  {
+    "id": 71,
+    "nombre": "Chevrolet"
+  },
+  {
+    "id": 72,
+    "nombre": "Kia"
+  },
+  {
+    "id": 73,
+    "nombre": "Subaru"
+  },
+  {
+    "id": 74,
+    "nombre": "Audi"
+  },
+  {
+    "id": 75,
+    "nombre": "Nissan"
+  },
+  {
+    "id": 76,
+    "nombre": "Aston Martin"
+  },
+  {
+    "id": 77,
+    "nombre": "Nissan"
+  },
+  {
+    "id": 78,
+    "nombre": "BMW"
+  },
+  {
+    "id": 79,
+    "nombre": "Mazda"
+  },
+  {
+    "id": 80,
+    "nombre": "GMC"
+  }
+]

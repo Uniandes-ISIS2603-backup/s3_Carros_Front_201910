@@ -15,7 +15,9 @@ import {AppRoutingModule} from './app-routing/app-routing.module';
 import {AuthModule} from './auth/auth.module';
 //Importaciones de modulos carros
 import {PuntoVentaModule} from './punto-venta/punto-venta.module';
-
+import {ModeloModule} from './modelo/modelo.module';
+import {MarcaModule} from './marca/marca.module';
+import {AutomovilModule} from './automovil/automovil.module';
 
 
 @NgModule({
@@ -25,6 +27,9 @@ import {PuntoVentaModule} from './punto-venta/punto-venta.module';
     imports: [
         BrowserModule,
         PuntoVentaModule,
+        ModeloModule,
+        MarcaModule,
+        AutomovilModule,
         AppRoutingModule,
         HttpClientModule,
         BrowserAnimationsModule,

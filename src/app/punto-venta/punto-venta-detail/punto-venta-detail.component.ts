@@ -17,9 +17,10 @@ export class PuntoVentaDetailComponent implements OnInit {
     private route: ActivatedRoute
   ) { }
 
+    @Input() 
   puntoVentaDetail: PuntoVentaDetail;
 
-  @Input() puntoVenta_id: number;
+  puntoVenta_id: number;
   loader: any; 
 
   getPuntoVentaDetail(): void
