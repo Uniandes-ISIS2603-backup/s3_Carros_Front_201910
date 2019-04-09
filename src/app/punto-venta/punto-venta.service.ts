@@ -17,6 +17,7 @@ export class PuntoVentaService {
   }
   getPuntoVentaDetail(puntoVentaId): Observable<PuntoVentaDetail>
   {
+    console.log(API_URL+ "punto-venta-"+ puntoVentaId+ ".json"); 
   return this.http.get<PuntoVentaDetail>(API_URL+ "punto-venta-"+ puntoVentaId+ ".json"); 
   }
 

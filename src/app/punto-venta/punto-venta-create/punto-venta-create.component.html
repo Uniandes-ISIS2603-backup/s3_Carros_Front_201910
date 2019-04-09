@@ -1,29 +1,26 @@
-<p>
-	punto-venta-create works!
-</p>
 <div class="row">
 	<div class="col-3"> </div>
 	<div class="col-6">
 		<br>
     <h2 class="text-center"> Crear un punto de venta</h2> 
     <br>
-    <form name="puntoVenta" (ngSumit) = "f.form.valid && createPuntoVenta()"#f="ngForm" novalidate>
+    <form name="puntoVenta" (ngSumit)="f.form.valid && createPuntoVenta()"  #f="ngForm" novalidate>
       <div class="from-group">
         <label for="puntoVentaDireccion"> 
-          <b> Punto Venta Direccion</b>
+          <b> Direccion</b>
         </label>
-          <input type="text" name="pVentaDireccion" class="form-control" id="pVentaDireccion" [(ngModel)]="pVenta.direccion"
-         #pVentaDireccion="ngModel" [ngClass]="{ 'is-invalid': f.submitted && pVentaDireccion.invalid }" required>
+          <input type="text" name="puntoVentaDireccion" class="form-control" id="puntoVentaDireccion" [(ngModel)]="puntoVenta.direccion"
+         #puntoVentaDireccion="ngModel" [ngClass]="{ 'is-invalid': f.submitted && puntoVentaDireccion.invalid }" required>
         <div class="invalid-feedback">
   <div> La direccion del punto de venta falta</div>
         </div>
       </div>
       <div class="from-group">
          <label for="puntoVentaTelefono"> 
-          <b> Punto Venta Telefono</b>
+          <b> Telefono</b>
         </label>
-        <input type="text" name="pVentaTelefono" class="form-control" id="pVentaTelefono" [(ngModel)]="pVenta.direccion"
-         #pVentaDireccion="ngModel" [ngClass]="{ 'is-invalid': f.submitted && pVentaTelefono.invalid }" required>
+        <input type="text" name="puntoVentaTelefono" class="form-control" id="puntoVentaTelefono" [(ngModel)]="puntoVenta.telefono"
+         #puntoVentaTelefono="ngModel" [ngClass]="{ 'is-invalid': f.submitted && puntoVentaTelefono.invalid }" required>
          <div class="invalid-feedback">
        <div> El telefono del punto de venta falta</div>
         
@@ -32,8 +29,7 @@
       </div>
       <br>
       <div class="row form-inline justify-content-center align-self-center">
-                <button type="submit" class="btn btn-primary">Create
-                </button>
+                <button type="submit" class="btn btn-primary" (click)="createPuntoVenta()" >Create</button>
                 <div class="divider"></div>
                 <button type="button" class="btn btn-danger" (click)="cancelCreation()">Cancel</button>
             </div>

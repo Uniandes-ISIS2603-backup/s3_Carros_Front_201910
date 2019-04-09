@@ -1,18 +1,39 @@
 <div class="container-fluid">
-	
-		<table class="table table-striped">
+	<div class="row">
+		<div class="col">
+      <br>
+			<div class="row justify-content-center align-self-center">
+        
+				<button [ngClass]="{ 'btn-primary': !showCreate, 'btn-danger': showCreate }" type="button" class="btn"
+                    (click)="showHideCreate()">Crear un punto de venta</button>
+            </div>
+            <br>
+	<table class="table table-striped">
 			<thead class="thead-dark">
+        
 				<tr>
 					<th scope="col">ID</th>
 				</tr>
 			</thead>
 			<tbody>
-				<tr *ngFor="let i of puntosVenta">
-					<td style="cursor pointer;"> <a class="figure-caption" routerLink='../{{i.id}}'> {{i.id}}</a>
+				<tr *ngFor="let i of puntosVenta" (click) ="onSelected(i.id)">
+					<td style="cursor pointer;"> 
+            <dd>{{i.direccion}}</dd>
 					</td>
 
 				</tr>
 			</tbody>
-		</table>
-	
+	</table>
+		</div>
+    	<div class="col-8">
+         <div *ngIf="selectedPuntoVenta">
+                <app-punto-venta-detail [puntoVentaDetail]="selectedPuntoVenta"></app-punto-venta-detail>
+            </div>
+  <div *ngIf="showCreate">
+          <app-punto-venta-create (cancel)="showHideCreate()" (create)="ngOnInit()"></app-punto-venta-create>
+  </div>
+    	</div>
+       
+  </div>
+
 </div>

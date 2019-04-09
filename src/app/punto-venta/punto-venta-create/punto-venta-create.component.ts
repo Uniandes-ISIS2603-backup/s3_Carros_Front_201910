@@ -18,23 +18,33 @@ export class PuntoVentaCreateComponent implements OnInit {
         private toastrService: ToastrService
   ) { }
 
-  pVenta: PuntoVenta;
+  puntoVenta: PuntoVenta;
+
+   @Output() cancel = new EventEmitter();
 
   @Output() create = new EventEmitter();
-  @Output() cancel = new EventEmitter();
+ 
 
   createPuntoVenta(): PuntoVenta
   {
-    this.puntoVentaService.createPuntoVenta(this.pVenta).subscribe((pVenta)=>
+    console.log(this.puntoVenta);
+    this.puntoVentaService.createPuntoVenta(this.puntoVenta).subscribe((pVenta)=>
     { 
-      this.pVenta = pVenta; 
+      this.puntoVenta = pVenta; 
       this.create.emit();
       this.toastrService.success("El punto de venta fue creado","Creacion Punto Venta");
 
     });
-    return this.pVenta
+    return this.puntoVenta; 
   }
-  ngOnInit() {
+
+  cancelCreation(): void
+  {
+    this.cancel.emit();
+  }
+  ngOnInit() 
+  {
+    this.puntoVenta = new PuntoVenta();
   }
 
 }
