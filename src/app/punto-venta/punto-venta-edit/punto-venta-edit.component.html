@@ -1,0 +1,43 @@
+
+<div class="row">
+    <div class="col-12">
+        <br>
+        <h2 class="text-center">Editar un punto de venta</h2>
+        <br>
+        <form name="puntoVenta" (ngSubmit)="f.form.valid && editPuntoVenta()" #f="ngForm" novalidate>
+              <div class="form-group">
+                <label for="puntoVentaDireccion"><b>Direccion</b></label>
+                <input type="text" name="puntoVentaDireccion" class="form-control" id="puntoVentaDireccion" [(ngModel)]="puntoVenta.direccion"
+                       #puntoVentaDireccion="ngModel" [ngClass]="{ 'is-invalid': f.submitted && puntoVentaDireccion.invalid }" required>
+                       <div class="invalid-feedback">
+                    <div>Falta la direccion del punto de venta</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="puntoVentaTelefono"><b>Telefono</b></label>
+                <input name="puntoVentaTelefono" class="form-control" id="puntoVentaTelefono" [(ngModel)]="puntoVenta.telefono"
+                          #puntoVentaTelefono="ngModel" [ngClass]="{ 'is-invalid': f.submitted && puntoVentaTelefono.invalid }"
+                          required>
+                <div class="invalid-feedback">
+                    <div>Falta el telefono de punto de venta</div>
+                </div>
+            </div>
+        <div class="row form-inline justify-content-center align-self-center">
+                
+                
+                
+            </div>
+        </form>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12">
+        <div class="row form-inline justify-content-center align-self-center">
+            <i  style="padding-right: 1em;"class="fa fa-save " (click)="editPuntoVenta()"><button type="submit" class="btn btn-primary">Edit</button></i>
+            <div class="divider"></div>
+            <i class="fa fa-ban" (click)="cancelEdition()"><button type="button" class="btn btn-danger" (click)="cancelEdition()">Cancel</button></i>
+        </div>
+    </div>
+</div>
+<br>
+<br>

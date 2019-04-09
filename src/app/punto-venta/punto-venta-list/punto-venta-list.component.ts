@@ -23,6 +23,14 @@ export class PuntoVentaListComponent implements OnInit {
 
   selectedPuntoVenta: PuntoVenta;
 
+  showEdit: boolean;
+   /**
+     * Shows or hides the detail of an author
+     */
+ showView: boolean;
+
+
+
   onSelected(puntoVenta_id: number): void
   {
     this.showCreate = false; 
@@ -47,7 +55,20 @@ export class PuntoVentaListComponent implements OnInit {
   {
     this.puntoVentaService.getPuntoVentaDetail(this.puntoVenta_id).subscribe(selectedPuntoVenta => { this.selectedPuntoVenta = selectedPuntoVenta});
   }
-
+   showHideEdit(puntoVenta_id: number): void {
+        if (!this.showEdit || (this.showEdit && puntoVenta_id != this.selectedPuntoVenta.id)) {
+            this.showView = false;
+            this.showCreate = false;
+            this.showEdit = true;
+            this.puntoVenta_id = puntoVenta_id;
+            this.selectedPuntoVenta = new PuntoVentaDetail();
+            this.getPuntoVentaDetail();
+        }
+        else {
+            this.showEdit = false;
+            this.showView = true;
+        }
+    }
 
   ngOnInit() {
     this.showCreate = false; 

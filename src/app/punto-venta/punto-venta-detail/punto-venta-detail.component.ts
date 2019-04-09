@@ -31,7 +31,7 @@ export class PuntoVentaDetailComponent implements OnInit {
 
   ngOnInit() 
   {
-           this.puntoVenta_id = +this.route.snapshot.paramMap.get('id');
+      this.puntoVenta_id = +this.route.snapshot.paramMap.get('id');
         if (this.puntoVenta_id){
         this.puntoVentaDetail = new PuntoVentaDetail();
         this.getPuntoVentaDetail();

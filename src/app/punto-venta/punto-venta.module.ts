@@ -8,6 +8,7 @@ import { PuntoVentaDetailComponent } from './punto-venta-detail/punto-venta-deta
 
 import{AppRoutingModule} from '../app-routing/app-routing.module';
 import { PuntoVentaCreateComponent } from './punto-venta-create/punto-venta-create.component';
+import { PuntoVentaEditComponent } from './punto-venta-edit/punto-venta-edit.component';
 
 
 @NgModule({
@@ -16,7 +17,7 @@ import { PuntoVentaCreateComponent } from './punto-venta-create/punto-venta-crea
     FormsModule,
     AppRoutingModule
   ],
-  declarations: [PuntoVentaListComponent, PuntoVentaDetailComponent, PuntoVentaCreateComponent],
+  declarations: [PuntoVentaListComponent, PuntoVentaDetailComponent, PuntoVentaCreateComponent, PuntoVentaEditComponent],
   exports: [PuntoVentaListComponent, PuntoVentaCreateComponent],
   providers: [PuntoVentaService]
 })

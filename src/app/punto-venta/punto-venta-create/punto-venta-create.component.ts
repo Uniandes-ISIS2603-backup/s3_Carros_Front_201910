@@ -24,7 +24,9 @@ export class PuntoVentaCreateComponent implements OnInit {
 
   @Output() create = new EventEmitter();
  
-
+  prueba(){
+    console.log(this.puntoVenta);
+  }
   createPuntoVenta(): PuntoVenta
   {
     console.log(this.puntoVenta);

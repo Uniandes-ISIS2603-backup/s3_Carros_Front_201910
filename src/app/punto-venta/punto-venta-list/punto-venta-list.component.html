@@ -1,7 +1,7 @@
 <div class="container-fluid">
 	<div class="row">
 		<div class="col">
-      <br>
+			<br>
 			<div class="row justify-content-center align-self-center">
         
 				<button [ngClass]="{ 'btn-primary': !showCreate, 'btn-danger': showCreate }" type="button" class="btn"
@@ -20,7 +20,9 @@
 					<td style="cursor pointer;"> 
             <dd>{{i.direccion}}</dd>
 					</td>
-
+        <td >
+        <button class="btn btn-primary" (click)="showHideEdit(i.id)"><span class="fa fa-pencil"></span></button>
+        </td>
 				</tr>
 			</tbody>
 	</table>
@@ -29,9 +31,12 @@
          <div *ngIf="selectedPuntoVenta">
                 <app-punto-venta-detail [puntoVentaDetail]="selectedPuntoVenta"></app-punto-venta-detail>
             </div>
-  <div *ngIf="showCreate">
+        <div *ngIf="showCreate">
           <app-punto-venta-create (cancel)="showHideCreate()" (create)="ngOnInit()"></app-punto-venta-create>
-  </div>
+        </div>
+         <div *ngIf="showEdit">
+                <app-punto-venta-edit [puntoVenta]="selectedPuntoVenta" (cancel)="showHideEdit(selectedPuntoVenta.id)" (update)="updatePuntoVenta()" ></app-punto-venta-edit>
+            </div>
     	</div>
        
   </div>
