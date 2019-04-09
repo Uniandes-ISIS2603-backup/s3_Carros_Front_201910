@@ -24,6 +24,10 @@ import {RegistrosDetailComponent} from '../registros/registros-detail/registros-
 import {QuejasListComponent} from '../quejasReclamos/quejas-list/quejas-list.component';
 import {QuejasDetailComponent} from '../quejasReclamos/quejas-detail/quejas-detail.component';
 
+import {EmpleadoListComponent} from '../empleado/empleado-list/empleado-list.component';
+import {EmpleadoDetailComponent} from '../empleado/empleado-detail/empleado-detail.component';
+import {EmpleadoCreateComponent} from '../empleado/empleado-create/empleado-create.component'
+
 const routes: Routes = [
 
     {
@@ -102,6 +106,23 @@ const routes: Routes = [
       {
         path: ':id',
         component: QuejasDetailComponent
+      }
+    ]
+  },
+  {
+    path: 'empleados',
+    children:[
+      {
+        path: 'list',
+        component: EmpleadoListComponent
+      },
+      {
+        path: ':id',
+        component: EmpleadoDetailComponent
+      },
+      {
+        path: 'add',
+        component: EmpleadoCreateComponent
       }
     ]
   }

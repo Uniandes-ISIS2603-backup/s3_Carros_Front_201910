@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<div class="row">
+    <div class="col-3"></div>
+    <div class="col-6">
+      <br>
+      <h2 class="text-center">Crea un empleado</h2>
+      <br>
+      <form name="empleado" (ngSubmit)="f.form.valid && createEmpleado()" #f="ngForm" novalidate>
+        <div class="form-group">
+          <label for="nombreEmpleado"><b>Nombre</b></label>
+          <input type="text" name="nombreEmpleado" class="form-control" id="nombreEmpleado" [(ngModel)]="empleadoNuevo.nombre" #nombreEmpleado="ngModel" [ngClass]="{ 'is-invalid': f.submitted && nombreEmpleado.invalid }" required>
+          <div class="invalid-feedback">
+            <div>Debe ingresar el nombre del empleado</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="correoEmpleado"><b>Correo</b></label>
+          <input type="text" name="correoEmpleado" class="form-control" id="correoEmpleado" [(ngModel)]="empleadoNuevo.correo" #correoEmpleado="ngModel" [ngClass]="{ 'is-invalid': f.submitted && correoEmpleado.invalid }" required>
+          <div class="invalid-feedback">
+            <div>Debe ingresar el correo del empleado</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="extensionEmpleado"><b>Extensión</b></label>
+          <input type="text" name="extensionEmpleado" class="form-control" id="extensionEmpleado" [(ngModel)]="empleadoNuevo.extension" #extensionEmpleado="ngModel" [ngClass]="{ 'is-invalid': f.submitted && extensionEmpleado.invalid }" required>
+          <div class="invalid-feedback">
+            <div>Debe ingresar la extensión del empleado</div>
+          </div>
+        </div>
+        <div class="row form-inline justify-content-center align-self-center">
+            <button type="submit" class="btn btn-primary">Create</button>
+            <div class="divider"></div>
+            <button type="button" class="btn btn-danger" (click)="cancelCreation()">Cancel</button>
+        </div>     
+      </form>  
+    </div>
+    <div class="col-3"></div>
+</div>      
