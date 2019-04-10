@@ -1,20 +1,31 @@
 <div class="container-fluid">
-	
-		<table class="table table-striped">
-			<thead class="thead-dark">
-				<tr>
-					<th scope="col">ID</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr *ngFor="let q of compraVentas" (click) ="onSelected(q.ventaID)">
-					<td style="cursor pointer;"> 
-						<dd>{{q.ventaID}}</dd>
-					</td>
-					<td >
-						<button class="btn btn-primary" (click)="showHideEdit(q.id)"><span class="fa fa-pencil"></span></button>
-					</td>
-				</tr>
-			</tbody>
-		</table>
+	<div class="row">
+		<div class="col">
+			<table class="table table-striped">
+				<thead class="thead-dark">
+					<tr>
+						<th>ID</th>
+						<th>Editar</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr *ngFor="let q of compraVentas">
+						<td style="cursor: pointer;"> 
+							<a class="figure-caption" (click)="onSelected(q.ventaID)">Venta {{q.ventaID}}</a>
+						</td>
+						<td >
+							<button class="btn btn-primary" (click)="showHideEdit(q.id)"><span class="fa fa-pencil"></span></button>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<div class="border row">
+		<div class="col">
+			<div *ngIf="selectedCompraVenta">
+				<app-compraVenta-detail [compraVentaDetail]="selectedCompraVenta"> </app-compraVenta-detail>
+			</div>
+		</div>
+	</div>
 </div>
