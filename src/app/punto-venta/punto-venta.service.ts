@@ -28,4 +28,8 @@ export class PuntoVentaService {
   {
       return this.http.post<PuntoVenta>(API_BACK + resource, puntoVenta);
   }
+  
+    updatePuntoVenta(puntoVenta): Observable<PuntoVentaDetail> {
+        return this.http.put<PuntoVentaDetail>(API_BACK + resource + '/' + puntoVenta.id, puntoVenta);
+    }
 }

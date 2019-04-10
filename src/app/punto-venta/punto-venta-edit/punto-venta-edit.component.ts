@@ -7,7 +7,7 @@ import {PuntoVentaDetail} from '../punto-venta-detail';
 
 @Component({
   selector: 'app-punto-venta-edit',
-  templateUrl: './punto-venta-edit.component.html',
+  templateUrl: './punto-venta-edit.component.html', 
   styleUrls: ['./punto-venta-edit.component.css'],
   providers:[DatePipe]
 })
