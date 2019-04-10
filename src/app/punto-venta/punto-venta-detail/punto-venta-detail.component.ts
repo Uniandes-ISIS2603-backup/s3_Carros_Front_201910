@@ -13,6 +13,7 @@ import { PuntoVentaDetail } from '../punto-venta-detail';
 export class PuntoVentaDetailComponent implements OnInit {
 
  @Input() puntoVentaDetail: PuntoVentaDetail;
+ 
   constructor(
     private puntoVentaService: PuntoVentaService,
     private route: ActivatedRoute

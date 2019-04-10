@@ -29,6 +29,4 @@ export class CompraVentaService
   updateCompraVenta(compraVenta): Observable<CompraVentaDetail> {
         return this.http.put<CompraVentaDetail>(API + recurso + '/' + compraVenta.id, compraVenta);
     }
-
-  
 }

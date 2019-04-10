@@ -12,38 +12,25 @@ import { CompraVentaDetail } from '../compraVenta-detail';
 })
 export class CompraVentaDetailComponent implements OnInit {
  
-
   constructor(
     private compraVentaService: CompraVentaService,
     private route: ActivatedRoute
   ) { }
 
-  compraVentaDetail: CompraVentaDetail;
+  @Input() compraVentaDetail: CompraVentaDetail;
+  
+  compraVentaId : number;
 
-  @Input() compraVentaId : number;
-
-  loader: any;
-
-  getCompraVentaDetail(): void {
-    this.compraVentaService.getCompraVentaDetail(this.compraVentaId)
-      .subscribe(obs => {
-        this.compraVentaDetail = obs
-      });
+  getCompraVentaDetail(): void 
+  {
+    this.compraVentaService.getCompraVentaDetail(this.compraVentaId).subscribe(obs => {this.compraVentaDetail = obs});
   }
 
-  onLoad(params) {
-
-    this.compraVentaId = parseInt(params['ventaID']);
-    console.log(" en detail " + this.compraVentaId);
+  ngOnInit() 
+  {
+    this.compraVentaId = +this.route.snapshot.paramMap.get('ventaID');
+    if (this.compraVentaId)
     this.compraVentaDetail = new CompraVentaDetail();
     this.getCompraVentaDetail();
   }
-  ngOnInit() {
-    this.loader = this.route.params.subscribe((params: Params) => this.onLoad(params));
-  }
-
-  ngOnDestroy() {
-    this.loader.unsubscribe();
-  }
-
 }
