@@ -19,6 +19,8 @@ import {ModeloModule} from './modelo/modelo.module';
 import {MarcaModule} from './marca/marca.module';
 import {AutomovilModule} from './automovil/automovil.module';
 import { QuejasReclamosModule } from './quejasReclamos/quejas-reclamos.module';
+import { CompraVentaModule } from './compraVenta/compraVenta.module';
+import{FacturaModule} from './factura/factura.module';
 import { RegistrosModule } from './registros/registros.module';
 
 
@@ -33,6 +35,8 @@ import { RegistrosModule } from './registros/registros.module';
         MarcaModule,
         AutomovilModule,
         QuejasReclamosModule,
+        CompraVentaModule,
+        FacturaModule,
         RegistrosModule,
         AppRoutingModule,
         HttpClientModule,

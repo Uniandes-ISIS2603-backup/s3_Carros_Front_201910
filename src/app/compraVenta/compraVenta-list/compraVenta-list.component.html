@@ -1,0 +1,20 @@
+<div class="container-fluid">
+	
+		<table class="table table-striped">
+			<thead class="thead-dark">
+				<tr>
+					<th scope="col">ID</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr *ngFor="let q of compraVentas" (click) ="onSelected(q.ventaID)">
+					<td style="cursor pointer;"> 
+						<dd>{{q.ventaID}}</dd>
+					</td>
+					<td >
+						<button class="btn btn-primary" (click)="showHideEdit(q.id)"><span class="fa fa-pencil"></span></button>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+</div>

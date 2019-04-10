@@ -1,0 +1,92 @@
+[
+  {
+    "ventaID": 1,
+    "calificacionCompra": 4.5,
+    "fecha": "12/02/2018",
+    "pagado": "true"
+  },
+  {
+    "ventaID": 2,
+    "calificacionCompra": 4,
+    "fecha": "12/03/2018",
+    "pagado": "true"
+  },
+  {
+    "ventaID": 3,
+    "calificacionCompra": 4.5,
+    "fecha": "22/05/2018",
+    "pagado": "true"
+  },
+  {
+    "ventaID": 4,
+    "calificacionCompra": 4.8,
+    "fecha": "23/05/2018",
+    "pagado": "true"
+  },
+  {
+    "ventaID": 5,
+    "calificacionCompra": 5,
+    "fecha": "26/05/2018",
+    "pagado": "true"
+  },
+  {
+    "ventaID": 6,
+    "calificacionCompra": 4.5,
+    "fecha": "15/06/2018",
+    "pagado": "true"
+  },
+  {
+    "ventaID": 7,
+    "calificacionCompra": 4.5,
+    "fecha": "12/07/2018",
+    "pagado": "true"
+  },
+  {
+    "ventaID": 8,
+    "calificacionCompra": 4.3,
+    "fecha": "18/07/2018",
+    "pagado": "true"
+  },
+  {
+    "ventaID": 9,
+    "calificacionCompra": 5,
+    "fecha": "25/07/2018",
+    "pagado": "true"
+  },
+  {
+    "ventaID": 10,
+    "calificacionCompra": 4.5,
+    "fecha": "29/07/2018",
+    "pagado": "true"
+  },
+  {
+    "ventaID": 11,
+    "calificacionCompra": 4,
+    "fecha": "12/08/2018",
+    "pagado": "true"
+  },
+  {
+    "ventaID": 12,
+    "calificacionCompra": 4.9,
+    "fecha": "12/08/2018",
+    "pagado": "true"
+  },
+  {
+    "ventaID": 13,
+    "calificacionCompra": 4.7,
+    "fecha": "12/09/2018",
+    "pagado": "true"
+  },
+  {
+    "ventaID": 14,
+    "calificacionCompra": 4.5,
+    "fecha": "12/10/2018",
+    "pagado": "true"
+  },
+  {
+    "ventaID": 15,
+    "calificacionCompra": 5,
+    "fecha": "12/12/2018",
+    "pagado": "true"
+  }
+]

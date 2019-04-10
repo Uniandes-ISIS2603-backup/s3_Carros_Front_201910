@@ -24,6 +24,12 @@ import {RegistrosDetailComponent} from '../registros/registros-detail/registros-
 import {QuejasListComponent} from '../quejasReclamos/quejas-list/quejas-list.component';
 import {QuejasDetailComponent} from '../quejasReclamos/quejas-detail/quejas-detail.component';
 
+import {CompraVentaListComponent} from '../compraVenta/compraVenta-list/compraVenta-list.component';
+import {CompraVentaDetailComponent} from '../compraVenta/compraVenta-detail/compraVenta-detail.component';
+
+import {FacturaDetailComponent} from '../factura/factura-detail/factura-detail.component';
+import {FacturaListComponent} from '../factura/factura-list/factura-list.component';
+
 const routes: Routes = [
 
     {
@@ -102,6 +108,32 @@ const routes: Routes = [
       {
         path: ':id',
         component: QuejasDetailComponent
+      }
+    ]
+  },
+  {
+    path: 'compraVenta',
+    children:[
+      {
+        path: 'list',
+        component: CompraVentaListComponent
+      },
+      {
+        path: ':id',
+        component: CompraVentaDetailComponent
+      }
+    ]
+  },
+  {
+    path: 'factura',
+    children:[
+      {
+        path: 'list',
+        component: FacturaListComponent
+      },
+       {
+        path: ':id',
+        component: FacturaDetailComponent 
       }
     ]
   }
