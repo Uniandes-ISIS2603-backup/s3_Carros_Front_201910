@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import {Marca} from '../marca';
 import {MarcaService} from '../marca.service';
 
@@ -12,7 +12,7 @@ export class MarcaListComponent implements OnInit {
   constructor(private marcaService: MarcaService) { }
 //
 
-  marcas: Marca[];
+  @Input() marcas: Marca[];
 
   getMarcas(): void
   {
