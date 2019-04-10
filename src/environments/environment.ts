@@ -1,4 +1,4 @@
 export const environment = {
   production: false,
-  apiURL: 'http://localhost:8080/s3_Carros-api/api'
+  apiURL: 'http://localhost:8080/s3_carros-api/api'
 };
