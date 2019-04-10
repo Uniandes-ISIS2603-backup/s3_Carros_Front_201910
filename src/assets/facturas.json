@@ -1,0 +1,77 @@
+[
+  {
+    "facturaID": 1,
+    "cuentaOrigen": 421500045026,
+    "fecha": "12/02/2018"
+  },
+  {
+    "facturaID": 2,
+    "cuentaOrigen": 512400046056,
+    "fecha": "12/03/2018"
+  },
+  {
+    "facturaID": 3,
+    "cuentaOrigen": 123459845624,
+    "fecha": "22/05/2018"
+  },
+  {
+    "facturaID": 4,
+    "cuentaOrigen": 456845125222,
+    "fecha": "23/05/2018"
+  },
+  {
+    "facturaID": 5,
+    "cuentaOrigen": 545625974561,
+    "fecha": "26/05/2018"
+  },
+  {
+    "ventaID": 6,
+    "cuentaOrigen": 451200048426,
+    "fecha": "15/06/2018"
+  },
+  {
+    "facturaID": 7,
+    "cuentaOrigen": 754600042563,
+    "fecha": "12/07/2018"
+  },
+  {
+    "facturaID": 8,
+    "cuentaOrigen": 954800041523,
+    "fecha": "18/07/2018"
+  },
+  {
+    "facturaID": 9,
+    "cuentaOrigen": 956300042365,
+    "fecha": "25/07/2018"
+  },
+  {
+    "facturaID": 10,
+    "cuentaOrigen": 750300041265,
+    "fecha": "29/07/2018"
+  },
+  {
+    "facturaID": 11,
+    "cuentaOrigen": 465400042359,
+    "fecha": "12/08/2018"
+  },
+  {
+    "facturaID": 12,
+    "cuentaOrigen": 659800040239,
+    "fecha": "12/08/2018"
+  },
+  {
+    "facturaID": 13,
+    "cuentaOrigen": 654200041526,
+    "fecha": "12/09/2018"
+  },
+  {
+    "facturaID": 14,
+    "cuentaOrigen": 321100042365,
+    "fecha": "12/10/2018"
+  },
+  {
+    "facturaID": 15,
+    "cuentaOrigen": 565400042259,
+    "fecha": "12/12/2018"
+  }
+]

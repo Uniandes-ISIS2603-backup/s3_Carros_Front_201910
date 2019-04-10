@@ -28,6 +28,11 @@ import { EmpleadoListComponent } from '../empleado/empleado-list/empleado-list.c
 import { EmpleadoDetailComponent } from '../empleado/empleado-detail/empleado-detail.component';
 import { ClienteListComponent } from '../cliente/cliente-list/cliente-list.component';
 import { ClienteDetailComponent } from '../cliente/cliente-detail/cliente-detail.component';
+import {CompraVentaListComponent} from '../compraVenta/compraVenta-list/compraVenta-list.component';
+import {CompraVentaDetailComponent} from '../compraVenta/compraVenta-detail/compraVenta-detail.component';
+
+import {FacturaDetailComponent} from '../factura/factura-detail/factura-detail.component';
+import {FacturaListComponent} from '../factura/factura-list/factura-list.component';
 
 const routes: Routes = [
 
@@ -123,6 +128,19 @@ const routes: Routes = [
       }
     ]
   },
+  {    
+    path: 'compraVenta',
+    children:[
+      {
+        path: 'list',
+        component: CompraVentaListComponent
+      },
+      {
+        path: ':id',
+        component: CompraVentaDetailComponent
+      }
+    ]
+  },
   {
     path: 'clientes',
     children:[
@@ -133,6 +151,19 @@ const routes: Routes = [
       {
         path: ':id',
         component: ClienteDetailComponent
+      }
+    ]
+  },
+  {   
+    path: 'factura',
+    children:[
+      {
+        path: 'list',
+        component: FacturaListComponent
+      },
+       {
+        path: ':id',
+        component: FacturaDetailComponent 
       }
     ]
   }
