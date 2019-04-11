@@ -1,3 +1,25 @@
-<p>
-  empleado-detail works!
-</p>
+<div class="card">
+  <h3 class="card-title">{{empleadoDetail.nombre}}</h3> 
+  <p><strong>Correo: </strong> {{empleadoDetail.correo}}<p> 
+  <p><strong>Extensión: </strong> {{empleadoDetail.extension}}<p>
+  <p><strong>Punto de venta: </strong> {{empleadoDetail.puntoVenta.direccion}}<p>
+  <div class="container">
+      <div class="row">
+        <div class="col">  
+          <table class="table">
+            <thead>
+              <tr>
+                 <th>Ventas</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor = "let c of empleadoDetail.compras">
+                <td>{{c.ventaID}}</td>
+              </tr> 
+            </tbody>
+          </table>
+        </div>
+      </div>  
+  </div>
+</div>
+ 

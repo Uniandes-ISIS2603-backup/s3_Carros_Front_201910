@@ -27,4 +27,8 @@ export class EmpleadoService {
   getEmpleadoDetail(id): Observable<EmpleadoDetail>{
     return this.http.get<EmpleadoDetail>(API_URL + empleados + '/' + id);
   }
+
+  updateEmpleado(empleado): Observable<EmpleadoDetail> {
+    return this.http.put<EmpleadoDetail>(API_URL + empleados + '/' + empleado.empleadoID, empleado);
+}
 }

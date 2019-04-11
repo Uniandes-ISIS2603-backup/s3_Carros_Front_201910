@@ -15,6 +15,7 @@ export class EmpleadoListComponent implements OnInit {
 
   showCreate: boolean;
 
+
   getEmpleados(): void{
     this.empleadoService.getEmpleados().subscribe(empleado => this.empleados = empleado);
   }

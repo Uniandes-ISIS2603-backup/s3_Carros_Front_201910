@@ -4,9 +4,10 @@
  * and open the template in the editor.
  */
 import { Empleado } from './empleado';
-//import { CompraVenta } from '../../compraVenta';
+import { CompraVenta } from '../compraVenta/compraVenta';
+
 
 export class EmpleadoDetail extends Empleado{
-  //ventas: CompraVenta[];
+  ventas: CompraVenta[];
 }
 
