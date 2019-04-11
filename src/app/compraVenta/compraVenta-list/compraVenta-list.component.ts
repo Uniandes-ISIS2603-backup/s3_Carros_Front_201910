@@ -28,7 +28,6 @@ export class CompraVentaListComponent implements OnInit {
     this.compraVentaService.getCompraVentaDetail(compraVenta_id).subscribe(o => this.selectedCompraVenta = o);
   }
 
-  
   ngOnInit() {
     this.getCompraVentas();
   }

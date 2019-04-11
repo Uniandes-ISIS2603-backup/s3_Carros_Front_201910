@@ -112,7 +112,7 @@ const routes: Routes = [
     ]
   },
   {
-    path: 'compraVenta',
+    path: 'compraVentas',
     children:[
       {
         path: 'list',

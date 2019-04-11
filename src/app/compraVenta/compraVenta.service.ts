@@ -18,7 +18,7 @@ export class CompraVentaService
   }
 
  getCompraVentaDetail(compraVentaId): Observable<CompraVentaDetail> {
-        return this.http.get<CompraVentaDetail>(API + "compraVenta-" + compraVentaId+".json");
+        return this.http.get<CompraVentaDetail>(API + "compraVenta-" + compraVentaId + ".json");
     }
 
   createCompraVenta(compraVenta): Observable<CompraVenta>
