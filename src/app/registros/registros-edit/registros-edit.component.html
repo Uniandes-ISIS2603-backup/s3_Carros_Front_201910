@@ -8,7 +8,7 @@
               <div class="form-group">
                 <label for="precioComprado"><b>Precio</b></label>
                 <input type="number" name="precioComprado" class="form-control" id="precioComprado" [(ngModel)]="registro.precioComprado"
-                       #precioComprado="ngModel" [ngClass]="{ 'is-invalid': f.submitted && puntoVentaDireccion.invalid }" required>
+                       #precioComprado="ngModel" [ngClass]="{ 'is-invalid': f.submitted && precioComprado.invalid }" required>
                        <div class="invalid-feedback">
                     <div>Falta el precio</div>
                 </div>

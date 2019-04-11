@@ -6,8 +6,15 @@
         <form name="queja" (ngSubmit)="f.form.valid && editQueja()" #f="ngForm" novalidate>
               <div class="form-group">
                 <label for="tipoQueja"><b>Tipo de queja</b></label>
-                <input type="number" name="tipoQueja" class="form-control" id="tipoQueja" [(ngModel)]="queja.tipoQueja"
-                       #tipoQueja="ngModel" [ngClass]="{ 'is-invalid': f.submitted && tipoQueja.invalid }" required>
+                <select type="number" name="tipoQueja" class="form-control" id="tipoQueja" [(ngModel)]="queja.tipoQueja"
+                       #tipoQueja="ngModel" [ngClass]="{ 'is-invalid': f.submitted && tipoQueja.invalid }" required convert-to-number>
+                       <option value="0">Estado automovil</option>
+                    <option value="1">Problema pago</option>
+                    <option value="2">Demora entrega</option>
+                    <option value="3">Mala atención</option>
+                    <option value="4">Reembolso</option>
+                    <option value="5">Otro</option>
+            </select>
                        <div class="invalid-feedback">
                     <div></div>
                 </div>
