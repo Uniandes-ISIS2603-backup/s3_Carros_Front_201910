@@ -8,15 +8,22 @@
             
             <div class="form-group">
                 <label for="tipoQueja"><b>Tipo de queja</b></label>
-                <input type="number" name="tipoQueja" class="form-control" id="tipoQueja" [(ngModel)]="queja.tipoQueja"
-                    #tipoQueja="ngModel" [ngClass]="{ 'is-invalid': f.submitted && tipoQueja.invalid }" required>
+                <select name="tipoQueja" class="form-control" id="tipoQueja" [(ngModel)]="queja.tipoQueja"
+                    #tipoQueja="ngModel" [ngClass]="{ 'is-invalid': f.submitted && tipoQueja.invalid }" required convert-to-number>
+                    <option value="0">Estado automovil</option>
+                    <option value="1">Problema pago</option>
+                    <option value="2">Demora entrega</option>
+                    <option value="3">Mala atención</option>
+                    <option value="4">Reembolso</option>
+                    <option value="5">Otro</option>
+            </select>
                 <div class="invalid-feedback">
                     <div></div>
                 </div>
             </div>
             <div class="form-group">
                 <label for="solucionado"><b>Solucionado</b></label>
-                <input type="checkbox" name=solucionado class="form-control" id="solucionado" [(ngModel)]="queja.solucionado"
+                <input type="checkbox" [checked]="queja.solucionado" name=solucionado class="form-control" id="solucionado" [(ngModel)]="queja.solucionado"
                     #solucionado="ngModel" [ngClass]="{ 'is-invalid': f.submitted && solucionado.invalid }" required>
                 <div class="invalid-feedback">
                     <div></div>
@@ -25,7 +32,7 @@
             <div class="form-group">
                 <label for="comentarios"><b>Comentarios</b></label>
                 <input type="text" name=comentarios class="form-control" id="comentarios" [(ngModel)]="queja.comentarios"
-                    #comentarios="ngModel" [ngClass]="{ 'is-invalid': f.submitted && comentarios.invalid }" required>
+                    #comentarios="ngModel" [ngClass]="{ 'is-invalid': f.submitted && comentarios.invalid }">
                 <div class="invalid-feedback">
                     <div></div>
                 </div>
