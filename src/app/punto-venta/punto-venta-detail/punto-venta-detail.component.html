@@ -3,7 +3,65 @@
     <p class="h4 p4-4"> {{puntoVentaDetail.direccion}}</p>
     <p class="h4 p-4"> {{puntoVentaDetail.telefono}}</p>
 
-    <p class="h3 p-3">Marcas del punto de venta : </p>
-    <app-marca-list [marcas]="puntoVentaDetail.marcas"></app-marca-list>
+ 
 
+    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+            <a class="btn btn-danger" data-toggle="collapse" href="#MarcasList" role="button" aria-expanded="false" aria-controls="MarcasList">
+              Marcas
+            </a>
+            
+            <a class="btn btn-danger" data-toggle="collapse" href="#ComprasList" role="button" aria-expanded="false" aria-controls="ComprasList">
+                    Compras
+            </a>
+            <a class="btn btn-danger" data-toggle="collapse" href="#VentasList" role="button" aria-expanded="false" aria-controls="VentasList">
+                    Ventas
+            </a>
 
+            <a class="btn btn-danger" data-toggle="collapse" href="#EmpleadosList" role="button" aria-expanded="false" aria-controls="EmpleadosList">
+                    Empleados
+            </a>
+
+            <a class="btn btn-danger" data-toggle="collapse" href="#ClientesList" role="button" aria-expanded="false" aria-controls="ClientesList">
+                    Clientes
+            </a>
+
+    </div>
+
+          <div class="collapse" id="MarcasList">
+            <div class="card card-body">
+                    <p class="h3 p-3">Marcas del punto de venta : </p>
+                    <app-marca-list [marcas]="puntoVentaDetail.marcas"></app-marca-list>
+            </div>
+          </div>
+          
+          <div class="collapse" id="ComprasList">
+                <div class="card card-body">
+                        <p class="h3 p-3">Compras del punto de venta : </p>
+                        <app-compraVenta-list [compraVentas]="puntoVentaDetail.CompraVenta"></app-compraVenta-list>
+                 </div>
+          </div>
+
+           
+          <div class="collapse" id="VentasList">
+                <div class="card card-body">
+                        <p class="h3 p-3">Ventas del punto de venta : </p>
+                        <app-registros [registros]="puntoVentaDetail.RegistroCompra"></app-registros>
+                 </div>
+          </div>
+
+           
+          <div class="collapse" id="EmpleadosList">
+                <div class="card card-body">
+                        <p class="h3 p-3">Empleados del punto de venta : </p>
+                        <app-empleado-list [empleados]="puntoVentaDetail.empleados"></app-empleado-list>
+                 </div>
+          </div>
+
+           
+          <div class="collapse" id="ComprasList">
+                <div class="card card-body">
+                        <p class="h3 p-3">Clientes del punto de venta : </p>
+                        <app-cliente-list [clientes]="puntoVentaDetail.clientes"></app-cliente-list>
+                 </div>
+          </div>
+       

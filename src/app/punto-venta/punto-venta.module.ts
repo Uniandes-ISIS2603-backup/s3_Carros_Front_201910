@@ -10,6 +10,11 @@ import{AppRoutingModule} from '../app-routing/app-routing.module';
 import { PuntoVentaCreateComponent } from './punto-venta-create/punto-venta-create.component';
 import { PuntoVentaEditComponent } from './punto-venta-edit/punto-venta-edit.component';
 
+import {ClienteModule} from '../cliente/cliente.module';
+import {EmpleadoModule} from '../empleado/empleado.module';
+import {CompraVentaModule} from '../compraVenta/compraVenta.module';
+import {RegistrosModule} from '../registros/registros.module';
+
 import {MarcaModule} from '../marca/marca.module';
 
 
@@ -18,7 +23,11 @@ import {MarcaModule} from '../marca/marca.module';
     CommonModule, 
     FormsModule,
     AppRoutingModule, 
-    MarcaModule
+    MarcaModule,
+    ClienteModule,
+    EmpleadoModule,
+    CompraVentaModule,
+    RegistrosModule
   ],
   declarations: [PuntoVentaListComponent, PuntoVentaDetailComponent, PuntoVentaCreateComponent, PuntoVentaEditComponent],
   exports: [PuntoVentaListComponent, PuntoVentaCreateComponent],

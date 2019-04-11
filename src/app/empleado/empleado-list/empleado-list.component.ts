@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { EmpleadoService } from '../empleado.service';
 import { Empleado } from '../empleado';
 
@@ -11,7 +11,7 @@ export class EmpleadoListComponent implements OnInit {
 
   constructor(private empleadoService: EmpleadoService) { }
 
-  empleados: Empleado[];
+  @Input() empleados: Empleado[];
 
   showCreate: boolean;
 

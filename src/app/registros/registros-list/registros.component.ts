@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewContainerRef } from '@angular/core';
+import { Component, OnInit, ViewContainerRef, Input } from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {FormsModule} from '@angular/forms';
@@ -30,7 +30,7 @@ export class RegistrosListComponent implements OnInit {
   showCreate: boolean;
   showEdit: boolean;
   showView: boolean;
-  registros: Registros[];
+  @Input() registros: Registros[];
   registro_id: number;
   selectedRegistro: RegistrosDetail;
 
