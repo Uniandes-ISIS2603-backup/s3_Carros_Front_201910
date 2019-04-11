@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ClienteService } from '../cliente.service';
+import { ActivatedRoute } from '@angular/router';
+import { ClienteDetail } from '../cliente-detail';
 
 @Component({
   selector: 'app-cliente-detail',
@@ -7,9 +10,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ClienteDetailComponent implements OnInit {
 
-  constructor() { }
+  constructor(private clienteService: ClienteService,
+    private route: ActivatedRoute) { }
+
+  clienteId : number;
+
+  clienteDetail: ClienteDetail;
+
+  getClienteDetail(): void{
+    this.clienteService.getClienteDetail(this.clienteId).subscribe(clienteDetail => {
+      this.clienteDetail = clienteDetail
+    });
+  }
 
   ngOnInit() {
+    this.clienteId = +this.route.snapshot.paramMap.get('id');
+    this.clienteDetail = new ClienteDetail();
+    this.getClienteDetail();
   }
 
 }

@@ -27,7 +27,9 @@
               <td>{{e.nombre}}</td>
               <td>{{e.correo}}</td>
               <td>{{e.extension}}</td>
-              <td>{{e.puntoVenta.direccion}}</td>
+              <td>
+                <dd class="caption" routerLink="/punto-venta/{{e.puntoVenta.id}}">{{e.puntoVenta.direccion}}</dd>
+              </td>
             </tr>  
           </tbody>    
         </table>

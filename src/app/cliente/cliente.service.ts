@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Cliente } from './cliente';
 import { Observable } from 'rxjs';
 import { environment } from '../../environments/environment';
+import { ClienteDetail } from './cliente-detail';
 
 const API_URL = environment.apiURL;
 const clientes = '/clientes';
@@ -14,5 +15,9 @@ export class ClienteService {
 
   getClientes(): Observable<Cliente[]>{
     return this.http.get<Cliente[]>(API_URL + clientes);
+  }
+
+  getClienteDetail(clienteId): Observable<ClienteDetail>{
+    return this.http.get<ClienteDetail>(API_URL + clientes + '/' + clienteId);
   }
 }
