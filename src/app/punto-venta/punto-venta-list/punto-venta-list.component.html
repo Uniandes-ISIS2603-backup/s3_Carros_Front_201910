@@ -17,7 +17,7 @@
 			</thead>
 			<tbody>
 				<tr *ngFor="let i of puntosVenta" (click) ="onSelected(i.id)">
-					<td style="cursor pointer;"> 
+					<td style="cursor: pointer;"> 
             <dd>{{i.direccion}}</dd>
 					</td>
         <td >
@@ -28,15 +28,16 @@
 	</table>
 		</div>
     	<div class="col-8">
+					<div *ngIf="showEdit">
+							<app-punto-venta-edit [puntoVenta]="selectedPuntoVenta" (cancel)="showHideEdit(selectedPuntoVenta.id)" (update)="updatePuntoVenta()" ></app-punto-venta-edit>
+					</div>
          <div *ngIf="selectedPuntoVenta">
                 <app-punto-venta-detail [puntoVentaDetail]="selectedPuntoVenta"></app-punto-venta-detail>
             </div>
         <div *ngIf="showCreate">
           <app-punto-venta-create (cancel)="showHideCreate()" (create)="ngOnInit()"></app-punto-venta-create>
         </div>
-         <div *ngIf="showEdit">
-                <app-punto-venta-edit [puntoVenta]="selectedPuntoVenta" (cancel)="showHideEdit(selectedPuntoVenta.id)" (update)="updatePuntoVenta()" ></app-punto-venta-edit>
-            </div>
+         
     	</div>
        
   </div>

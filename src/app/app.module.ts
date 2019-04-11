@@ -22,6 +22,9 @@ import { QuejasReclamosModule } from './quejasReclamos/quejas-reclamos.module';
 import { CompraVentaModule } from './compraVenta/compraVenta.module';
 import{FacturaModule} from './factura/factura.module';
 import { RegistrosModule } from './registros/registros.module';
+import { EmpleadoModule } from './empleado/empleado.module';
+import { ClienteModule } from './cliente/cliente.module';
+
 
 
 @NgModule({
@@ -30,6 +33,8 @@ import { RegistrosModule } from './registros/registros.module';
     ],
     imports: [
         BrowserModule,
+        ClienteModule,
+        EmpleadoModule,
         PuntoVentaModule,
         ModeloModule,
         MarcaModule,

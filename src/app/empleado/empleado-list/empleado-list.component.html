@@ -1,0 +1,42 @@
+<div class="container">
+  <div class="row">
+   <div class="col">
+      <br>
+      <br>
+      <div class="row justify-content-center align-self-center">
+        <button [ngClass]="{ 'btn-primary': !showCreate, 'btn-danger': showCreate }" type="button" class="btn" (click)="showHideCreate()">Crea un empleado</button>
+      </div>
+      <br>  
+      <div class="card">
+        <table class="table">
+          <thead class="thead-dark">
+            <tr>
+              <th>Id</th>
+              <th>Nombre</th>
+              <th>Correo</th>
+              <th>Extensión</th>
+              <th>Punto de Venta</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor = "let e of empleados">
+              
+              <td style="cursor: pointer;">
+                <dd class="figure-caption" routerLink="/empleados/{{e.empleadoID}}">{{e.empleadoID}}</dd>
+              </td>
+              <td>{{e.nombre}}</td>
+              <td>{{e.correo}}</td>
+              <td>{{e.extension}}</td>
+              <td>{{e.puntoVenta.direccion}}</td>
+            </tr>  
+          </tbody>    
+        </table>
+      </div>
+      <div class="col-8">
+        <div *ngIf="showCreate">
+            <app-empleado-create (cancel)="showHideCreate()" (create)="ngOnInit()"> </app-empleado-create>
+        </div>
+      </div>  
+    </div>
+  </div>
+</div>
