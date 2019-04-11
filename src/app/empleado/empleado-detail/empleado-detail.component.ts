@@ -22,7 +22,7 @@ export class EmpleadoDetailComponent implements OnInit {
   ngOnInit() {
     this.empleadoId = +this.route.snapshot.paramMap.get('id');
     this.empleadoDetail = new EmpleadoDetail();
-        this.getEmpleadoDetail();
+    this.getEmpleadoDetail();
   }
 
 }

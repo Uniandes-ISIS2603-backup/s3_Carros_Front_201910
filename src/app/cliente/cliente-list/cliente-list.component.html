@@ -19,10 +19,9 @@
           </thead>
           <tbody>
             <tr *ngFor = "let c of clientes">
-              
-              <td style="cursor: pointer;">
+               <td style="cursor: pointer;">
                 <dd class="figure-caption" routerLink="/clientes/{{c.clienteID}}">{{c.clienteID}}</dd>
-              </td> 
+              </td>
               <td>{{c.nombre}}</td>
               <td>{{c.correo}}</td>
               <td>{{c.telefono}}</td>
