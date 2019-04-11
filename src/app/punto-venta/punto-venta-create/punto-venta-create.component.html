@@ -10,7 +10,8 @@
                 <label for="puntoVentaDireccion">
                     <b> Direccion</b>
                 </label>
-                <input type="text" name="puntoVentaDireccion" class="form-control" id="puntoVentaDireccion" [(ngModel)]="puntoVenta.direccion" #puntoVentaDireccion="ngModel" [ngClass]="{ 'is-invalid': f.submitted && puntoVentaDireccion.invalid }" required>
+                <input type="text" name="puntoVentaDireccion" class="form-control" id="puntoVentaDireccion" 
+                [(ngModel)]="puntoVenta.direccion" #puntoVentaDireccion="ngModel" [ngClass]="{ 'is-invalid': f.submitted && puntoVentaDireccion.invalid }" required>
                 <div class="invalid-feedback">
                     <div> La direccion del punto de venta falta</div>
                 </div>
