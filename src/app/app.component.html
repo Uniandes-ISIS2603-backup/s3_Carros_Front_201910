@@ -1,49 +1,108 @@
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color:#990000">
 
+    <!-- Navbar brand -->
+    <a class="navbar-brand" href="http://localhost:4200/home">
+        <img src="https://cdn.pixabay.com/photo/2012/04/28/19/07/car-44073_960_720.png" height="40" alt="mdb logo">
+    </a>
 
-<div class="container-fluid">
-	<nav class=" navbar-light bg-light">        
-	<div class="row">
-    <div class="col">
-  	<a class="navbar-brand && text-center" href="#"> 
-			<div class="form-inline">
-				<p class="text-center">
-					GoodFellas
-				</p>
-			</div>
-		</a>
-    </div>
-	</div>
-</nav>   
-</div>
-<div class="container-fluid">
-  <nav class=" navbar-light bg-light">
-   <div class="w-100"></div>
-    <div class="col">
-		    <ul class="nav">
-			  <li class="nav-item">
-				<div class="btn-group" role="group" aria-label="Basic example">
-					<button type="button" class="btn btn-outline-danger && nav-link" routerLink="punto-venta/list" routerLinkActive ="active">Punto venta</button>
-          <button type="button" class="btn btn-outline-danger && nav-link" routerLink="marca/list" routerLinkActive ="active">Marcas</button>
-          <button type="button" class="btn btn-outline-danger && nav-link" routerLink="modelo/list" routerLinkActive ="active">Modelos</button>
-          <button type="button" class="btn btn-outline-danger && nav-link" routerLink="automovil/list" routerLinkActive ="active">Automovil</button>
-          <button type="button" class="btn btn-outline-danger && nav-link" routerLink="registros/list" routerLinkActive ="active">Registros</button>
-          <button type="button" class="btn btn-outline-danger && nav-link" routerLink="compraVentas/list" routerLinkActive ="active">CompraVentas</button>
-          <button type="button" class="btn btn-outline-danger && nav-link" routerLink="factura/list" routerLinkActive ="active">Facturas</button>
-          <button type="button" class="btn btn-outline-danger && nav-link" routerLink="quejasReclamos/list" routerLinkActive ="active">Quejas</button>
-          <button type="button" class="btn btn-outline-danger && nav-link" routerLink="empleados/list" routerLinkActive ="active">Empleados</button>
-          <button type="button" class="btn btn-outline-danger && nav-link" routerLink="clientes/list" routerLinkActive ="active">Clientes</button>
+    <!-- Collapse button -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
+        aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="basicExampleNav">
+
+        <!-- Links -->
+        <ul class="navbar-nav mr-auto">
+
+            <li class="nav-item active">
+                <a class="nav-link" href="http://localhost:4200/home" style="color: #ffffff">
+                    Inicio
+                    <span class="sr-only">(current)</span>
+                </a>
+            </li>
+
+            <!-- Dropdown -->
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false" style="color: #ffffff">Catalogo</a>
+                <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item" routerLink="marca/list">Marcas</a>
+                    <a class="dropdown-item" routerLink="modelo/list">Modelo</a>
+                    <a class="dropdown-item" routerLink="automovil/list">Automoviles</a>
+                </div>
+            </li>
+            <!-- Dropdown -->
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false" style="color: #ffffff">Compras</a>
+                <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item" routerLink="factura/list">Facturas</a>
+                    <a class="dropdown-item" routerLink="compraVentas/list">Todas las compras</a>
+                    
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#" style="color: #ffffff" routerLink="quejasReclamos/list">Quejas</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#" style="color: #ffffff" routerLink="clientes/list">Clientes</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#" style="color: #ffffff" routerLink="empleados/list">Empleados</a>
+            </li>
+            <!-- Dropdown -->
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false" style="color: #ffffff">Funcionalidades</a>
+                <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item" routerLink="bicicletas/add">Crear bicicleta</a>
+                    <a class="dropdown-item" href="#">Actualizar bicicleta</a>
+                    <a class="dropdown-item" href="#">Eliminar bicicleta</a>
+                    <a class="dropdown-item" routerLink="/marcas/create">Crear marca</a>
+                </div>
+            </li>
+            <!-- Dropdown -->
+            <li class="nav-item">
+                <a class="nav-link" routerLink="punto-venta/list" style="color: #ffffff">Puntos de venta</a>
+            </li>
+        </ul>
+
+        <div>
+            <div>
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item"><a class="nav-link" [routerLink]=" ">Perfil</a></li>
+                    <li class="nav-item"> <a class="nav-link" [routerLink]="">Configuración</a></li>
+                    <li class="nav-item"><a class="nav-link" (click)="logout()" href="#">Cerrar Sesión</a></li>
+                </ul>
+            </div>
+
         </div>
-        </li>
-        </ul> <br>
+
     </div>
-    <div class="w-100"></div>
-   <div class="col">
-      <router-outlet></router-outlet>
-      </div>
-  </nav>
+    <!-- Collapsible content -->
+
+</nav>
+<!-- Routed components go here -->
+<div>
+    <router-outlet></router-outlet>
+    <br>
+    <br>
 </div>
 
-
+<footer class="footer bg-light" id="footer">
+    <div class="container">
+        <p class="navbar-text text-center">
+            <img src="data:image/png;base64,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" alt="logo" width="50%" /><span id="footer-text">
+                © GoodFellas
+                    201910
+            </span>
+        </p>
+    </div>
+</footer>
 
 
 
