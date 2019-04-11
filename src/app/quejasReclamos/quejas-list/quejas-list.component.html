@@ -1,18 +1,48 @@
 <div class="container-fluid">
-	
-		<table class="table table-striped">
-			<thead class="thead-dark">
-				<tr>
-					<th scope="col">Caso ID</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr *ngFor="let q of quejas">
-					<td style="cursor pointer;"> <a class="figure-caption" routerLink='../{{q.id}}'> {{q.casoId}}</a>
-					</td>
+  <div class="row">
+		<div class="col">
+			<br>
+			<div class="row justify-content-center align-self-center">
+        
+				<button [ngClass]="{ 'btn-primary': !showCreate, 'btn-danger': showCreate }" type="button" class="btn"
+                    (click)="showHideCreate()">Crear una queja</button>
+            </div>
+            <br>
+	<div class="row">
+		<div class="col">
+			<table class="table table-striped">
+				<thead class="thead-dark">
+					<tr>
+						<th>Quejas</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr *ngFor="let q of quejas">
+						<td style="cursor: pointer;">
+							<a class="figure-caption" (click)="onSelected(q.id)">{{q.casoId}}</a>
+						</td>
 
-				</tr>
-			</tbody>
-		</table>
-	
+            <td >
+        <button class="btn btn-primary" (click)="showHideEdit(q.id)"><span class="fa fa-pencil"></span></button>
+        </td>
+
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<div class="border row">
+		<div class="col">
+      <div *ngIf="showCreate">
+          <app-quejas-create (cancel)="showHideCreate()" (create)="ngOnInit()"></app-quejas-create>
+        </div>
+			<div *ngIf="selectedQueja">
+				<app-quejas-detail [quejasDetail]="selectedQueja"> </app-quejas-detail>
+			</div>
+      <div *ngIf="showEdit">
+                <app-quejas-edit [queja]="selectedQueja" (cancel)="showHideEdit(selectedQueja.id)" (update)="updateQueja()" ></app-quejas-edit>
+            </div>
+    	</div>
+		</div>
+	</div>
 </div>

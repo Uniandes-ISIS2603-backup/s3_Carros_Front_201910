@@ -16,16 +16,16 @@ export class QuejasEditComponent implements OnInit {
         private toastrService: ToastrService
     ) {}
 
-  @Input() quejaId: number;
+  @Input() queja_id: number;
+
+  @Input() queja: QuejasDetail; 
 
   @Output() cancel = new EventEmitter();
 
-    @Output() update = new EventEmitter();
-
-    queja: QuejasDetail;
+   
 
   getQueja(): void {
-        this.quejaService.getQuejasDetail(this.quejaId)
+        this.quejaService.getQuejasDetail(this.queja_id)
             .subscribe(queja => {
                 this.queja = queja;
             });
@@ -34,7 +34,6 @@ export class QuejasEditComponent implements OnInit {
   editQueja(): void {
         this.quejaService.updateQueja(this.queja)
             .subscribe(() => {
-                this.update.emit();
                 this.toastrService.success("La información de la queja fue editada", "Modificar estado de la queja");
             });
     }

@@ -17,9 +17,9 @@ export class RegistrosDetailComponent implements OnInit {
     private route: ActivatedRoute
   ) { }
 
-  registroDetail: RegistrosDetail;
+  @Input() registroDetail: RegistrosDetail;
 
-  @Input() registro_id: number;
+  registro_id: number;
 
   loader: any;
 
@@ -30,19 +30,15 @@ export class RegistrosDetailComponent implements OnInit {
       });
   }
 
-  onLoad(params) {
-
-    this.registro_id = parseInt(params['id']);
-    console.log(" en detail " + this.registro_id);
-    this.registroDetail = new RegistrosDetail();
-    this.getRegistroDetail();
-  }
   ngOnInit() {
-    this.loader = this.route.params.subscribe((params: Params) => this.onLoad(params));
+    this.registro_id = +this.route.snapshot.paramMap.get('id');
+    if (this.registro_id) {
+      this.registroDetail = new RegistrosDetail();
+      this.getRegistroDetail();
+    }
+
   }
 
-  ngOnDestroy() {
-    this.loader.unsubscribe();
-  }
+ 
 
 }

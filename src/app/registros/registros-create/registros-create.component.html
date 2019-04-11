@@ -1,3 +1,41 @@
-<p>
-registros-create works!
-</p>
+<div class="row">
+    <div class="col-3"></div>
+    <div class="col-6">
+        <br>
+        <h2 class="text-center">Crear un registro</h2>
+        <br>
+        <form name="registro" (ngSubmit)="f.form.valid && createRegistro()" #f="ngForm" novalidate>
+            <div class="form-group">
+                <label for="precioComprado"><b>Precio</b></label>
+                <input type="number" name="precioComprado" class="form-control" id="precioComprado" [(ngModel)]="registro.precioComprado"
+                    #precioComprado="ngModel" [ngClass]="{ 'is-invalid': f.submitted && precioComprado.invalid }" required>
+                <div class="invalid-feedback">
+                    <div>Hace falta el precio</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="nombreVendedor"><b>Nombre</b></label>
+                <input type="text" name=nombreVendedor class="form-control" id="nombreVendedor" [(ngModel)]="registro.nombreVendedor"
+                    #precioComprado="ngModel" [ngClass]="{ 'is-invalid': f.submitted && nombreVendedor.invalid }" required>
+                <div class="invalid-feedback">
+                    <div>Hace falta el nombre del vendedor</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="fechaCompra"><b>Fecha</b></label>
+                <input type="date" name=fechaCompra class="form-control" id="fechaCompra" [(ngModel)]="registro.fechaCompra"
+                    #fechaCompra="ngModel" [ngClass]="{ 'is-invalid': f.submitted && fechaCompra.invalid }" required>
+                <div class="invalid-feedback">
+                    <div>Hace falta la fecha</div>
+                </div>
+            </div>
+            <div class="row form-inline justify-content-center align-self-center">
+                <button type="submit" class="btn btn-primary">Create</button>
+                <div class="divider"></div>
+                <button type="button" class="btn btn-danger" (click)="cancelCreation()">Cancel</button>
+            </div>
+        </form>
+    </div>
+    <div class="col-3"></div>
+</div>
+

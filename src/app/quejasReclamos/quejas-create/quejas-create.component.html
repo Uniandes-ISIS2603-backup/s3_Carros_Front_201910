@@ -1,3 +1,41 @@
-<p>
-quejas-create works!
-</p>
+<div class="row">
+    <div class="col-3"></div>
+    <div class="col-6">
+        <br>
+        <h2 class="text-center">Crear una queja</h2>
+        <br>
+        <form name="queja" (ngSubmit)="f.form.valid && createQueja()" #f="ngForm" novalidate>
+            
+            <div class="form-group">
+                <label for="tipoQueja"><b>Tipo de queja</b></label>
+                <input type="number" name="tipoQueja" class="form-control" id="tipoQueja" [(ngModel)]="queja.tipoQueja"
+                    #tipoQueja="ngModel" [ngClass]="{ 'is-invalid': f.submitted && tipoQueja.invalid }" required>
+                <div class="invalid-feedback">
+                    <div></div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="solucionado"><b>Solucionado</b></label>
+                <input type="checkbox" name=solucionado class="form-control" id="solucionado" [(ngModel)]="queja.solucionado"
+                    #solucionado="ngModel" [ngClass]="{ 'is-invalid': f.submitted && solucionado.invalid }" required>
+                <div class="invalid-feedback">
+                    <div></div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="comentarios"><b>Comentarios</b></label>
+                <input type="text" name=comentarios class="form-control" id="comentarios" [(ngModel)]="queja.comentarios"
+                    #comentarios="ngModel" [ngClass]="{ 'is-invalid': f.submitted && comentarios.invalid }" required>
+                <div class="invalid-feedback">
+                    <div></div>
+                </div>
+            </div>
+            <div class="row form-inline justify-content-center align-self-center">
+                <button type="submit" class="btn btn-primary">Create</button>
+                <div class="divider"></div>
+                <button type="button" class="btn btn-danger" (click)="cancelCreation()">Cancel</button>
+            </div>
+        </form>
+    </div>
+    <div class="col-3"></div>
+</div>

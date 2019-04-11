@@ -1,0 +1,52 @@
+
+<div class="row">
+    <div class="col-12">
+        <br>
+        <h2 class="text-center">Editar un registro</h2>
+        <br>
+        <form name="registro" (ngSubmit)="f.form.valid && editRegistro()" #f="ngForm" novalidate>
+              <div class="form-group">
+                <label for="precioComprado"><b>Precio</b></label>
+                <input type="number" name="precioComprado" class="form-control" id="precioComprado" [(ngModel)]="registro.precioComprado"
+                       #precioComprado="ngModel" [ngClass]="{ 'is-invalid': f.submitted && puntoVentaDireccion.invalid }" required>
+                       <div class="invalid-feedback">
+                    <div>Falta el precio</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="nombreVendedor"><b>Nombre Vendedor</b></label>
+                <input type= "text" name="nombreVendedor" class="form-control" id="nombreVendedor" [(ngModel)]="registro.nombreVendedor"
+                          #nombreVendedor="ngModel" [ngClass]="{ 'is-invalid': f.submitted && nombreVendedor.invalid }"
+                          required>
+                <div class="invalid-feedback">
+                    <div>Falta el nombre del vendedor</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="fechaCompra"><b>Fecha</b></label>
+                <input type="date" name="fechaCompra" class="form-control" id="fechaCompra" [(ngModel)]="registro.fechaCompra"
+                          #fechaCompra="ngModel" [ngClass]="{ 'is-invalid': f.submitted && fechaCompra.invalid }"
+                          required>
+                <div class="invalid-feedback">
+                    <div>Falta la fecha</div>
+                </div>
+            </div>
+        <div class="row form-inline justify-content-center align-self-center">
+                
+                
+                
+            </div>
+        </form>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12">
+        <div class="row form-inline justify-content-center align-self-center">
+            <i  style="padding-right: 1em;"class="fa fa-save " (click)="editRegistro()"><button type="submit" class="btn btn-primary">Edit</button></i>
+            <div class="divider"></div>
+            <i class="fa fa-ban" (click)="cancelEdition()"><button type="button" class="btn btn-danger" (click)="cancelEdition()">Cancel</button></i>
+        </div>
+    </div>
+</div>
+<br>
+<br>

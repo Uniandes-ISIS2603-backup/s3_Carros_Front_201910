@@ -17,32 +17,28 @@ export class QuejasDetailComponent implements OnInit {
     private route: ActivatedRoute
   ) { }
 
-  quejasDetail: QuejasDetail;
+  @Input() quejasDetail: QuejasDetail;
 
-  @Input() quejaId : number;
+  @Input() queja_id : number;
 
   loader: any;
 
   getQuejasDetail(): void {
-    this.quejasService.getQuejasDetail(this.quejaId)
+    this.quejasService.getQuejasDetail(this.queja_id)
       .subscribe(o => {
         this.quejasDetail = o
       });
   }
 
-  onLoad(params) {
-
-    this.quejaId = parseInt(params['id']);
-    console.log(" en detail " + this.quejaId);
-    this.quejasDetail = new QuejasDetail();
-    this.getQuejasDetail();
-  }
   ngOnInit() {
-    this.loader = this.route.params.subscribe((params: Params) => this.onLoad(params));
+    this.queja_id = +this.route.snapshot.paramMap.get('id');
+    if (this.queja_id) {
+      this.quejasDetail = new QuejasDetail();
+      this.getQuejasDetail();
+    }
+
   }
 
-  ngOnDestroy() {
-    this.loader.unsubscribe();
-  }
+  
 
 }

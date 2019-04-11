@@ -35,6 +35,7 @@ export class RegistrosCreateComponent implements OnInit {
     return this.registro
   }
   ngOnInit() {
+    this.registro = new Registros();
   }
 
 }

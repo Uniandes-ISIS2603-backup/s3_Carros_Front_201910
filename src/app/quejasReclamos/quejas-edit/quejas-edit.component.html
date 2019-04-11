@@ -1,3 +1,51 @@
-<p>
-quejas-edit works!
-</p>
+<div class="row">
+    <div class="col-12">
+        <br>
+        <h2 class="text-center">Editar una queja</h2>
+        <br>
+        <form name="queja" (ngSubmit)="f.form.valid && editQueja()" #f="ngForm" novalidate>
+              <div class="form-group">
+                <label for="tipoQueja"><b>Tipo de queja</b></label>
+                <input type="number" name="tipoQueja" class="form-control" id="tipoQueja" [(ngModel)]="queja.tipoQueja"
+                       #tipoQueja="ngModel" [ngClass]="{ 'is-invalid': f.submitted && tipoQueja.invalid }" required>
+                       <div class="invalid-feedback">
+                    <div></div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="solucionado"><b>Solucionado</b></label>
+                <input type= "checkbox" name="solucionado" class="form-control" id="solucionado" [(ngModel)]="queja.solucionado"
+                          #solucionado="ngModel" [ngClass]="{ 'is-invalid': f.submitted && solucionado.invalid }"
+                          required>
+                <div class="invalid-feedback">
+                    <div></div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="comentarios"><b>Comentarios</b></label>
+                <input type="text" name="comentarios" class="form-control" id="comentarios" [(ngModel)]="queja.comentarios"
+                          #comentarios="ngModel" [ngClass]="{ 'is-invalid': f.submitted && comentarios.invalid }"
+                          required>
+                <div class="invalid-feedback">
+                    <div></div>
+                </div>
+            </div>
+        <div class="row form-inline justify-content-center align-self-center">
+                
+                
+                
+            </div>
+        </form>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12">
+        <div class="row form-inline justify-content-center align-self-center">
+            <i  style="padding-right: 1em;"class="fa fa-save " (click)="editQueja()"><button type="submit" class="btn btn-primary">Edit</button></i>
+            <div class="divider"></div>
+            <i class="fa fa-ban" (click)="cancelEdition()"><button type="button" class="btn btn-danger" (click)="cancelEdition()">Cancel</button></i>
+        </div>
+    </div>
+</div>
+<br>
+<br>
