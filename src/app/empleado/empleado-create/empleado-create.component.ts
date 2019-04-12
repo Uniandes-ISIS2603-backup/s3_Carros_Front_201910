@@ -21,11 +21,11 @@ export class EmpleadoCreateComponent implements OnInit {
 
   createEmpleado(): Empleado{
     console.log(this.empleadoNuevo);
-    this.empleadoService.createEmpleado(this.empleadoNuevo)  .subscribe((empleado) => {
+    this.empleadoService.createEmpleado(this.empleadoNuevo).subscribe((empleado) => {
         this.empleadoNuevo = empleado;
         this.create.emit();
         this.toastrService.success("El empleado fue creado", "Creación Empleado");
-      })
+      });
     return this.empleadoNuevo;
   }
 

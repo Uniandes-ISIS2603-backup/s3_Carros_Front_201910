@@ -1,3 +1,35 @@
-<p>
-  cliente-detail works!
-</p>
+<div class="card">
+    <h3 class="card-title">{{clienteDetail.nombre}}</h3> 
+    <p><strong>Correo: </strong> {{clienteDetail.correo}}<p> 
+    <p><strong>Extensión: </strong> {{clienteDetail.telefono}}<p>
+    <div class="container">
+        <div class="row">
+          <div class="col">  
+            <table class="table">
+              <thead>
+                <tr>
+                   <th>Puntos de venta de interés</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor = "let pv of clienteDetail.puntosVenta">
+                  <td>{{pv.direccion}}</td>
+                </tr> 
+              </tbody>
+            </table>
+            <table class="table">
+                <thead>
+                  <tr>
+                     <th>Compras</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor = "let c of clienteDetail.compras">
+                    <td>{{c.compras}}</td>
+                  </tr> 
+                </tbody>
+              </table>
+          </div>
+        </div>  
+    </div>
+  </div>
