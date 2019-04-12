@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import {Modelo} from '../modelo';
 import {ModeloService} from '../modelo.service';
 
@@ -12,7 +12,7 @@ export class ModeloListComponent implements OnInit {
   constructor(private modeloService: ModeloService) { }
 //
 
-  modelos: Modelo[];
+ @Input() modelos: Modelo[];
 
   getModelos(): void
   {

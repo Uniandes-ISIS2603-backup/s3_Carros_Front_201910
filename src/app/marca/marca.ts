@@ -6,4 +6,5 @@ export class Marca
  
  nombre: String; 
 
+  imagen: String;
 }

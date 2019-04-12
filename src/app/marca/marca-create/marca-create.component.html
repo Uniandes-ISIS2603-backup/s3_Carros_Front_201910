@@ -1,0 +1,31 @@
+<div class="row">
+        <div class="col-3"> </div>
+        <div class="col-6">
+            <br>
+            <h2 class="text-center"> Agregar una marca</h2>
+            <br>
+            <form name="puntoVenta" (ngSubmit)="f.form.valid && createMarca()" #f="ngForm" novalidate>
+                <div class="from-group">
+    
+                    <label for="marcaNombre">
+                        <b> Nombre</b>
+                    </label>
+                    <input type="text" name="marcaNombre" class="form-control" id="marcaNombre" 
+                    [(ngModel)]="marca.nombre" #marcaNombre="ngModel" [ngClass]="{ 'is-invalid': f.submitted && marcaNombre.invalid }" required>
+                    <div class="invalid-feedback">
+                        <div>  No se puede crear la marca sin un nombre</div>
+                    </div>
+                    <label for="marcaImagen">Ingrese la ruta de la imagen</label>
+                    <input type="text" name="marcaImagen" class="form-control" id="marcaImagen"  [(ngModel)]="marca.imagen" #marcaImagen="ngModel" [ngClass]="{ 'is-invalid': f.submitted && marcaImagen.invalid }" required>
+                </div>
+                <br>
+                <div class="row form-inline justify-content-center align-self-center">
+                    <button type="submit" class="btn btn-primary" >Create</button>
+                    <div class="divider"></div>
+                    <button type="button" class="btn btn-danger" (click)="cancelCreation()">Cancel</button>
+                </div>
+    
+            </form>
+    
+        </div>
+    </div>

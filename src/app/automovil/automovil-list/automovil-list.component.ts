@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input } from '@angular/core';
 import {Automovil} from '../automovil';
 import {AutomovilService} from '../automovil.service';
 
@@ -12,7 +12,7 @@ export class AutomovilListComponent implements OnInit {
   constructor(private marcaService: AutomovilService) { }
 //
 
-  automoviles: Automovil[];
+  @Input() automoviles: Automovil[];
 
   getAutomoviless(): void
   {
