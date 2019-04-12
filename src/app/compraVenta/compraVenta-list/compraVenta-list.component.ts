@@ -1,35 +1,93 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { Router, RouterLink } from '@angular/router';
-import { CompraVentaService } from '../compraVenta.service';
-import { CompraVenta } from '../compraVenta';
-import { CompraVentaDetailComponent } from '../compraVenta-detail/compraVenta-detail.component';
-import { CompraVentaDetail } from '../compraVenta-detail';
+import { Component, OnInit, ViewContainerRef, Input } from '@angular/core';
+import {ModalDialogService, SimpleModalComponent} from 'ngx-modal-dialog';
+import {ToastrService} from 'ngx-toastr';
 
+import {CompraVenta} from '../compraVenta';
+import {CompraVentaService} from '../compraVenta.service';
+
+/**
+* The component for the list of compraVentas.
+*/
 @Component({
   selector: 'app-compraVenta-list',
   templateUrl: './compraVenta-list.component.html',
+  styleUrls: ['./compraVenta-list.component.css']
 })
 export class CompraVentaListComponent implements OnInit {
-  
-  constructor(private compraVentaService: CompraVentaService, private router: Router) { }
 
-  compraVenta_ID: number;
-  selectedCompraVenta: CompraVentaDetail;
+  /**
+   * Constructor for the component
+   * @param editorialService The author's services provider
+   */
+  constructor(
+    private compraVentaService: CompraVentaService,
+    private modalDialogService: ModalDialogService,
+    private viewRef: ViewContainerRef,
+    private toastrService: ToastrService) { }
 
-  @Input() compraVentas : CompraVenta[];
+  /**
+   * The list of compraVentas.
+   */
+  @Input() compraVentas: CompraVenta[];
 
-  getCompraVentas(): void{
-    this.compraVentaService.getCompraVentas().subscribe(lasCompraVentas => this.compraVentas = lasCompraVentas);
+  /**
+   * Shows or hides the create component
+   */
+  showCreate: boolean;
+
+  /**
+   * Shows or hides the edit component.
+   */
+  showEdit: boolean;
+
+  /**
+   * The id of the editorial being edited.
+   */
+  compraVentaId: number;
+
+  /**
+   * Asks the service to update the list of compraVentas
+   */
+  getCompraVentas(): void {
+    this.compraVentaService.getCompraVentas()
+        .subscribe(lasCompraVentas => {
+            this.compraVentas = lasCompraVentas;
+        });
+}
+
+  /**
+   * Shows or hides the create component
+   */
+  showHideCreate(): void {
+    this.showEdit = false;
+    this.showCreate = !this.showCreate!
   }
-  
-  onSelected(compraVenta_id: number): void {
-    this.compraVenta_ID = compraVenta_id;
-    this.selectedCompraVenta = new CompraVentaDetail();
-    this.compraVentaService.getCompraVentaDetail(compraVenta_id).subscribe(o => this.selectedCompraVenta = o);
+
+  /**
+   *Shows or hides the create component
+   */
+  showHideEdit(compraVenta_id: number): void {
+    if (!this.showEdit || (this.showEdit && compraVenta_id != this.compraVentaId)) {
+        this.showCreate = false;
+        this.showEdit = true;
+        this.compraVentaId = compraVenta_id;
+    }
+    else {
+        this.showEdit = false;
+    }
   }
 
+  updateEditorial(): void {
+    this.showEdit = false;
+  }
+
+  /**
+   *This will initialize the component by retrieving the list of compraVentas from the service
+   * This method will be called when the component is created
+   */
   ngOnInit() {
+    this.showCreate = false;
+    this.showEdit = false;
     this.getCompraVentas();
-  }
-
+   }
 }

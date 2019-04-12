@@ -6,7 +6,6 @@
         <br>
         <form name="puntoVenta" (ngSubmit)="f.form.valid && createPuntoVenta()" #f="ngForm" novalidate>
             <div class="from-group">
-
                 <label for="puntoVentaDireccion">
                     <b> Direccion</b>
                 </label>
@@ -23,9 +22,7 @@
                 <input type="text" name="puntoVentaTelefono" class="form-control" id="puntoVentaTelefono" [(ngModel)]="puntoVenta.telefono" #puntoVentaTelefono="ngModel" [ngClass]="{ 'is-invalid': f.submitted && puntoVentaTelefono.invalid }" required>
                 <div class="invalid-feedback">
                     <div> El telefono del punto de venta falta</div>
-
                 </div>
-
             </div>
             <br>
             <div class="row form-inline justify-content-center align-self-center">
@@ -33,8 +30,6 @@
                 <div class="divider"></div>
                 <button type="button" class="btn btn-danger" (click)="cancelCreation()">Cancel</button>
             </div>
-
         </form>
-
     </div>
 </div>

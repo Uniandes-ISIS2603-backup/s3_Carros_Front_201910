@@ -1,31 +1,38 @@
 <div class="container-fluid">
-	<div class="row">
-		<div class="col">
-			<table class="table table-striped">
-				<thead class="thead-dark">
-					<tr>
-						<th>ID</th>
-						<th>Editar</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr *ngFor="let q of compraVentas">
-						<td style="cursor: pointer;"> 
-							<a class="figure-caption" (click)="onSelected(q.ventaID)">Venta {{q.ventaID}}</a>
-						</td>
-						<td >
-							<button class="btn btn-primary" (click)="showHideEdit(q.ventaID)"><span class="fa fa-pencil"></span></button>
-						</td>
-					</tr>
-				</tbody>
-			</table>
-		</div>
-	</div>
-	<div class="border row">
-		<div class="col">
-			<div *ngIf="selectedCompraVenta">
-				<app-compraVenta-detail [compraVentaDetail]="selectedCompraVenta"> </app-compraVenta-detail>
-			</div>
-		</div>
-	</div>
+    <div class="row">
+        <div class="col-md-4">
+            <br>
+            <div class="row justify-content-center align-self-center">
+                <button [ngClass]="{ 'btn-primary': !showCreate, 'btn-danger': showCreate }" type="button" class="btn"
+                    (click)="showHideCreate()">Crear una CompraVenta</button>
+            </div>
+            <br>
+            <br>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>ID</th>    
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor = "let i of compraVentas">
+                        <td style="cursor: pointer;">
+                <dd class="figure-caption" routerLink="/compraVentas/{{i.ventaID}}">CompraVenta número {{i.ventaID}}</dd>
+                </td>
+                <td>
+                    <button class="btn btn-primary" (click)="showHideEdit(i.ventaID)"><span class="fa fa-pencil"></span></button>
+                </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-md-8">
+            <div *ngIf="showCreate">
+                <app-compraVenta-create (cancel)="showHideCreate()" (create)="ngOnInit()" *ngIf="showCreate"></app-compraVenta-create>
+            </div>
+            <div *ngIf="showEdit">
+                <app-compraVenta-edit [compraVenta]="compraVentaSelected" (cancel)="showHideEdit(compraVentaSelected.ventaID)" (update)="updateCompraVenta()"></app-compraVenta-edit>
+            </div>
+        </div>
+    </div>
 </div>
