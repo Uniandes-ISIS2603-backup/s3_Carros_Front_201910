@@ -14,7 +14,7 @@
          
                     <div class="card h-100">   
                         <a routerLink="/marcas/{{i.id}}">
-                            <img class="card-img-top" src="http://blog.supercarros.com/wp-content/uploads/2018/02/Untitled-1-696x435.jpg" alt="">
+                            <img class="card-img-top" src="{{i.imagen}}" alt="">
                         </a>
                         <div class="card-body">
                             <h4 class="card-title">{{i.nombreMarca}}</h4>
@@ -22,7 +22,7 @@
                         </div>
                         <div class="card-footer">
                             
-                            <a class="btn btn-danger btn-block"  (click) ="onSelected(i.id)">Carros</a>
+                            <a class="btn btn-danger btn-block"  (click) ="onSelected(i.id)">Modelos</a>
                         </div>
                     </div>
         

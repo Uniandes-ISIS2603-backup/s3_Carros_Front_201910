@@ -11,7 +11,7 @@
                         <b> Nombre</b>
                     </label>
                     <input type="text" name="marcaNombre" class="form-control" id="marcaNombre" 
-                    [(ngModel)]="marca.nombre" #marcaNombre="ngModel" [ngClass]="{ 'is-invalid': f.submitted && marcaNombre.invalid }" required>
+                    [(ngModel)]="marca.nombreMarca" #marcaNombre="ngModel" [ngClass]="{ 'is-invalid': f.submitted && marcaNombre.invalid }" required>
                     <div class="invalid-feedback">
                         <div>  No se puede crear la marca sin un nombre</div>
                     </div>
