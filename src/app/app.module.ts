@@ -24,6 +24,7 @@ import{FacturaModule} from './factura/factura.module';
 import { RegistrosModule } from './registros/registros.module';
 import { EmpleadoModule } from './empleado/empleado.module';
 import { ClienteModule } from './cliente/cliente.module';
+import {HomeModule} from './home/home.module';
 
 
 
@@ -32,6 +33,7 @@ import { ClienteModule } from './cliente/cliente.module';
         AppComponent
     ],
     imports: [
+        HomeModule,
         BrowserModule,
         ClienteModule,
         EmpleadoModule,

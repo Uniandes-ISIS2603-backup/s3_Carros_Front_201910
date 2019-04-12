@@ -5,14 +5,20 @@ import {MarcaService} from './marca.service';
 
 import { FormsModule } from '@angular/forms';
 import { MarcaDetailComponent } from './marca-detail/marca-detail.component';
+import { MarcaCreateComponent } from './marca-create/marca-create.component';
+import { MarcaEditComponent } from './marca-edit/marca-edit.component';
+import {ModeloModule} from '../modelo/modelo.module';
+import{AppRoutingModule} from '../app-routing/app-routing.module';
 
 
 @NgModule({
   imports: [
     CommonModule, 
-    FormsModule
+    FormsModule,
+    ModeloModule,
+    AppRoutingModule
   ],
-  declarations: [MarcaListComponent, MarcaDetailComponent],
+  declarations: [MarcaListComponent, MarcaDetailComponent, MarcaCreateComponent, MarcaEditComponent],
   exports: [MarcaListComponent],
   providers: [MarcaService]
 })

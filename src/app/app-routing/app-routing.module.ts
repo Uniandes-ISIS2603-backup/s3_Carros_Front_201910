@@ -34,148 +34,153 @@ import {CompraVentaDetailComponent} from '../compraVenta/compraVenta-detail/comp
 import {FacturaDetailComponent} from '../factura/factura-detail/factura-detail.component';
 import {FacturaListComponent} from '../factura/factura-list/factura-list.component';
 
-const routes: Routes = [
+import {HomeComponent} from '../home/home-main/home.component';
 
-    {
-    path: 'punto-venta',
-    children:[
-      {
-        path: 'list',
-        component: PuntoVentaListComponent
-      },
-       {
-        path: ':id',
-        component: PuntoVentaDetailComponent,
-        
-      }
-    ]
-  },
-    {
-    path: 'modelo',
-    children:[
-      {
-        path: 'list',
-        component: ModeloListComponent
-      },
-       {
-        path: ':id',
-        component: ModeloDetailComponent 
-      }
-    ]
-  },
-    {
-    path: 'marca',
-    children:[
-      {
-        path: 'list',
-        component: MarcaListComponent
-      },
-       {
-        path: ':id',
-        component: MarcaDetailComponent 
-      }
-    ]
-  },
-    {
-    path: 'automovil',
-    children:[
-      {
-        path: 'list',
-        component: AutomovilListComponent
-      },
-       {
-        path: ':id',
-        component: AutomovilDetailComponent 
-      }
-    ]
+const routes: Routes = [
+  {
+    path: 'home',
+    component: HomeComponent
   },
   {
-    path: 'registros',
-    children:[
-      {
-        path: 'list',
-        component: RegistrosListComponent
-      },
-      {
-        path: ':id',
-        component: RegistrosDetailComponent
-      }
-    ]
-  },
+  path: 'punto-venta',
+  children:[
+    {
+      path: 'list',
+      component: PuntoVentaListComponent
+    },
+     {
+      path: ':id',
+      component: PuntoVentaDetailComponent
+      
+    }
+  ]
+},
   {
-    path: 'quejasReclamos',
-    children:[
-      {
-        path: 'list',
-        component: QuejasListComponent
-      },
-      {
-        path: ':id',
-        component: QuejasDetailComponent
-      }
-    ]
-  },
+  path: 'modelo',
+  children:[
+    {
+      path: 'list',
+      component: ModeloListComponent
+    },
+     {
+      path: ':id',
+      component: ModeloDetailComponent 
+    }
+  ]
+},
   {
-    path: 'empleados',
-    children:[
-      {
-        path: 'list',
-        component: EmpleadoListComponent
-      },
-      {
-        path: ':id',
-        component: EmpleadoDetailComponent
-      }
-    ]
-  },
-  {    
-    path: 'compraVentas',
-    children:[
-      {
-        path: 'list',
-        component: CompraVentaListComponent
-      },
-      {
-        path: ':id',
-        component: CompraVentaDetailComponent
-      }
-    ]
-  },
+  path: 'marca',
+  children:[
+    {
+      path: 'list',
+      component: MarcaListComponent
+    },
+     {
+      path: ':id',
+      component: MarcaDetailComponent 
+    }
+  ]
+},
   {
-    path: 'clientes',
-    children:[
-      {
-        path: 'list',
-        component: ClienteListComponent
-      },
-      {
-        path: ':id',
-        component: ClienteDetailComponent
-      }
-    ]
-  },
-  {   
-    path: 'factura',
-    children:[
-      {
-        path: 'list',
-        component: FacturaListComponent
-      },
-       {
-        path: ':id',
-        component: FacturaDetailComponent 
-      }
-    ]
-  }
+  path: 'automovil',
+  children:[
+    {
+      path: 'list',
+      component: AutomovilListComponent
+    },
+     {
+      path: ':id',
+      component: AutomovilDetailComponent 
+    }
+  ]
+},
+{
+  path: 'registros',
+  children:[
+    {
+      path: 'list',
+      component: RegistrosListComponent
+    },
+    {
+      path: ':id',
+      component: RegistrosDetailComponent
+    }
+  ]
+},
+{
+  path: 'quejasReclamos',
+  children:[
+    {
+      path: 'list',
+      component: QuejasListComponent
+    },
+    {
+      path: ':id',
+      component: QuejasDetailComponent
+    }
+  ]
+},
+{
+  path: 'empleados',
+  children:[
+    {
+      path: 'list',
+      component: EmpleadoListComponent
+    },
+    {
+      path: ':id',
+      component: EmpleadoDetailComponent
+    }
+  ]
+},
+{    
+  path: 'compraVentas',
+  children:[
+    {
+      path: 'list',
+      component: CompraVentaListComponent
+    },
+    {
+      path: ':id',
+      component: CompraVentaDetailComponent
+    }
+  ]
+},
+{
+  path: 'clientes',
+  children:[
+    {
+      path: 'list',
+      component: ClienteListComponent
+    },
+    {
+      path: ':id',
+      component: ClienteDetailComponent
+    }
+  ]
+},
+{   
+  path: 'factura',
+  children:[
+    {
+      path: 'list',
+      component: FacturaListComponent
+    },
+     {
+      path: ':id',
+      component: FacturaDetailComponent 
+    }
+  ]
+}
 ];
 
 @NgModule({
-    imports: [
-        CommonModule,
-        RouterModule.forRoot(routes, {onSameUrlNavigation: 'reload'})
-    ],
-    exports: [RouterModule],
-    declarations: []
+  imports: [
+      CommonModule,
+      RouterModule.forRoot(routes, {onSameUrlNavigation: 'reload'})
+  ],
+  exports: [RouterModule],
+  declarations: []
 })
 export class AppRoutingModule {
 

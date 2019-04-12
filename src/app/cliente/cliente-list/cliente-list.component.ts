@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ClienteService } from '../cliente.service';
 import { Cliente } from '../cliente';
 import { ClienteDetailComponent } from '../cliente-detail/cliente-detail.component';
@@ -13,7 +13,7 @@ export class ClienteListComponent implements OnInit {
 
   constructor(private clienteService: ClienteService) { }
 
-  clientes: Cliente[];
+  @Input() clientes: Cliente[];
 
   showCreate: boolean;
 

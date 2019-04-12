@@ -18,9 +18,9 @@
 				</thead>
 				<tbody>
 					<tr *ngFor="let q of quejas">
-						<td style="cursor: pointer;">
-							<a class="figure-caption" (click)="onSelected(q.id)">{{q.casoId}}</a>
-						</td>
+						<td style="cursor: pointer;" (click)="onSelected(q.casoId)">
+							<a class="figure-caption" >{{q.casoId}}</a>
+						</td> 	
 
             <td >
         <button class="btn btn-primary" (click)="showHideEdit(q.id)"><span class="fa fa-pencil"></span></button>
@@ -40,7 +40,7 @@
 				<app-quejas-detail [quejasDetail]="selectedQueja"> </app-quejas-detail>
 			</div>
       <div *ngIf="showEdit">
-                <app-quejas-edit [queja]="selectedQueja" (cancel)="showHideEdit(selectedQueja.id)" (update)="updateQueja()" ></app-quejas-edit>
+                <app-quejas-edit [queja]="selectedQueja" (cancel)="showHideEdit(selectedQueja.casoId)" (update)="updateQueja()" ></app-quejas-edit>
             </div>
     	</div>
 		</div>

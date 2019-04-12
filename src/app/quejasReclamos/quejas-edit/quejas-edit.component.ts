@@ -1,4 +1,4 @@
-import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
+import {Component, OnInit, Input, OnChanges, Output, EventEmitter} from '@angular/core';
 import {ToastrService} from 'ngx-toastr';
 
 import {QuejasService} from '../quejas.service';
@@ -22,6 +22,8 @@ export class QuejasEditComponent implements OnInit {
 
   @Output() cancel = new EventEmitter();
 
+  @Output() update = new EventEmitter();
+
    
 
   getQueja(): void {
@@ -35,7 +37,8 @@ export class QuejasEditComponent implements OnInit {
         this.quejaService.updateQueja(this.queja)
             .subscribe(() => {
                 this.toastrService.success("La información de la queja fue editada", "Modificar estado de la queja");
-            });
+            })
+        this.update.emit();
     }
 
     cancelEdition(): void {

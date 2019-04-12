@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 import { CompraVentaService } from '../compraVenta.service';
 import { CompraVenta } from '../compraVenta';
@@ -16,7 +16,7 @@ export class CompraVentaListComponent implements OnInit {
   compraVenta_ID: number;
   selectedCompraVenta: CompraVentaDetail;
 
-  compraVentas : CompraVenta[];
+  @Input() compraVentas : CompraVenta[];
 
   getCompraVentas(): void{
     this.compraVentaService.getCompraVentas().subscribe(lasCompraVentas => this.compraVentas = lasCompraVentas);

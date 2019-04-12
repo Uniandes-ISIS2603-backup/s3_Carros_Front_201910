@@ -35,6 +35,7 @@ export class QuejasCreateComponent implements OnInit {
     return this.queja
   }
   ngOnInit() {
+    this.queja = new QuejasReclamos();
   }
 
 }

@@ -12,14 +12,16 @@ import { QuejasDetail } from '../quejas-detail';
 })
 export class QuejasDetailComponent implements OnInit {
 
+  @Input() quejasDetail: QuejasDetail;
+  
   constructor(
     private quejasService: QuejasService,
     private route: ActivatedRoute
   ) { }
 
-  @Input() quejasDetail: QuejasDetail;
+  
 
-  @Input() queja_id : number;
+  queja_id : number;
 
   loader: any;
 

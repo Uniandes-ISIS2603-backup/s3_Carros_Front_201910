@@ -8,10 +8,11 @@ import { RegistrosCreateComponent } from './registros-create/registros-create.co
 import { RegistrosEditComponent } from './registros-edit/registros-edit.component';
 import {FormsModule} from '@angular/forms';
 import {ToastrModule} from 'ngx-toastr';
+import{AppRoutingModule} from '../app-routing/app-routing.module';
 
 @NgModule({
   imports: [
-    CommonModule,RouterModule, FormsModule, ToastrModule.forRoot({
+    CommonModule,RouterModule, FormsModule, AppRoutingModule, ToastrModule.forRoot({
             timeOut: 10000,
             positionClass: 'toast-bottom-right',
             preventDuplicates: true,

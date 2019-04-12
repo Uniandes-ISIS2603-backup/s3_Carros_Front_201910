@@ -25,11 +25,14 @@ export class QuejasService {
 
   createQueja(queja): Observable<QuejasReclamos>
   {
+    if(queja.comentarios == null) queja.comentarios = "";
+    queja.solucionado = false;
     return this.http.post<QuejasReclamos>(API_BACK + resource, queja);
   }
 
   updateQueja(queja): Observable<QuejasDetail> {
-        return this.http.put<QuejasDetail>(API_BACK + resource + '/' + queja.id, queja);
+    if(queja.comentarios == null) queja.comentarios = "";
+        return this.http.put<QuejasDetail>(API_BACK + resource + '/' + queja.casoId, queja);
     }
 
   
