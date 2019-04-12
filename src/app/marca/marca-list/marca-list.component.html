@@ -6,21 +6,23 @@
 <br>
 <br>
 <div class="container">
-    
+    <div *ngIf="showCreate">
+        <app-marca-create (cancel)="showHideCreate()" (create)="ngOnInit()"></app-marca-create>
+        </div>
         <div class="row text-center text-lg-left">
                 <div class="col-lg-3 col-md-6 mb-4" *ngFor="let i of marcas">
          
                     <div class="card h-100">   
                         <a routerLink="/marcas/{{i.id}}">
-                            <img class="card-img-top" src="http://blog.supercarros.com/wp-content/uploads/2018/02/Untitled-1-696x435.jpg" alt="">
+                            <img class="card-img-top" src="{{i.imagen}}" alt="">
                         </a>
                         <div class="card-body">
-                            <h4 class="card-title">{{i.nombre}}</h4>
-                            <p class="card-text"> Descripcion</p>
+                            <h4 class="card-title">{{i.nombreMarca}}</h4>
+                            <p class="card-text">{{i.descripcion}}</p>
                         </div>
                         <div class="card-footer">
                             
-                            <a class="btn btn-danger btn-block"  (click) ="onSelected(i.id)">Carros</a>
+                            <a class="btn btn-danger btn-block"  (click) ="onSelected(i.id)">Modelos</a>
                         </div>
                     </div>
         
@@ -31,9 +33,7 @@
             <div *ngIf="slectedMarca">
                     <app-marca-detail [marcaDetail]="slectedMarca"></app-marca-detail>
                 </div>
-                <div *ngIf="showCreate">
-                <app-marca-create (cancel)="showHideCreate()" (create)="ngOnInit()"></app-marca-create>
-                </div>
+               
     <div></div>
 
 

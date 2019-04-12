@@ -4,7 +4,9 @@ export class Marca
 {
  id: number;
  
- nombre: String; 
+ nombreMarca: String; 
 
   imagen: String;
+
+  descripcion: String;
 }

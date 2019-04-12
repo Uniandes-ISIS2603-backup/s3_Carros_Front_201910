@@ -16,7 +16,7 @@ export class MarcaService {
 
   getMarcas(): Observable<Marca[]>
   {
-    return this.http.get<Marca[]>(API_URL + marcas);
+    return this.http.get<Marca[]>( API_BACK + resource);
   }
 
   getMarcasDetail(marcaId): Observable<MarcaDetail>

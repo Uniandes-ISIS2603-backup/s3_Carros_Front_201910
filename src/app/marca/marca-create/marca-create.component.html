@@ -11,12 +11,15 @@
                         <b> Nombre</b>
                     </label>
                     <input type="text" name="marcaNombre" class="form-control" id="marcaNombre" 
-                    [(ngModel)]="marca.nombre" #marcaNombre="ngModel" [ngClass]="{ 'is-invalid': f.submitted && marcaNombre.invalid }" required>
+                    [(ngModel)]="marca.nombreMarca" #marcaNombre="ngModel" [ngClass]="{ 'is-invalid': f.submitted && marcaNombre.invalid }" required>
                     <div class="invalid-feedback">
                         <div>  No se puede crear la marca sin un nombre</div>
                     </div>
                     <label for="marcaImagen">Ingrese la ruta de la imagen</label>
                     <input type="text" name="marcaImagen" class="form-control" id="marcaImagen"  [(ngModel)]="marca.imagen" #marcaImagen="ngModel" [ngClass]="{ 'is-invalid': f.submitted && marcaImagen.invalid }" required>
+
+                    <label for="marcaDescripcion">Ingrese la descripcion de la marca</label>
+                    <input type="text" name="marcaDescripcion" class="form-control" id="marcaDescripcion"  [(ngModel)]="marca.descripcion" #marcaDescripcion="ngModel" [ngClass]="{ 'is-invalid': f.submitted && marcaDescripcion.invalid }" required>
                 </div>
                 <br>
                 <div class="row form-inline justify-content-center align-self-center">
