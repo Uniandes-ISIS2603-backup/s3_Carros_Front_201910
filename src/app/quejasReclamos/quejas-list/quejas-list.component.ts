@@ -30,6 +30,8 @@ export class QuejasListComponent implements OnInit {
   }
 
   onSelected(queja_id: number): void {
+    console.log(this.queja_id);
+    console.log(queja_id);
     this.queja_id = queja_id;
     this.selectedQueja = new QuejasDetail();
     this.quejasService.getQuejasDetail(queja_id).subscribe(o => this.selectedQueja = o);

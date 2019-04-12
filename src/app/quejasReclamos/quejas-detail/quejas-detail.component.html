@@ -1,6 +1,7 @@
 <p class="h4 p-3">
 
-	Queja: </p>
- <p>{{quejasDetail.tipoQueja}}</p>
-<p> {{quejasDetail.solucionado}}</p>
-<p> {{quejasDetail.comentarios}}</p>
+	Queja: Works 	 </p>
+	
+ <p>Tipo de queja: {{quejasDetail.tipoQueja == 0 ? 'Estado automovil': quejasDetail.tipoQueja == 1? 'Problema Pago' : quejasDetail.tipoQueja == 2 ? 'Demora entrega' : quejasDetail.tipoQueja == 3 ? 'Mala atención' : quejasDetail.tipoQueja == 4 ? 'Reembolso' : quejasDetail.tipoQueja == 5 ? 'Otro' : ''}}</p>
+<p> Estado: {{quejasDetail.solucionado? 'Solucionado' : 'No solucionado'}}</p>
+<p> Comentarios: {{quejasDetail.comentarios}}</p>

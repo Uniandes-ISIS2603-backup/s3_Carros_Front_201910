@@ -18,12 +18,12 @@
 				</thead>
 				<tbody>
 					<tr *ngFor="let r of registros">
-						<td style="cursor: pointer;">
-							<a class="figure-caption" (click)="onSelected(r.id)">{{r.CompraID}}</a>
+						<td style="cursor: pointer;" (click)="onSelected(r.CompraID)">
+							<a class="figure-caption" >{{r.CompraID}}</a>
 						</td>
 
             <td >
-        <button class="btn btn-primary" (click)="showHideEdit(r.id)"><span class="fa fa-pencil"></span></button>
+        <button class="btn btn-primary" (click)="showHideEdit(r.CompraID)"><span class="fa fa-pencil"></span></button>
         </td>
 
 					</tr>
@@ -40,7 +40,7 @@
 				<app-registros-detail [registroDetail]="selectedRegistro"> </app-registros-detail>
 			</div>
       <div *ngIf="showEdit">
-                <app-registros-edit [registro]="selectedRegistro" (cancel)="showHideEdit(selectedRegistro.id)" (update)="updateRegistro()" ></app-registros-edit>
+                <app-registros-edit [registro]="selectedRegistro" (cancel)="showHideEdit(selectedRegistro.CompraID)" (update)="updateRegistro()" ></app-registros-edit>
             </div>
     	</div>
 		</div>

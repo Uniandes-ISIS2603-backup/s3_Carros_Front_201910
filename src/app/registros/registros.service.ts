@@ -8,7 +8,7 @@ import { RegistrosDetail } from './registros-detail';
 const API = '../../assets/';
 const registros = 'registros.json';
 const API_BACK ='http://localhost:8080/s3_carros-api/api';
-const resource = '/puntosdeVenta';
+const resource = '/registrosCompra';
 
 @Injectable()
 export class RegistrosService {
