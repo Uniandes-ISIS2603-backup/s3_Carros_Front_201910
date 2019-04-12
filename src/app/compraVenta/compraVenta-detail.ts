@@ -1,10 +1,14 @@
-import{CompraVenta} from "./compraVenta";
+import{ CompraVenta } from "./compraVenta";
+import{ QuejasReclamos } from '../quejasReclamos/quejas-reclamos';
 
+/**
+ * This class represents an compraventaDetail. 
+ * It contains all the information relevant to the compraVenta.
+ */
 export class CompraVentaDetail extends CompraVenta
 {
- calificacionCompra: number; 
-
- fecha: String;
- 
- pagado: String;
+    /**
+     * Las quejas de la compraVenta.
+     */
+    quejas: QuejasReclamos[];
 }

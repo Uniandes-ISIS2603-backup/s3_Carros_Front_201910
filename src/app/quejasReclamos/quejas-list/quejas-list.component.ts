@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 import { QuejasService } from '../quejas.service';
 import { QuejasReclamos } from '../quejas-reclamos';
@@ -14,7 +14,7 @@ export class QuejasListComponent implements OnInit {
   showCreate: boolean;
   showEdit: boolean;
   showView: boolean;
-  quejas: QuejasReclamos[];
+  @Input() quejas: QuejasReclamos[];
   queja_id: number;
   selectedQueja: QuejasDetail;
   

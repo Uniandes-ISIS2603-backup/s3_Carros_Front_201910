@@ -1,4 +1,50 @@
-<p class="h4 p-3"> CompraVenta {{compraVentaDetail.ventaID}}</p>
-<p>{{compraVentaDetail.calificacionCompra}}</p>
-<p>{{compraVentaDetail.fecha}}</p>
-<p>{{compraVentaDetail.pagado}}</p>
+<div class="col-md-12">
+    <div class="container-fluid"> 
+        <p class="h4 p-3"> CompraVenta número {{compraVentaDetail.ventaID}}</p>
+        <div class="row border margin">
+            <p>{{compraVentaDetail.calificacionCompra}}</p>
+            <p>{{compraVentaDetail.fecha}}</p>
+            <p>{{compraVentaDetail.pagado}}</p>
+            <p>{{compraVentaDetail.factura}}</p>
+            <p>{{compraVentaDetail.Automovil}}</p>
+            <p>{{compraVentaDetail.Empleado}}</p>
+            <p>{{compraVentaDetail.Cliente}}</p>
+        </div>
+        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                <a class="btn btn-danger" data-toggle="collapse" href="#QuejasList" role="button" aria-expanded="false" aria-controls="QuejasList">
+                  Quejas
+                </a>    
+        </div>
+        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                <a class="btn btn-danger" data-toggle="collapse" href="#ClienteDetail" role="button" aria-expanded="false" aria-controls="ClienteDetail">
+                  Cliente
+                </a>    
+        </div>
+        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                <a class="btn btn-danger" data-toggle="collapse" href="#EmpleadoDetail" role="button" aria-expanded="false" aria-controls="EmpleadoDetail">
+                  Empleado
+                </a>    
+        </div>
+        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                <a class="btn btn-danger" data-toggle="collapse" href="#AutomovilDetail" role="button" aria-expanded="false" aria-controls="AutomovilDetail">
+                  Automovil
+                </a>    
+        </div>
+        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                <a class="btn btn-danger" data-toggle="collapse" href="#FacturaDetail" role="button" aria-expanded="false" aria-controls="FacturaDetail">
+                  Factura
+                </a>    
+        </div>
+        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                <a class="btn btn-danger" data-toggle="collapse" href="#PuntoVentaDetail" role="button" aria-expanded="false" aria-controls="PuntoVentaDetail">
+                  Punto de venta
+                </a>    
+        </div>
+        <div class="collapse" id="QuejasList">
+            <div class="card card-body">
+                <p class="h3 p-3">Quejas de la compraVenta: </p>
+                <app-quejas-list [quejas]="compraVentaDetail.quejas"></app-quejas-list>
+            </div>
+        </div>
+    </div>
+</div>
