@@ -15,12 +15,20 @@ export class ClienteListComponent implements OnInit {
 
   clientes: Cliente[];
 
+  showCreate: boolean;
+
 
   getClientes(): void{
     this.clienteService.getClientes().subscribe(clientes => this.clientes = clientes);
   }
 
+  
+  showHideCreate(): void {
+    this.showCreate = !this.showCreate;
+  }
+
   ngOnInit() {
+    this.showCreate = false;
     this.getClientes();
   }
 

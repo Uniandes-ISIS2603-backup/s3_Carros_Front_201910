@@ -6,6 +6,7 @@ import { ClienteService } from './cliente.service';
 import { ClienteDetailComponent } from './cliente-detail/cliente-detail.component';
 import { RouterModule } from '@angular/router';
 import { ToastrModule } from 'ngx-toastr';
+import { ClienteCreateComponent } from './cliente-create/cliente-create.component';
 
 @NgModule({
   imports: [
@@ -15,7 +16,7 @@ import { ToastrModule } from 'ngx-toastr';
       preventDuplicates: true,
   }) 
   ],
-  declarations: [ClienteListComponent, ClienteDetailComponent],
+  declarations: [ClienteListComponent, ClienteDetailComponent, ClienteCreateComponent],
   exports: [ClienteListComponent, ClienteDetailComponent],
   providers: [ClienteService]
 })

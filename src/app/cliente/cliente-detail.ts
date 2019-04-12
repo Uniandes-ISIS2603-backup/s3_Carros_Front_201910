@@ -6,9 +6,10 @@
 
 import { Cliente } from "./cliente";
 import { PuntoVenta } from "../punto-venta/punto-venta";
-//import { CompraVenta } from '../../compraVenta';
+import { CompraVenta } from "../compraVenta/compraVenta";
+
  export class ClienteDetail extends Cliente{
-    //compras: CompraVenta[];
+    compras: CompraVenta[];
     puntosVenta: PuntoVenta[];
 }
 
