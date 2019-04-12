@@ -34,6 +34,12 @@ export class RegistrosCreateComponent implements OnInit {
     });
     return this.registro
   }
+  
+  cancelCreation(): void
+  {
+    this.cancel.emit();
+  }
+  
   ngOnInit() {
     this.registro = new Registros();
   }

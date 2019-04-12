@@ -8,7 +8,7 @@
             <div class="form-group">
                 <label for="precioComprado"><b>Precio</b></label>
                 <input type="number" name="precioComprado" class="form-control" id="precioComprado" [(ngModel)]="registro.precioComprado"
-                    #precioComprado="ngModel" [ngClass]="{ 'is-invalid': f.submitted && precioComprado.invalid }" required>
+                    #precioComprado="ngModel" [ngClass]="{ 'is-invalid': f.submitted && precioComprado?.invalid }" required>
                 <div class="invalid-feedback">
                     <div>Hace falta el precio</div>
                 </div>
@@ -16,7 +16,7 @@
             <div class="form-group">
                 <label for="nombreVendedor"><b>Nombre</b></label>
                 <input type="text" name=nombreVendedor class="form-control" id="nombreVendedor" [(ngModel)]="registro.nombreVendedor"
-                    #precioComprado="ngModel" [ngClass]="{ 'is-invalid': f.submitted && nombreVendedor.invalid }" required>
+                    #nombreVendedor="ngModel" [ngClass]="{ 'is-invalid': f.submitted && nombreVendedor.invalid }" required>
                 <div class="invalid-feedback">
                     <div>Hace falta el nombre del vendedor</div>
                 </div>
