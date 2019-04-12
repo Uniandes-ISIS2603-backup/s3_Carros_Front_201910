@@ -20,5 +20,14 @@ export class ModeloService {
   getModeloDetail(modeloId): Observable<ModeloDetail>
   {
     return this.http.get<ModeloDetail>(API_URL+ modelos+ '/' + modeloId);
-  } 
+  }
+  
+  createModelo(modelo): Observable<Modelo>
+  {
+      return this.http.post<Modelo>(API_URL + modelos, modelo);
+  }
+  
+    updateModelo(modelo): Observable<ModeloDetail> {
+        return this.http.put<ModeloDetail>(API_URL + modelos + '/' + modelo.modeloId, modelo);
+    } 
 }

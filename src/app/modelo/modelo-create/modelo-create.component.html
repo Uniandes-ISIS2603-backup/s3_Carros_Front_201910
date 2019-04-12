@@ -7,12 +7,12 @@
         <form name="modelo" (ngSubmit)="f.form.valid && createModelo()" #f="ngForm" novalidate>
             <div class="form-group">
                 <label for="modeloName">
-                  <b>Name</b>
+                  <b>Nombre</b>
                   </label>
-                <input type="text" name="modeloName" class="form-control" id="modelolName" [(ngModel)]="modelo.name"
+                <input type="text" name="modeloName" class="form-control" id="modelolName" [(ngModel)]="modelo.nombre"
                     #modeloName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && modeloName.invalid }" required>
                 <div class="invalid-feedback">
-                    <div>Falta el nombre del modelo</div>
+                    <div>Falta el id del modelo</div>
                 </div>
                 <label for="numeroPuertas">
                   <b>Numero Puertas</b>
@@ -43,19 +43,23 @@
               <label for="cilindraje">
                   <b>Clindraje</b>
                 </label>
-              <input type="text" name="modeloName" class="form-control" id="modelolName" [(ngModel)]="modelo.name"
+              <input type="text" name="modeloName" class="form-control" id="modelolName" [(ngModel)]="modelo.nombre"
                     #modeloName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && modeloName.invalid }" required>
                 <div class="invalid-feedback">
-                    <div>Falta el nombre del modelo</div>
+                    <div>Falta el id del modelo</div>
                 </div> 
+                    
+                    
                <label for="combustible">
                   <b>Combustible</b>
                 </label>
                 <select class="form-control">
                 <option>Selecciona una opcion</option>
-                <option>Corriente</option>
-                <option>Disel</option>
-                <option>Gas</option>
+                <option value="Corriente">Corriente</option>
+                <option value="Disel">Disel</option>
+                <option value="Gas">Gas</option>
+                <option value="ACPM">ACPM</option>
+                
                 </select>
               <label for="traccion">
                <b> Traccion </b> 
@@ -85,7 +89,7 @@
               <label for="Direccion">
                <b> Direccion </b> 
               </label>
-              <input type="text" name="modeloName" class="form-control" id="modelolName" [(ngModel)]="modelo.name"
+              <input type="text" name="modeloName" class="form-control" id="modelolName" [(ngModel)]="modelo.nombre"
                     #modeloName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && modeloName.invalid }" required>
 <BR>
                <div class="custom-control custom-checkbox mb-1">
@@ -100,13 +104,13 @@
               <label for="asientos">
                <b> Asientos </b> 
               </label>
-            <input type="text" name="modeloName" class="form-control" id="modelolName" [(ngModel)]="modelo.name"
+            <input type="text" name="modeloName" class="form-control" id="modelolName" [(ngModel)]="modelo.nombre"
                     #modeloName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && modeloName.invalid }" required>
                     <br>
               <label for="vidrios">
                <b> Vidrios </b> 
               </label>
-            <input type="text" name="modeloName" class="form-control" id="modelolName" [(ngModel)]="modelo.name"
+            <input type="text" name="modeloName" class="form-control" id="modelolName" [(ngModel)]="modelo.nombre"
                     #modeloName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && modeloName.invalid }" required>
                   
             </div>

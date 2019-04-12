@@ -1,10 +1,8 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { DatePipe } from '@angular/common';
-
-
+import {ToastrService} from 'ngx-toastr';
 
 import { ModeloService } from '../modelo.service';
-
 import { Modelo } from '../modelo';
 
 @Component({
@@ -23,6 +21,7 @@ export class ModeloCreateComponent implements OnInit {
     constructor(
         private dp : DatePipe,
         private modeloService: ModeloService,
+        private toastrService: ToastrService
       
     ) { }
 
@@ -43,12 +42,26 @@ export class ModeloCreateComponent implements OnInit {
     */
     @Output() create = new EventEmitter();
 
+
+    prueba(){
+        console.log(this.modelo);
+      }
+
+
+
     /**
     * Creates an modelo
     */
     createModelo(): Modelo {
-     
-            return this.modelo;
+        console.log(this.modelo);
+        this.modeloService.createModelo(this.modelo).subscribe((model)=>
+        { 
+          this.modelo = model; 
+          this.create.emit();
+          this.toastrService.success("El modelo fue creado","Creacion Modelo");
+    
+        });
+        return this.modelo; 
     }
 
     /**

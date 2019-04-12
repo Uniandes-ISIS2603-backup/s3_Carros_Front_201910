@@ -8,14 +8,22 @@ import { ModeloDetailComponent } from './modelo-detail/modelo-detail.component';
 
 import{AppRoutingModule} from '../app-routing/app-routing.module';
 import {ModeloCreateComponent} from './modelo-create/modelo-create.component';
+import { ModeloEditComponent } from './modelo-edit/modelo-edit.component';
+
+import { AutomovilModule } from '../automovil/automovil.module';
+
+
+
+
 
 @NgModule({
   imports: [
     CommonModule, 
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AutomovilModule    
   ],
-  declarations: [ModeloListComponent, ModeloDetailComponent, ModeloCreateComponent],
+  declarations: [ModeloListComponent, ModeloDetailComponent, ModeloCreateComponent, ModeloEditComponent],
   exports: [ModeloListComponent, ModeloCreateComponent],
   providers: [ModeloService]
 })

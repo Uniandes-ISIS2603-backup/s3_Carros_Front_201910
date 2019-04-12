@@ -4,7 +4,9 @@ export class Modelo
 {
   modeloId:number; 
   
-  nombre: String; 
+  nombre: String;
+  
+  imagen: String; 
 
   numeroPuertas: number; 
 
