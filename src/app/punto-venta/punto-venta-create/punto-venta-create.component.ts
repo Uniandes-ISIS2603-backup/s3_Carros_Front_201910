@@ -10,23 +10,41 @@ import { PuntoVenta } from '../punto-venta';
   styleUrls: ['./punto-venta-create.component.css'],
   providers: [DatePipe]
 })
+/**
+ * 
+ */
 export class PuntoVentaCreateComponent implements OnInit {
 
+  /**
+   * 
+   * @param dp 
+   * @param puntoVentaService 
+   * @param toastrService 
+   */
   constructor(
        private dp : DatePipe,
         private puntoVentaService: PuntoVentaService,
         private toastrService: ToastrService
   ) { }
 
+  /**
+   * 
+   */
   puntoVenta: PuntoVenta;
 
+  /**
+   * 
+   */
    @Output() cancel = new EventEmitter();
 
-  @Output() create = new EventEmitter();
+   /**
+    * 
+    */
+   @Output() create = new EventEmitter();
  
-  prueba(){
-    console.log(this.puntoVenta);
-  }
+    /**
+     * 
+     */
   createPuntoVenta(): PuntoVenta
   {
     console.log(this.puntoVenta);
@@ -40,10 +58,17 @@ export class PuntoVentaCreateComponent implements OnInit {
     return this.puntoVenta; 
   }
 
+  /**
+   * 
+   */
   cancelCreation(): void
   {
     this.cancel.emit();
   }
+
+  /**
+   * 
+   */
   ngOnInit() 
   {
     this.puntoVenta = new PuntoVenta();

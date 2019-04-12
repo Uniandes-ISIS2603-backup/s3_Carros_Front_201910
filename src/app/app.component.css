@@ -6,3 +6,12 @@ p {
   
 }
 
+.site-footer, .page-wrap:after {
+    /* .push must be the same height as footer */
+      height: 142px; 
+  }
+  .site-footer {
+    background: orange;
+    border: #ff0000;
+  }
+  #add{position: absolute; bottom: 160px;}

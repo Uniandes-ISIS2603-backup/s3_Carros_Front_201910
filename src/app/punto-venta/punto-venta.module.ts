@@ -17,7 +17,9 @@ import {RegistrosModule} from '../registros/registros.module';
 
 import {MarcaModule} from '../marca/marca.module';
 
-
+/**
+ * Devlaraciones sobre el modulo
+ */
 @NgModule({
   imports: [
     CommonModule, 
@@ -33,4 +35,7 @@ import {MarcaModule} from '../marca/marca.module';
   exports: [PuntoVentaListComponent, PuntoVentaCreateComponent],
   providers: [PuntoVentaService]
 })
+/**
+ * Clase del modulo punto de venta
+ */
 export class PuntoVentaModule { }

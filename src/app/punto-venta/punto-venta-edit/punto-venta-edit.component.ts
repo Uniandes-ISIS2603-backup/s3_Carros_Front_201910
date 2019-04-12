@@ -5,6 +5,9 @@ import {PuntoVentaService } from '../punto-venta.service';
 import { PuntoVenta } from '../punto-venta';
 import {PuntoVentaDetail} from '../punto-venta-detail';
 
+/**
+ * 
+ */
 @Component({
   selector: 'app-punto-venta-edit',
   templateUrl: './punto-venta-edit.component.html', 
@@ -13,17 +16,31 @@ import {PuntoVentaDetail} from '../punto-venta-detail';
 })
 export class PuntoVentaEditComponent implements OnInit, OnChanges
  {
-
+  /**
+   * 
+   * @param dp 
+   * @param puntoVentaService 
+   * @param toastrService 
+   */
   constructor(
      private dp: DatePipe,
         private puntoVentaService: PuntoVentaService,
         private toastrService: ToastrService,
   ) { }
 
+  /**
+   * 
+   */
   @Input() puntoVenta_id: number;
 
+  /**
+   * 
+   */
   @Input() puntoVenta: PuntoVentaDetail; 
 
+  /**
+   * 
+   */
    @Output() cancel = new EventEmitter();
 
     /**
@@ -32,13 +49,19 @@ export class PuntoVentaEditComponent implements OnInit, OnChanges
     */
     @Output() update = new EventEmitter();
 
-    getPuntoVenta(): void {
+    /**
+     * 
+     */
+  getPuntoVenta(): void {
         this.puntoVentaService.getPuntoVentaDetail(this.puntoVenta_id)
             .subscribe(puntoVenta => {
                 this.puntoVenta = puntoVenta;
             });
     }
-
+  
+    /**
+     * 
+     */
   editPuntoVenta():void
   {
     this.puntoVentaService.updatePuntoVenta(this.puntoVenta).subscribe(()=> {
@@ -47,15 +70,25 @@ export class PuntoVentaEditComponent implements OnInit, OnChanges
     this.update.emit();
   }
   
+  /**
+   * 
+   */
    cancelEdition(): void {
         this.cancel.emit();
     }
 
+    /**
+     * 
+     */
   ngOnInit() 
   {
     this.puntoVenta = new PuntoVentaDetail();
         this.getPuntoVenta();
   }
+
+  /**
+   * 
+   */
   ngOnChanges()
   {
     this.ngOnInit();
