@@ -1,21 +1,40 @@
 <div class="container-fluid">
-    <div class="col-md-5">
-        <table class="table table-striped">
-            <thead class="thead-dark">
-                <tr>
-                    <th>FacturaID</th>  
-                    <th>CuentaOrigen</th>
-                    <th>Fecha</th>
-                    <th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor = "let i of facturas">
-                <td> {{i.facturaID}} </td>
-                <td> {{i.cuentaOrigen}}</td>
-                <td> {{i.fecha}}</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+  <div class="row">
+      <div class="col-md-4">
+          <br>
+          <div class="row justify-content-center align-self-center">
+              <button [ngClass]="{ 'btn-primary': !showCreate, 'btn-danger': showCreate }" type="button" class="btn"
+                  (click)="showHideCreate()">Crear una Factura</button>
+          </div>
+          <br>
+          <br>
+          <div class="card">
+              <table class="table">
+                <thead class="thead-dark">
+                  <tr>
+                      <th>FacturaID</th>  
+                      <th>CuentaOrigen</th>
+                      <th>Fecha</th>
+                      <th>CompraVenta</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                      <tr *ngFor = "let i of facturas">
+                          <td style="cursor: pointer;">
+                            <dd class="figure-caption" routerLink="/facturas/{{i.facturaID}}"> {{i.facturaID}} 
+                          </td>
+                      <td> {{i.cuentaOrigen}}</td>
+                      <td> {{i.fecha}}</td>
+                      <td> {{i.compraVenta.ventaID}}</td>
+                      </tr>
+                  </tbody>
+              </table>
+          </div>
+        </div>
+      <div class="col-md-8">
+          <div *ngIf="showCreate">
+              <app-factura-create (cancel)="showHideCreate()" (create)="ngOnInit()" *ngIf="showCreate"></app-factura-create>
+          </div>
+      </div>
+  </div>
 </div>

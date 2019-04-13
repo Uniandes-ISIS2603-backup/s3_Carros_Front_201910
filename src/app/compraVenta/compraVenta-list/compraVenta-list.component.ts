@@ -4,6 +4,7 @@ import {ToastrService} from 'ngx-toastr';
 
 import {CompraVenta} from '../compraVenta';
 import {CompraVentaService} from '../compraVenta.service';
+import { CompraVentaDetail } from '../compraVenta-detail';
 
 /**
 * The component for the list of compraVentas.
@@ -17,7 +18,7 @@ export class CompraVentaListComponent implements OnInit {
 
   /**
    * Constructor for the component
-   * @param editorialService The author's services provider
+   * @param compraVentaService The author's services provider
    */
   constructor(
     private compraVentaService: CompraVentaService,
@@ -45,6 +46,11 @@ export class CompraVentaListComponent implements OnInit {
    */
   compraVentaId: number;
 
+    /**
+   * Compraventa seleccionado
+   */
+  selectedCompraVentaVenta: CompraVenta;
+
   /**
    * Asks the service to update the list of compraVentas
    */
@@ -54,6 +60,26 @@ export class CompraVentaListComponent implements OnInit {
             this.compraVentas = lasCompraVentas;
         });
 }
+
+    /**
+     * Obtiene el detail de una compraVenta
+     */
+    getCompraVentaDetail(): void
+    {
+      this.compraVentaService.getCompraVentaDetail(this.compraVentaId).subscribe(selectedCVenta => { this.selectedCompraVentaVenta = selectedCVenta});
+    }
+
+  /**
+   * Metodo que
+   * @param compraVenta_id 
+   */
+  onSelected(compraVenta_id: number): void
+  {
+    this.showCreate = false; 
+    this.compraVentaId = compraVenta_id;
+    this.selectedCompraVentaVenta = new CompraVentaDetail();
+    this.getCompraVentaDetail();
+  }
 
   /**
    * Shows or hides the create component

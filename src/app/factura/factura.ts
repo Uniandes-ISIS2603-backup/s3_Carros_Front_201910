@@ -1,3 +1,4 @@
+import {CompraVenta} from '../compraVenta/compraVenta';
 export class Factura 
 {
  facturaID: number;
@@ -5,4 +6,6 @@ export class Factura
  cuentaOrigen: number; 
 
  fecha: String;
+
+ compraVenta: CompraVenta;
 }
