@@ -2,12 +2,12 @@
 	<div class="col-3"></div>
 	<div class="col-6">
 		<br>
-        <h2 class="text-center">Crear un modelo</h2>
+        <h2 class="text-center">Editar un modelo</h2>
         <br>
-        <form name="modelo" (ngSubmit)="f.form.valid && createModelo()" #f="ngForm" novalidate>
+        <form name="modelo" (ngSubmit)="f.form.valid && editModelo()" #f="ngForm" novalidate>
             <div class="form-group">
                 <label for="modeloName">
-                  <b>Nombre</b>
+                  <b>Name</b>
                   </label>
                 <input type="text" name="modeloName" class="form-control" id="modelolName" [(ngModel)]="modelo.nombre"
                     #modeloName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && modeloName.invalid }" required>
@@ -43,23 +43,19 @@
               <label for="cilindraje">
                   <b>Clindraje</b>
                 </label>
-              <input type="text" name="cilindraje" class="form-control" id="modelolName" [(ngModel)]="modelo.cilindraje"
-                    #cilindraje="ngModel" [ngClass]="{ 'is-invalid': f.submitted && cilindraje.invalid }" required>
+              <input type="text" name="modeloName" class="form-control" id="modelolName" [(ngModel)]="modelo.nombre"
+                    #modeloName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && modeloName.invalid }" required>
                 <div class="invalid-feedback">
                     <div>Falta el id del modelo</div>
                 </div> 
-                    
-                    
                <label for="combustible">
                   <b>Combustible</b>
                 </label>
                 <select class="form-control">
                 <option>Selecciona una opcion</option>
-                <option value="Corriente">Corriente</option>
-                <option value="Disel">Disel</option>
-                <option value="Gas">Gas</option>
-                <option value="ACPM">ACPM</option>
-                
+                <option>Corriente</option>
+                <option>Disel</option>
+                <option>Gas</option>
                 </select>
               <label for="traccion">
                <b> Traccion </b> 
@@ -89,8 +85,8 @@
               <label for="Direccion">
                <b> Direccion </b> 
               </label>
-              <input type="text" name="direccion" class="form-control" id="direccion" [(ngModel)]="modelo.direccion"
-                    #direccion="ngModel" [ngClass]="{ 'is-invalid': f.submitted && direccion.invalid }" required>
+              <input type="text" name="modeloName" class="form-control" id="modelolName" [(ngModel)]="modelo.nombre"
+                    #modeloName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && modeloName.invalid }" required>
 <BR>
                <div class="custom-control custom-checkbox mb-1">
     <input type="checkbox" class="custom-control-input" id="customControlValidation1" required>
@@ -104,20 +100,20 @@
               <label for="asientos">
                <b> Asientos </b> 
               </label>
-            <input type="text" name="asientos" class="form-control" id="modelolName" [(ngModel)]="modelo.asientos"
-                    #asientos="ngModel" [ngClass]="{ 'is-invalid': f.submitted && asientos.invalid }" required>
+            <input type="text" name="modeloName" class="form-control" id="modelolName" [(ngModel)]="modelo.nombre"
+                    #modeloName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && modeloName.invalid }" required>
                     <br>
               <label for="vidrios">
                <b> Vidrios </b> 
               </label>
-            <input type="text" name="vidrios" class="form-control" id="vidrios" [(ngModel)]="modelo.vidrios"
-                    #vidrios="ngModel" [ngClass]="{ 'is-invalid': f.submitted && vidrios.invalid }" required>
+            <input type="text" name="modeloName" class="form-control" id="modelolName" [(ngModel)]="modelo.nombre"
+                    #modeloName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && modeloName.invalid }" required>
                   
             </div>
             <div class="row form-inline justify-content-center align-self-center">
-                <button type="submit" class="btn btn-primary">Create</button>
+                <button type="submit" class="btn btn-primary">Guardar</button>
                 <div class="divider"></div>
-                <button type="button" class="btn btn-danger" (click)="cancelCreation()">Cancel</button>
+                <button type="button" class="btn btn-danger" (click)="cancelEdition()">Cancel</button>
             </div>
         </form>
     </div>

@@ -6,14 +6,20 @@ import {AutomovilService} from './automovil.service';
 import { FormsModule } from '@angular/forms';
 import { AutomovilDetailComponent } from './automovil-detail/automovil-detail.component';
 
+import{AppRoutingModule} from '../app-routing/app-routing.module';
+import { AutomovilCreateComponent } from './automovil-create/automovil-create.component';
+import { AutomovilEditComponent } from './automovil-edit/automovil-edit.component';
+
+
 
 @NgModule({
   imports: [
     CommonModule, 
-    FormsModule
+    FormsModule,
+    AppRoutingModule
   ],
-  declarations: [AutomovilListComponent, AutomovilDetailComponent],
-  exports: [AutomovilListComponent],
+  declarations: [AutomovilListComponent, AutomovilDetailComponent, AutomovilCreateComponent, AutomovilEditComponent],
+    exports: [AutomovilListComponent, AutomovilCreateComponent],
   providers: [AutomovilService]
 })
 export class AutomovilModule { }

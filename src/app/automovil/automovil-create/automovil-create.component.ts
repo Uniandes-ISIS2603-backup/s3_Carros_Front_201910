@@ -2,33 +2,33 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { DatePipe } from '@angular/common';
 import {ToastrService} from 'ngx-toastr';
 
-import { ModeloService } from '../modelo.service';
-import { Modelo } from '../modelo';
+import { AutomovilService } from '../automovil.service';
+import { Automovil } from '../automovil';
 
 @Component({
-    selector: 'app-modelo-create',
-    templateUrl: './modelo-create.component.html',
-    styleUrls: ['./modelo-create.component.css'],
+    selector: 'app-automovil-create',
+    templateUrl: './automovil-create.component.html',
+    styleUrls: ['./automovil-create.component.css'],
     providers : [DatePipe]
 })
-export class ModeloCreateComponent implements OnInit {
+export class AutomovilCreateComponent implements OnInit {
 
     /**
     * Constructor for the component
-    * @param modeloService The modelo's services provider
+    * @param autoService The auto's services provider
     * @param toastrService The toastr to show messages to the user
     */
     constructor(
         private dp : DatePipe,
-        private modeloService: ModeloService,
+        private autoService: AutomovilService,
         private toastrService: ToastrService
       
     ) { }
 
     /**
-    * The new modelo
+    * The new automovil
     */
-    modelo: Modelo;
+    auto: Automovil;
 
     /**
     * The output which tells the parent component
@@ -44,7 +44,7 @@ export class ModeloCreateComponent implements OnInit {
 
 
     prueba(){
-        console.log(this.modelo);
+        console.log(this.auto);
       }
 
 
@@ -52,16 +52,16 @@ export class ModeloCreateComponent implements OnInit {
     /**
     * Creates an modelo
     */
-    createModelo(): Modelo {
-        console.log(this.modelo);
-        this.modeloService.createModelo(this.modelo).subscribe((model)=>
+    createAutomovil(): Automovil {
+        console.log(this.auto);
+        this.autoService.createAutomovil(this.auto).subscribe((aut)=>
         { 
-          this.modelo = model; 
+          this.auto = aut; 
           this.create.emit();
-          this.toastrService.success("El modelo fue creado","Creacion Modelo");
+          this.toastrService.success("El automovil fue creado","Creacion Automovil");
     
         });
-        return this.modelo; 
+        return this.auto; 
     }
 
     /**
@@ -76,7 +76,7 @@ export class ModeloCreateComponent implements OnInit {
     * This function will initialize the component
     */
     ngOnInit() {
-        this.modelo = new Modelo();
+        this.auto = new Automovil();
     }
 
 }

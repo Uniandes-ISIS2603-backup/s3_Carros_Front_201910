@@ -3,6 +3,8 @@
 export class Automovil 
 {
  autoID: number;
+ 
+ rutaImagen: String;
 
  disponible: boolean; 
 
@@ -26,4 +28,8 @@ export class Automovil
 
  puntoventaID: number;
 
+
+getAnio(){
+    this.anio.getFullYear();
+}
 }

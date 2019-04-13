@@ -4,8 +4,11 @@ import {Modelo} from './modelo';
 import {Observable} from 'rxjs';
 import {ModeloDetail} from './modelo-detail';
 
-const API_URL = '../../assets/';
-const modelos = 'modelos.json';
+const API_BACK = '../../assets/';
+
+
+
+const resource = '/modelos';
 
 @Injectable()
 export class ModeloService {
@@ -14,11 +17,20 @@ export class ModeloService {
 
   getModelos(): Observable<Modelo[]>
   {
-    return this.http.get<Modelo[]>(API_URL + modelos);
+    return this.http.get<Modelo[]>(API_BACK + resource);
   }
 
   getModeloDetail(modeloId): Observable<ModeloDetail>
   {
-    return this.http.get<ModeloDetail>(API_URL+ modelos+ '/' + modeloId);
-  } 
+    return this.http.get<ModeloDetail>(API_BACK+ resource+ '/' + modeloId);
+  }
+  
+  createModelo(modelo): Observable<Modelo>
+  {
+      return this.http.post<Modelo>(API_BACK + resource, modelo);
+  }
+  
+    updateModelo(modelo): Observable<ModeloDetail> {
+        return this.http.put<ModeloDetail>(API_BACK + resource + '/' + modelo.modeloId, modelo);
+    } 
 }
