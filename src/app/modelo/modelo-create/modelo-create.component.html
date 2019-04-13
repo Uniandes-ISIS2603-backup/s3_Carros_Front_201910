@@ -43,8 +43,8 @@
               <label for="cilindraje">
                   <b>Clindraje</b>
                 </label>
-              <input type="text" name="modeloName" class="form-control" id="modelolName" [(ngModel)]="modelo.nombre"
-                    #modeloName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && modeloName.invalid }" required>
+              <input type="text" name="cilindraje" class="form-control" id="modelolName" [(ngModel)]="modelo.cilindraje"
+                    #cilindraje="ngModel" [ngClass]="{ 'is-invalid': f.submitted && cilindraje.invalid }" required>
                 <div class="invalid-feedback">
                     <div>Falta el id del modelo</div>
                 </div> 
@@ -89,8 +89,8 @@
               <label for="Direccion">
                <b> Direccion </b> 
               </label>
-              <input type="text" name="modeloName" class="form-control" id="modelolName" [(ngModel)]="modelo.nombre"
-                    #modeloName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && modeloName.invalid }" required>
+              <input type="text" name="direccion" class="form-control" id="direccion" [(ngModel)]="modelo.direccion"
+                    #direccion="ngModel" [ngClass]="{ 'is-invalid': f.submitted && direccion.invalid }" required>
 <BR>
                <div class="custom-control custom-checkbox mb-1">
     <input type="checkbox" class="custom-control-input" id="customControlValidation1" required>
@@ -104,14 +104,14 @@
               <label for="asientos">
                <b> Asientos </b> 
               </label>
-            <input type="text" name="modeloName" class="form-control" id="modelolName" [(ngModel)]="modelo.nombre"
-                    #modeloName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && modeloName.invalid }" required>
+            <input type="text" name="asientos" class="form-control" id="modelolName" [(ngModel)]="modelo.asientos"
+                    #asientos="ngModel" [ngClass]="{ 'is-invalid': f.submitted && asientos.invalid }" required>
                     <br>
               <label for="vidrios">
                <b> Vidrios </b> 
               </label>
-            <input type="text" name="modeloName" class="form-control" id="modelolName" [(ngModel)]="modelo.nombre"
-                    #modeloName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && modeloName.invalid }" required>
+            <input type="text" name="vidrios" class="form-control" id="vidrios" [(ngModel)]="modelo.vidrios"
+                    #vidrios="ngModel" [ngClass]="{ 'is-invalid': f.submitted && vidrios.invalid }" required>
                   
             </div>
             <div class="row form-inline justify-content-center align-self-center">
