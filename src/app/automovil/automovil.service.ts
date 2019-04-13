@@ -15,5 +15,20 @@ export class AutomovilService {
   {
     return this.http.get<Automovil[]>(API_URL + automoviles);
   }
+      
+    createAutomovil(auto): Observable<Automovil>
+  {
+      return this.http.post<Automovil>(API_URL + automoviles, auto);
+  }
+  
+  
+  getAutomovilDetail(autoID): Observable<Automovil>
+  {
+      return this.http.get<Automovil>(API_URL+ automoviles+ '/' + autoID);
+  }
+  
+    updateAutomovil(auto): Observable<Automovil> {
+        return this.http.put<Automovil>(API_URL + automoviles + '/' + auto.autoID, auto);
+    } 
 
 }

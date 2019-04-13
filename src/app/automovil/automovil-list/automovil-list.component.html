@@ -1,19 +1,39 @@
-<div class="container-fluid">
-    <div class="col-md-5">
-        <table class="table table-striped">
-            <thead class="thead-dark">
-                <tr>
-                    <th>Id</th>  
-                    <th>PLaca </th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor = "let i of automoviles">
-                <td> {{i.autoID}} </td>
-                <td> {{i.matricula}}</td>
-                
-                </tr>
-            </tbody>
-        </table>
-    </div>
-</div>
+
+<br>
+<br>
+<button [ngClass]="{ 'btn-primary': !showCreate, 'btn-danger': showCreate }" type="button" class="btn"
+                    (click)="showHideCreate()">Agregar una Automovil</button>
+<br>
+<br>
+<div class="container">
+    <div *ngIf="showCreate">
+        <app-automovil-create (cancel)="showHideCreate()" (create)="ngOnInit()"></app-automovil-create>
+        </div>
+        <div class="row text-center text-lg-left">
+                <div class="col-lg-3 col-md-6 mb-4" *ngFor="let i of automoviles">
+         
+                    <div class="card h-100">   
+                        <a routerLink="/marcas/{{i.autoID}}">
+                            <img class="card-img-top" src="{{i.rutaImagen}}" alt="">
+                            
+                        </a>
+                        <div class="card-body">
+                            <h4 class="card-title">{{i.referencia}}</h4>
+                            <h5 class="card-text">{{i.precioVenta}}</h5>
+                            <h6 class="card-text">{{i.anio}}</h6>
+                        </div>
+                        <div class="card-footer">
+                            
+                            <a class="btn btn-danger btn-block"  (click) ="onSelected(i.id)">Detalles</a>
+                        </div>
+                              
+                </div>
+            </div>
+    <div class="col-8">
+            <div *ngIf="selectedAuto">
+                    <app-automovil-detail [automovil]="selectedAuto"></app-automovil-detail>
+                </div>
+               
+    <div></div>
+
+

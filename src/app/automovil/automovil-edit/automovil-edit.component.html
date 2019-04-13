@@ -1,0 +1,135 @@
+<div class="row">
+	<div class="col-3"></div>
+	<div class="col-6">
+		<br>
+        <h2 class="text-center">Editar un Automovil</h2>
+        <br>
+        <form name="auto" (ngSubmit)="f.form.valid && editAutomovil()" #f="ngForm" novalidate>
+            <div class="form-group">
+                
+                <label for="rutaImagen">
+                  <b>ruta imagen</b> 
+                  </label>
+                <input type="text" name="rutaImagen" class="form-control" id="rutaImagen" [(ngModel)]="auto.rutaImagen"
+                    #rutaImagen="ngModel" [ngClass]="{ 'is-invalid': f.submitted && rutaImagen.invalid }" required>
+                <div class="invalid-feedback">
+                    <div>Falta la ruta de imagen del automovil</div>
+                </div>
+                   
+                <label class="custom-control-label" for="disponible">Disponible</label>    
+                <div class="custom-control custom-checkbox mb-1">
+                <input type="checkbox" class="custom-control-input" id="customControlValidation1" [(ngModel)]="auto.disponible"
+                    #disponible="ngModel" [ngClass]="{ 'is-invalid': f.submitted && disponible.invalid }" required>
+                
+                </div>                    
+                    
+                    
+                <label for="tipo">
+                  <b>tipo vehiculo</b>
+                </label>
+                <select name="tipo" class="form-control" id="tipo" [(ngModel)]="auto.tipo"
+                    #tipo="ngModel" [ngClass]="{ 'is-invalid': f.submitted && tipo.invalid }" required >
+                <option>Selecciona una opcion</option>
+                <option value="Sedan">Sedan</option>
+                <option value="Campero">Campero</option>
+                <option value="QP">QP</option>
+                <option value="Camioneta">Camioneta</option>
+                </select>
+                
+                <label for="referencia">
+                  <b>Referencia</b> 
+                  </label>
+                <input type="text" name="referencia" class="form-control" id="referencia" [(ngModel)]="auto.referencia"
+                    #referencia="ngModel" [ngClass]="{ 'is-invalid': f.submitted && referencia.invalid }" required>
+                <div class="invalid-feedback">
+                    <div>Falta la referencia del automovil</div>
+                </div>
+                
+                <div class="form-group">
+                <label for="anio"><b>Año</b></label>
+                <input type="date" name=anio class="form-control" id="anio" [(ngModel)]="auto.anio"
+                    #fechaCompra="ngModel" [ngClass]="{ 'is-invalid': f.submitted && fechaCompra.invalid }" required>
+                <div class="invalid-feedback">
+                    <div>Hace falta el año</div>
+                </div>
+            </div>
+                    
+                    
+                <label for="recorrido">
+                  <b>Recorrido(KM)</b> 
+                  </label>
+                <input type="number" name="recorrido" class="form-control" id="recorrido" [(ngModel)]="auto.recorrido"
+                    #recorrido="ngModel" [ngClass]="{ 'is-invalid': f.submitted && recorrido.invalid }" required>
+                <div class="invalid-feedback">
+                    <div>Falta el recorrido del automovil</div>
+                </div>
+                    
+                    
+                <label for="color">
+                  <b>Color</b> 
+                  </label>
+                <input type="text" name="color" class="form-control" id="color" [(ngModel)]="auto.color"
+                    #color="ngModel" [ngClass]="{ 'is-invalid': f.submitted && color.invalid }" required>
+                <div class="invalid-feedback">
+                    <div>Falta el color del automovil</div>
+                </div>
+                    
+                 <label for="idChasis">
+                  <b>ID del chasis</b> 
+                  </label>
+                <input type="number" name="idChasis" class="form-control" id="idChasis" [(ngModel)]="auto.idChasis"
+                    #idChasis="ngModel" [ngClass]="{ 'is-invalid': f.submitted && idChasis.invalid }" required>
+                <div class="invalid-feedback">
+                    <div>Falta el id del chasis del automovil</div>
+                </div>
+                    
+                
+                <label for="matricula">
+                  <b>Numero Matricula</b> 
+                  </label>
+                <input type="text" name="matricula" class="form-control" id="matricula" [(ngModel)]="auto.matricula"
+                    #matricula="ngModel" [ngClass]="{ 'is-invalid': f.submitted && matricula.invalid }" required>
+                <div class="invalid-feedback">
+                    <div>Falta el numero de matricula del automovil</div>
+                </div>
+                    
+                    
+                <label for="ciudadMatricula">
+                  <b>Ciudad de Matricula</b> 
+                  </label>
+                <input type="text" name="ciudadMatricula" class="form-control" id="ciudadMatricula" [(ngModel)]="auto.ciudadMatricula"
+                    #ciudadMatricula="ngModel" [ngClass]="{ 'is-invalid': f.submitted && ciudadMatricula.invalid }" required>
+                <div class="invalid-feedback">
+                    <div>Falta la ciudad de matricula del automovil</div>
+                </div>
+                    
+                  <label for="precioVenta">
+                  <b>precio de venta</b> 
+                  </label>
+                <input type="number" name="precioVenta" class="form-control" id="precioVenta" [(ngModel)]="auto.precioVenta"
+                    #precioVenta="ngModel" [ngClass]="{ 'is-invalid': f.submitted && precioVenta.invalid }" required>
+                <div class="invalid-feedback">
+                    <div>Falta el precio de venta del automovil</div>
+                </div>
+                    
+                    
+                  <label for="puntoventaID">
+                  <b>id del punto de venta donde estará el automovil</b> 
+                  </label>
+                <input type="number" name="puntoventaID" class="form-control" id="puntoventaID" [(ngModel)]="auto.puntoventaID"
+                    #puntoventaID="ngModel" [ngClass]="{ 'is-invalid': f.submitted && puntoventaID.invalid }" required>
+                <div class="invalid-feedback">
+                    <div>Falta el id del punto de venta del automovil</div>
+                </div>               
+                
+                  
+            </div>
+            <div class="row form-inline justify-content-center align-self-center">
+                <button type="submit" class="btn btn-primary">Guardar</button>
+                <div class="divider"></div>
+                <button type="button" class="btn btn-danger" (click)="cancelEdition()">Cancel</button>
+            </div>
+        </form>
+    </div>
+    <div class="col-3"></div>
+</div>
