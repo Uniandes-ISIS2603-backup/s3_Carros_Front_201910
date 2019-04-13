@@ -25,6 +25,9 @@
               <td>{{c.nombre}}</td>
               <td>{{c.correo}}</td>
               <td>{{c.telefono}}</td>
+              <td>
+                  <button class="btn btn-primary" (click)="showHideEdit(c.clienteID)"><span class="fa fa-pencil"></span></button>
+              </td>
             </tr>  
           </tbody>    
         </table>
@@ -32,6 +35,9 @@
       <div class="col-8">
         <div *ngIf="showCreate">
             <app-cliente-create (cancel)="showHideCreate()" (create)="ngOnInit()"> </app-cliente-create>
+        </div>
+        <div *ngIf="showEdit">
+            <app-cliente-edit [cliente]="selectedCliente" (cancel)="showHideEdit(selectedCliente.clienteID)" (update)="updateCliente()" ></app-cliente-edit>
         </div>
       </div>
     </div>

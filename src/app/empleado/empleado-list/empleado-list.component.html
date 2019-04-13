@@ -29,6 +29,9 @@
               <td>
                 <dd class="caption" routerLink="/punto-venta/{{e.puntoVenta.id}}">{{e.puntoVenta.direccion}}</dd>
               </td>
+              <td>
+                <button class="btn btn-primary" (click)="showHideEdit(e.empleadoID)"><span class="fa fa-pencil"></span></button>
+              </td>  
             </tr>  
           </tbody>    
         </table>
@@ -36,6 +39,9 @@
       <div class="col-8">
         <div *ngIf="showCreate">
             <app-empleado-create (cancel)="showHideCreate()" (create)="ngOnInit()"> </app-empleado-create>
+        </div>
+        <div *ngIf="showEdit">
+            <app-empleado-edit [empleado]="selectedEmpleado" (cancel)="showHideEdit(selectedEmpleado.empleadoID)" (update)="updateEmpleado()" ></app-empleado-edit>
         </div>
       </div>  
     </div>

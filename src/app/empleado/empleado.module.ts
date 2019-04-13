@@ -7,6 +7,7 @@ import { EmpleadoService } from './empleado.service';
 import { EmpleadoCreateComponent } from './empleado-create/empleado-create.component';
 import { EmpleadoDetailComponent } from './empleado-detail/empleado-detail.component';
 import { RouterModule } from '@angular/router';
+import { EmpleadoEditComponent } from './empleado-edit/empleado-edit.component';
 
 @NgModule({
   imports: [
@@ -15,8 +16,8 @@ import { RouterModule } from '@angular/router';
     ToastrModule.forRoot(),
     RouterModule
   ],
-  declarations: [EmpleadoListComponent, EmpleadoCreateComponent, EmpleadoDetailComponent],
-  exports: [EmpleadoListComponent, EmpleadoCreateComponent],
+  declarations: [EmpleadoListComponent, EmpleadoCreateComponent, EmpleadoDetailComponent,  EmpleadoEditComponent],
+  exports: [EmpleadoListComponent, EmpleadoCreateComponent, EmpleadoDetailComponent],
   providers: [EmpleadoService]
 })
 export class EmpleadoModule { }

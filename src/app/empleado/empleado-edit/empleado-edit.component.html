@@ -1,0 +1,54 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <br>
+            <h2 class="text-center">Edita un empleado</h2>
+            <br>
+            <form name="empleado" (ngSubmit)="f.form.valid && updateEmpleado()" #f="ngForm" novalidate>
+                  <div class="row">                    
+                    <div class="col-md-8">
+                        <div class="form-group">
+                            <label for="nombreEmpleado"><b>Nombre</b></label>
+                            <input type="text" name="nombreEmpleado" class="form-control" id="nombreEmpleado" [(ngModel)]="empleado.nombre"
+                                   #nombreEmpleado="ngModel" [ngClass]="{ 'is-invalid': f.submitted && nombreEmpleado.invalid }" required>
+                                   <div class="invalid-feedback">
+                                <div>Falta el nombre del empleado</div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="correoEmpleado"><b>correo</b></label>
+                            <textarea name="correoEmpleado" class="form-control" id="correoEmpleado" [(ngModel)]="empleado.correo"
+                                      #correoEmpleado="ngModel" [ngClass]="{ 'is-invalid': f.submitted && correoEmpleado.invalid }"
+                                      required></textarea>
+                            <div class="invalid-feedback">
+                                <div>Falta el correo del empleado</div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="exEmpleado"><b>Extensión</b></label>
+                            <input type="text" name="exEmpleado" class="form-control" id="exEmpleado" [(ngModel)]="empleado.extension"
+                                   #exEmpleado="ngModel" [ngClass]="{ 'is-invalid': f.submitted && exEmpleado.invalid }" required>
+                                   <div class="invalid-feedback">
+                                <div>Falta la extensión del empleado</div>
+                            </div>
+                        </div>
+                    </div> 
+                </div>
+                <br>
+                <br>
+                <div class="col-md-3"></div>
+                
+                <div class="row form-inline justify-content-center ">
+                    <button type="submit" class="btn btn-primary">Edit</button>
+
+                    <div class="divider"></div>
+
+                    <button type="button" class="btn btn-danger" (click)="cancelEdition()">Cancel</button>
+                </div>
+            </form>
+            <br>
+        </div>
+    </div>
+</div>
+<br>
+<br>
