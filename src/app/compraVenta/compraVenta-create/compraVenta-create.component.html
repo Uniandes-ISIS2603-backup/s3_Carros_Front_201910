@@ -17,7 +17,7 @@
             </div>
             <div class="form-group">
                 <label for="compraVentaFecha">
-                  <b>Calificación de la compraVenta</b>
+                  <b>Fecha de la compraVenta</b>
                 </label>
                 <input type="text" name="compraVentaFecha" class="form-control" id="compraVentaFecha" [(ngModel)]="compraVenta.fecha"
                     #compraVentaFecha="ngModel" [ngClass]="{ 'is-invalid': f.submitted && compraVentaFecha.invalid }" required>
@@ -25,6 +25,11 @@
                     <div>La fecha de la compraVenta falta.</div>
                 </div>
             </div>
+            <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1">Pago realizado</label>
+            </div>
+
             <div class="form-group">
                 <label for="compraVentaPago">
                   <b>Pago de la compraVenta</b>
@@ -35,6 +40,52 @@
                     <div>El pago de la compraVenta falta.</div>
                 </div>
             </div>
+            <div class="form-group">
+                    <label for="pvCompraVenta"><b>Punto de Venta</b></label>
+                    <input type="number" name="pvCompraVenta" class="form-control" id="pvCompraVenta" [(ngModel)]="compraVenta.puntoVenta" #pvCompraVenta="ngModel" [ngClass]="{ 'is-invalid': f.submitted && pvCompraVenta.invalid }" required>
+                    <div class="invalid-feedback"> 
+                      <div>Debe asignar un punto de venta a la compraVenta</div>
+                    </div>
+                  </div>
+            <br>
+            <div class="form-group">
+                    <label for="exampleFormControlSelect1">Example select</label>
+                    <select class="form-control" id="exampleFormControlSelect1">
+                        <option *ngFor="let i of puntosVenta">
+                            <td style="cursor: pointer;"> 
+                                <dd>{{i.id}}</dd>
+                            </td>
+                        </option>
+                      <option>1854</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                      <option>5</option>
+                    </select>
+                  </div>
+            <div class="form-group">
+                    <label for="empCompraVenta"><b>Empleado</b></label>
+                    <input type="number" name="empCompraVenta" class="form-control" id="empCompraVenta" [(ngModel)]="compraVenta.empleado" #empCompraVenta="ngModel" [ngClass]="{ 'is-invalid': f.submitted && empCompraVenta.invalid }" required>
+                    <div class="invalid-feedback"> 
+                      <div>Debe asignar un empleado a la compraVenta</div>
+                    </div>
+                  </div>
+            <br>
+            <div class="form-group">
+                    <label for="clntCompraVenta"><b>Cliente</b></label>
+                    <input type="number" name="clntCompraVenta" class="form-control" id="clntCompraVenta" [(ngModel)]="compraVenta.cliente" #clntCompraVenta="ngModel" [ngClass]="{ 'is-invalid': f.submitted && clntCompraVenta.invalid }" required>
+                    <div class="invalid-feedback"> 
+                      <div>Debe asignar un cliente a la compraVenta</div>
+                    </div>
+                  </div>
+            <br>
+            <div class="form-group">
+                    <label for="autCompraVenta"><b>Automovil</b></label>
+                    <input type="number" name="autCompraVenta" class="form-control" id="autCompraVenta" [(ngModel)]="compraVenta.automovil" #autCompraVenta="ngModel" [ngClass]="{ 'is-invalid': f.submitted && autCompraVenta.invalid }" required>
+                    <div class="invalid-feedback"> 
+                      <div>Debe asignar un automovil a la compraVenta</div>
+                    </div>
+                  </div>
             <br>
             <div class="row form-inline justify-content-center align-self-center">
                 <button type="submit" class="btn btn-primary">Crear</button>
