@@ -15,12 +15,12 @@ import { PuntoVenta } from '../punto-venta';
  */
 export class PuntoVentaCreateComponent implements OnInit {
 
-  /**
-   * 
-   * @param dp 
-   * @param puntoVentaService 
-   * @param toastrService 
-   */
+ /**
+    * Constructor for the component
+    * @param dp DatePipe to format the date.
+    * @param authorService The author's services provider
+    * @param toastrService The toastr to show messages to the user
+    */
   constructor(
        private dp : DatePipe,
         private puntoVentaService: PuntoVentaService,
@@ -28,22 +28,24 @@ export class PuntoVentaCreateComponent implements OnInit {
   ) { }
 
   /**
-   * 
+   * El punto de venta
    */
   puntoVenta: PuntoVenta;
 
-  /**
-   * 
-   */
+    /**
+    * The output which tells the parent component
+    * that the user no longer wants to create an author
+    */
    @Output() cancel = new EventEmitter();
 
    /**
-    * 
+    * The output which tells the parent component
+    * that the user created a new author
     */
    @Output() create = new EventEmitter();
  
     /**
-     * 
+     * Crea un punto de venta
      */
   createPuntoVenta(): PuntoVenta
   {
@@ -58,17 +60,18 @@ export class PuntoVentaCreateComponent implements OnInit {
     return this.puntoVenta; 
   }
 
-  /**
-   * 
-   */
+ /**
+    * Emits the signal to tell the parent component that the
+    * user no longer wants to create an user
+    */
   cancelCreation(): void
   {
     this.cancel.emit();
   }
 
-  /**
-   * 
-   */
+ /**
+    * This function will initialize the component
+    */
   ngOnInit() 
   {
     this.puntoVenta = new PuntoVenta();

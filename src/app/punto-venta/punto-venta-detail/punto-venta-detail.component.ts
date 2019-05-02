@@ -16,27 +16,29 @@ import { PuntoVentaDetail } from '../punto-venta-detail';
 export class PuntoVentaDetailComponent implements OnInit {
 
   /**
-   * 
+   * El punto de venta
    */
  @Input() puntoVentaDetail: PuntoVentaDetail;
  
  /**
-  * 
-  * @param puntoVentaService 
-  * @param route 
-  */
+    * Constructor for the component
+    * @param route The route which helps to retrieves the id of the book to be shown
+    * @param authorService The author's services provider
+    * @param toastrService The toastr to show messages to the user
+    */
   constructor(
     private puntoVentaService: PuntoVentaService,
     private route: ActivatedRoute
   ) { }
 
-  /**
-   * 
-   */
+      /**
+    * El id del punto de venta que viene en el path get .../authors/puntove
+    */
+
    puntoVenta_id: number;
  
    /**
-    * 
+    *  The method which obtains the author whose details we want to show
     */
   getPuntoVentaDetail(): void
   {
@@ -45,8 +47,9 @@ export class PuntoVentaDetailComponent implements OnInit {
 
 
   /**
-   * 
-   */
+    * The method which initializes the component.
+    * We need to create the author so it is never considered as undefined
+    */
   ngOnInit() 
   {
       this.puntoVenta_id = +this.route.snapshot.paramMap.get('id');

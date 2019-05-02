@@ -1,17 +1,8 @@
 p {
   font-family: gloss and bloom, sans-serif;
   font-size: 10pt;
-  color:  #ff0000;
+  color:  #000000;
   
   
 }
 
-.site-footer, .page-wrap:after {
-    /* .push must be the same height as footer */
-      height: 142px; 
-  }
-  .site-footer {
-    background: orange;
-    border: #ff0000;
-  }
-  #add{position: absolute; bottom: 160px;}
