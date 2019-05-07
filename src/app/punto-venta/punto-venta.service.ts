@@ -42,7 +42,7 @@ export class PuntoVentaService
    */
   getPuntoVentaDetail(puntoVentaId): Observable<PuntoVentaDetail>
   {
-    console.log(API_URL+ "punto-venta-"+ puntoVentaId+ ".json"); 
+    console.log(API_BACK + resource + '/' + puntoVentaId); 
   return this.http.get<PuntoVentaDetail>(API_BACK + resource + '/' + puntoVentaId); 
   }
 
@@ -59,7 +59,8 @@ export class PuntoVentaService
    * Metodo que actualiza un punto de venta
    * @param puntoVenta 
    */
-  updatePuntoVenta(puntoVenta): Observable<PuntoVentaDetail> {
+  updatePuntoVenta(puntoVenta): Observable<PuntoVentaDetail>
+   {
         return this.http.put<PuntoVentaDetail>(API_BACK + resource + '/' + puntoVenta.id, puntoVenta);
     }
 }

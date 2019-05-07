@@ -26,8 +26,12 @@ import {QuejasDetailComponent} from '../quejasReclamos/quejas-detail/quejas-deta
 
 import { EmpleadoListComponent } from '../empleado/empleado-list/empleado-list.component';
 import { EmpleadoDetailComponent } from '../empleado/empleado-detail/empleado-detail.component';
+import {EmpleadoCreateComponent} from '../empleado/empleado-create/empleado-create.component';
+
 import { ClienteListComponent } from '../cliente/cliente-list/cliente-list.component';
 import { ClienteDetailComponent } from '../cliente/cliente-detail/cliente-detail.component';
+import {ClienteCreateComponent} from '../cliente/cliente-create/cliente-create.component';
+
 import {CompraVentaListComponent} from '../compraVenta/compraVenta-list/compraVenta-list.component';
 import {CompraVentaDetailComponent} from '../compraVenta/compraVenta-detail/compraVenta-detail.component';
 
@@ -157,6 +161,7 @@ const routes: Routes = [
       path: ':id',
       component: ClienteDetailComponent
     }
+    
   ]
 },
 {   
@@ -171,7 +176,21 @@ const routes: Routes = [
       component: FacturaDetailComponent 
     }
   ]
+},
+{
+  path: 'usuario', 
+  children:[
+    {
+      path:'crearCliente',
+      component: ClienteCreateComponent
+    },
+    {
+      path: 'crearEmpleado',
+      component: EmpleadoCreateComponent
+    }
+  ]
 }
+
 ];
 
 @NgModule({

@@ -19,4 +19,14 @@ export class PuntoVenta
    * Representa el telefono del punto de venta;
    */
   telefono: String;
+
+  latitud: Number; 
+
+  longitud: Number; 
+
+  nombre: String;
+
+  rutaFotos: String;
+
+
 }

@@ -4,7 +4,7 @@ import {Modelo} from './modelo';
 import {Observable} from 'rxjs';
 import {ModeloDetail} from './modelo-detail';
 
-const API_BACK = '../../assets/';
+const API_BACK = 'http://localhost:8080/s3_carros-api/api';
 
 
 

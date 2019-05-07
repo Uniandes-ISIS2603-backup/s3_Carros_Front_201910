@@ -14,6 +14,9 @@ import {FormsModule} from '@angular/forms';
 
 import {HomeComponent} from './home-main/home.component';
 import {AppRoutingModule} from '../app-routing/app-routing.module';
+import {PuntoVentaModule} from '../punto-venta/punto-venta.module';
+import {AutomovilModule} from '../automovil/automovil.module';
+import {MarcaModule} from '../marca/marca.module';
 
 @NgModule({
     imports: [
@@ -21,7 +24,10 @@ import {AppRoutingModule} from '../app-routing/app-routing.module';
         AppRoutingModule,
         HttpClientModule,
         CommonModule,
-        FormsModule
+        FormsModule,
+       PuntoVentaModule,
+       AutomovilModule,
+       MarcaModule
     ],
     declarations: [
         HomeComponent

@@ -6,6 +6,17 @@
         <br>
         <form name="puntoVenta" (ngSubmit)="f.form.valid && createPuntoVenta()" #f="ngForm" novalidate>
             <div class="from-group">
+                    <label for="puntoVentaNombre">
+                            <b> Nombre </b>
+                    </label>
+                    <input type="text" name="puntoVentaNombre" class="form-control" id="puntoVentaNombre" 
+                        [(ngModel)]="puntoVenta.nombre" #puntoVentaDireccion="ngModel" [ngClass]="{ 'is-invalid': f.submitted && puntoVentaNombre.invalid }" required>
+                    <div class="invalid-feedback">
+                            <div> La nombre del punto de venta falta</div>
+                    </div>
+            </div>
+            
+            <div class="from-group">
                 <label for="puntoVentaDireccion">
                     <b> Direccion</b>
                 </label>
@@ -15,6 +26,7 @@
                     <div> La direccion del punto de venta falta</div>
                 </div>
             </div>
+            
             <div class="from-group">
                 <label for="puntoVentaTelefono">
                     <b> Telefono</b>
@@ -23,6 +35,36 @@
                 <div class="invalid-feedback">
                     <div> El telefono del punto de venta falta</div>
                 </div>
+            </div>
+            <div class="from-group">
+                    <label for="puntoVentaLatitud">
+                            <b> Latitud </b>
+                    </label>
+                    <input type="number" name="puntoVentaLatitud" class="form-control" id="puntoVentaLatitud" 
+                        [(ngModel)]="puntoVenta.latitud" #puntoVentaDireccion="ngModel" [ngClass]="{ 'is-invalid': f.submitted && puntoVentaLatitud.invalid }" required>
+                    <div class="invalid-feedback">
+                            <div> La latitud de la localizacion punto de venta falta</div>
+                    </div>
+            </div>
+            <div class="from-group">
+                    <label for="puntoVentaLongitud">
+                            <b> Longitud </b>
+                    </label>
+                    <input type="number" name="puntoVentaLongitud" class="form-control" id="puntoVentaLongitud" 
+                        [(ngModel)]="puntoVenta.longitud" #puntoVentaDireccion="ngModel" [ngClass]="{ 'is-invalid': f.submitted && puntoVentaLongitud.invalid }" required>
+                    <div class="invalid-feedback">
+                            <div> La longitud de la localizacion punto de venta falta</div>
+                    </div>
+            </div>
+            <div class="from-group">
+                    <label for="puntoVentaRutaImagen">
+                            <b> Ruta Imagen  </b>
+                    </label>
+                    <input type="text" name="puntoVentaRutaImagen" class="form-control" id="puntoVentaRutaImagen" 
+                        [(ngModel)]="puntoVenta.rutaFotos" #puntoVentaDireccion="ngModel" [ngClass]="{ 'is-invalid': f.submitted && puntoVentaRutaImagen.invalid }" required>
+                    <div class="invalid-feedback">
+                            <div> La imagen  del punto de venta falta</div>
+                    </div>
             </div>
             <br>
             <div class="row form-inline justify-content-center align-self-center">
