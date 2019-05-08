@@ -31,6 +31,9 @@
             <div class="card card-body">
                     <p class="h3 p-3">Marcas del punto de venta : </p>
                     <app-marca-list [marcas]="puntoVentaDetail.marcas"></app-marca-list>
+                    <div *ngFor="let item of puntoVentaDetail.marcas">
+                        <p>{{item.idMarca}}</p>
+                    </div>
             </div>
           </div>
           
