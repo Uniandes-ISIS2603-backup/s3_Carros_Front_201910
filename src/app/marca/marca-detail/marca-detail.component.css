@@ -1,0 +1,35 @@
+#boton
+{
+    
+    height: 10cm;
+    font-family:  Georgia;
+    width: 3cm;
+    font-size: 4mm;
+    text-align: center;
+    color: white;
+   
+}
+
+#botones
+{
+   
+    width: 3cm;
+   
+    color: white;
+    background: #666666;
+    
+   
+}
+
+#icon
+{
+    size: 8%;
+}
+a{
+    color: black;
+}
+
+#fondo
+{
+    background:     #cccccc;
+}

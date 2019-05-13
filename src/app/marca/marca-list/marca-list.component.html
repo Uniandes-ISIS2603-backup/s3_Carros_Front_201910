@@ -1,7 +1,9 @@
 <br>
 <br>
+<div class="row justify-content-center align-self-center" *ngxPermissionsOnly="['ADMIN']">
 <button [ngClass]="{ 'btn-primary': !showCreate, 'btn-danger': showCreate }" type="button" class="btn"
                     (click)="showHideCreate()">Agregar una marca</button>
+</div>
 <br>
 <br>
 <div class="container">
@@ -23,7 +25,7 @@
                     <div class="carousel-item" *ngFor="let i of marcas" >
                             <a routerLink="/marca/{{i.idMarca}}">
                            
-                        <img class="d-block w-100" src="{{i.imagen}}" alt="Second slide"></a>
+                        <img class="d-block w-100" src="{{i.imagen}}" alt="Second slide" ></a>
                         <div class="carousel-caption d-none d-md-block">
                             <h1>{{i.nombreMarca}}</h1>
                             <p>{{i.descripcion}}</p>
@@ -40,7 +42,7 @@
                         <span class="sr-only">Next</span>
                       </a>
             </div> 
-    <div class="col-8">
+    <div class="col-12">
             <div *ngIf="slectedMarca">
                     <app-marca-detail [marcaDetail]="slectedMarca"></app-marca-detail>
                 </div>

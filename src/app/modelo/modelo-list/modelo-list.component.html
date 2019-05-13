@@ -1,48 +1,61 @@
-<br>
-<br>
-<button [ngClass]="{ 'btn-primary': !showCreate, 'btn-danger': showCreate }" type="button" class="btn"
-                    (click)="showHideCreate()">Agregar un Modelo</button>
-<br>
-<br>
-<div class="container">
+<div id="papa">
+    <br>
+    <br>
+    <div class="row justify-content-center align-self-center" *ngxPermissionsOnly="['ADMIN']">
+       <button [ngClass]="{ 'btn-primary': !showCreate, 'btn-danger': showCreate }" type="button" class="btn"
+       (click)="showHideCreate()">Agregar un Modelo</button>
+    </div>
+    <br>
+    <br>
+    <div class="container">
     <div *ngIf="showCreate">
-        <app-modelo-create (cancel)="showHideCreate()" (create)="ngOnInit()"></app-modelo-create>
-        </div>
-        <div class="row text-center text-lg-left">
-                <div class="col-lg-3 col-md-6 mb-4" *ngFor="let i of modelos">
-         
-                    <div class="card h-100">   
-                        <a routerLink="/modelos/{{i.modeloId}}">
-                            <h4 class="card-title align-middle">{{i.nombre}}</h4>
-                            <img class="card-img-top" src="https://acs2.blob.core.windows.net/imgcatalogo/l/VA_8de258fca7fe4722802b8c61a239cde9.jpg" alt="">
-                        </a>
-                        <div class="card-body">                            
-                            <ul>
-                                <li>Numero Puertas: {{i.numeroPuertas}}</li>
-                                <li>Trasmision : {{i.trasmision}}</li>
-                                <li>Cilindraje : {{i.cilindraje}}</li>
-                                <li>Combustible : {{i.combustible}}</li>
-                                <li>Traccion : {{i.traccion}}</li>
-                                <li>Direccion : {{i.direccion}}</li>
-                                <li>Frenos ABS : {{i.frenosABS}}</li>
-                                <li>AirBag : {{i.airBag}}</li>
-                                <li>Aire Acondicionado : {{i.aireAc}}</li>
-                                <li>Asientos : {{i.asientos}}</li>
-                                <li>Vidrios : {{i.vidrios}}</li>
-                            </ul>
-                        </div>
-                        <div class="card-footer">
-                            
-                            <a class="btn btn-danger btn-block"  (click) ="onSelected(i.modeloId)">Automoviles</a>
-                        </div>
-                    </div>
-        
-         
-                </div>
-            </div>
-    <div class="col-8">
-            <div *ngIf="selectedModelo">
-                    <app-modelo-detail [modeloDetail]="selectedModelo"></app-modelo-detail>
-                </div>
+       <app-modelo-create (cancel)="showHideCreate()" (create)="ngOnInit()"></app-modelo-create>
+    </div>
+    <!--<div class="card mb-3" style="max-width: 40%;" *ngFor="let i of modelos">
+       <div class="row no-gutters">
+         <div class="col-md-4">
+           <img src="..." class="card-img" alt="...">
+         </div>
+         <div class="col-md-8">
+           <div class="card-body">
+             <h5 class="card-title">{{i.nombre}}</h5>
+             <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+             <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+           </div>
+         </div>
+       </div>
+       </div>-->
+    <div class="row text-center text-lg-left">
+       <div class="col-lg-3 col-md-6 mb-4" *ngFor="let i of modelos">
+          <div class="card h-100"style="background: #cccccc;">
+             <img class="card-img-top" src="https://freepngimg.com/thumb/chevrolet/32550-4-chevrolet-camaro-transparent.png" alt="" >
+             <div class="card-body" >
+                <h5 class="card-title" >{{i.nombre}}</h5>
+                <ul>
+                   <!---<li>Numero Puertas: {{i.numeroPuertas}}</li>
+                      <li>Trasmision : {{i.trasmision}}</li>
+                      <li>Cilindraje : {{i.cilindraje}}</li>
+                      <li>Combustible : {{i.combustible}}</li>
+                      <li>Traccion : {{i.traccion}}</li>
+                      <li>Direccion : {{i.direccion}}</li>
+                      <li>Frenos ABS : {{i.frenosABS}}</li>
+                      <li>AirBag : {{i.airBag}}</li>
+                      <li>Aire Acondicionado : {{i.aireAc}}</li>
+                      <li>Asientos : {{i.asientos}}</li>
+                      <li>Vidrios : {{i.vidrios}}</li>-->
+                </ul>
+             </div>
+             <div class="card-footer">
                
-    <div></div>
+                <a href="/home" class="btn btn-success" style="margin: 2px">Info</a>
+                <a href="/home" class="btn btn-danger">Automoviles</a>
+             </div>
+          </div>
+       </div>
+    </div>
+    <div class="col-8">
+       <div *ngIf="selectedModelo">
+          <app-modelo-detail [modeloDetail]="selectedModelo"></app-modelo-detail>
+       </div>
+       <div></div>
+    </div>

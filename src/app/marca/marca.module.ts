@@ -9,6 +9,7 @@ import { MarcaCreateComponent } from './marca-create/marca-create.component';
 import { MarcaEditComponent } from './marca-edit/marca-edit.component';
 import {ModeloModule} from '../modelo/modelo.module';
 import{AppRoutingModule} from '../app-routing/app-routing.module';
+import {NgxPermissionsModule} from 'ngx-permissions';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import{AppRoutingModule} from '../app-routing/app-routing.module';
     CommonModule, 
     FormsModule,
     ModeloModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgxPermissionsModule
   ],
   declarations: [MarcaListComponent, MarcaDetailComponent, MarcaCreateComponent, MarcaEditComponent],
   exports: [MarcaListComponent],

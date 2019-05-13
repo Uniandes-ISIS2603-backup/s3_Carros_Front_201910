@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, OnChanges } from '@angular/core';
 import {Marca} from '../marca';
 import {MarcaService} from '../marca.service';
 import {MarcaDetail} from '../marca-detail';
@@ -8,7 +8,7 @@ import {MarcaDetail} from '../marca-detail';
   templateUrl: './marca-list.component.html',
   styleUrls: ['./marca-list.component.css']
 })
-export class MarcaListComponent implements OnInit {
+export class MarcaListComponent implements OnInit, OnChanges {
 
   constructor(private marcaService: MarcaService) { }
 
@@ -42,6 +42,7 @@ export class MarcaListComponent implements OnInit {
   getMarcas(): void
   {
     this.marcaService.getMarcas().subscribe(marca => this.marcas = marca);
+
   }
 
   getMarcaDetail(): void
@@ -54,10 +55,17 @@ export class MarcaListComponent implements OnInit {
 
 
   ngOnInit() {
+    if(this.marcas == null)
+    {
     this.showCreate= false; 
     this.slectedMarca= undefined;
     this.marca_id = undefined;
     this.getMarcas();
+    }
+  }
+
+  ngOnChanges(){
+    console.log("paso por aca" + this.marcas);
   }
 
 }

@@ -6,3 +6,17 @@ p {
   
 }
 
+.navbar navbar-expand-lg navbar-light
+{
+    size: 100%;
+}
+#barra
+{
+    size: 30%;
+}
+
+#rolusuario
+{
+    color: white;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}

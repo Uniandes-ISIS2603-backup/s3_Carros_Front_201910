@@ -1,7 +1,48 @@
-<p>
-Marca detail works!
-</p>
+<diV id="fondo">
+<div class="continer-fluid" >
+  <div class="row">
+        <div id="botones">
+       
+        <div class="btn-group-vertical" role="group" aria-label="Basic example"id="boton">
+                <button type="button" class="btn btn-outline-secondary" id="boton">
+                        <img class="card-img-top" src="" id="icon" >
+                       
+                    <a>
+                        MODELOS
+                    </a>
+                    
+                </button>
+                <button type="button" class="btn btn-outline-secondary" id="boton">
+                    <a>
+                        
+                  CARROS
+                    </a>
+                    <br>
+                </button>
+                <button type="button" class="btn btn-outline-secondary" id="boton">
+                        <img class="card-img-top" src="" id="icon" >
+                       
+                    <a>
+                    PROMO
+                    </a>
+                    <br>
+                </button>
+                <button type="button" class="btn btn-outline-secondary" id="boton">
+                        <img class="card-img-top" src="" id="icon">
+                    <a>
+                    PUNTO-VENTA
+                    </a>
+                    <br>
+                </button>
+              </div>
+        </div>
+            <div class="col-10">
+                <app-modelo-list [modelos]="marcaDetail.modelos"></app-modelo-list>
+            </div>
+        </div>   
+</div>
+</diV>  
 
 
-<app-modelo-list [modelos]="marcaDetail.modelos"></app-modelo-list>
+
     

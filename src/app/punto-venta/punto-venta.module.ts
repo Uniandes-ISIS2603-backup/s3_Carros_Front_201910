@@ -14,7 +14,7 @@ import {ClienteModule} from '../cliente/cliente.module';
 import {EmpleadoModule} from '../empleado/empleado.module';
 import {CompraVentaModule} from '../compraVenta/compraVenta.module';
 import {RegistrosModule} from '../registros/registros.module';
-
+import {NgxPermissionsModule} from 'ngx-permissions';
 import {MarcaModule} from '../marca/marca.module';
 
 /**
@@ -29,7 +29,8 @@ import {MarcaModule} from '../marca/marca.module';
     ClienteModule,
     EmpleadoModule,
     CompraVentaModule,
-    RegistrosModule
+    RegistrosModule, 
+    NgxPermissionsModule
   ],
   declarations: [PuntoVentaListComponent, PuntoVentaDetailComponent, PuntoVentaCreateComponent, PuntoVentaEditComponent],
   exports: [PuntoVentaListComponent, PuntoVentaCreateComponent],

@@ -9,7 +9,7 @@ import { ModeloDetailComponent } from './modelo-detail/modelo-detail.component';
 import{AppRoutingModule} from '../app-routing/app-routing.module';
 import {ModeloCreateComponent} from './modelo-create/modelo-create.component';
 import { ModeloEditComponent } from './modelo-edit/modelo-edit.component';
-
+import {NgxPermissionsModule} from 'ngx-permissions';
 import { AutomovilModule } from '../automovil/automovil.module';
 
 
@@ -21,7 +21,9 @@ import { AutomovilModule } from '../automovil/automovil.module';
     CommonModule, 
     FormsModule,
     AppRoutingModule,
-    AutomovilModule    
+    AutomovilModule,
+    NgxPermissionsModule    
+
   ],
   declarations: [ModeloListComponent, ModeloDetailComponent, ModeloCreateComponent, ModeloEditComponent],
   exports: [ModeloListComponent, ModeloCreateComponent],

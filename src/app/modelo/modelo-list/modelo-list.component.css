@@ -1,3 +1,13 @@
 th{
   font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
+
+.card-title
+{
+  text-align: center;
+}
+
+#papa{
+  background: #cccccc;
+}
+
