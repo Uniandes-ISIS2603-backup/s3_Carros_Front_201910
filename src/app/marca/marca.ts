@@ -9,4 +9,6 @@ export class Marca
   imagen: String;
 
   descripcion: String;
+
+  logo: String;
 }

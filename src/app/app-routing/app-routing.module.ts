@@ -54,7 +54,11 @@ const routes: Routes = [
     },
      {
       path: ':id',
-      component: PuntoVentaDetailComponent
+      component: PuntoVentaDetailComponent,
+      children:[{
+        path:'marca',
+        redirectTo:'marca'
+      }]
       
     }
   ]

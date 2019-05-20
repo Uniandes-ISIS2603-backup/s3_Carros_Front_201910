@@ -24,6 +24,11 @@ export class MarcaService {
     return this.http.get<MarcaDetail>(API_BACK+ resource+ '/' + marcaId);
   }
 
+  getMarcasPorPuntoVenta(puntoVentaId:string): Observable<Marca[]>
+  {
+    return this.http.get<Marca[]>(`${API_BACK}/puntosdeVenta/${puntoVentaId}${resource}`);
+  }
+
   createMarca(marca): Observable<Marca>
   {
     return this.http.post<Marca>(API_BACK+ resource, marca);

@@ -28,6 +28,8 @@ export class Automovil
 
  puntoventaID: number;
 
+ imagen: String;
+
 
 getAnio(){
     this.anio.getFullYear();

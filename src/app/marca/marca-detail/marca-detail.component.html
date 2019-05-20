@@ -2,24 +2,23 @@
 <div class="continer-fluid" >
   <div class="row">
         <div id="botones">
-            <img class="card-img-top" src="https://freepngimg.com/thumb/maserati/24485-4-maserati-logo-photos.png" id="icon" >
-        <div class="btn-group-vertical" role="group" aria-label="Basic example"id="boton">
-                <button type="button" class="btn btn-outline-secondary" id="boton">
-                        <img class="card-img-top" src="" id="icon" >
-                       
+            <img class="card-img-top" src="{{marcaDetail.logo}}" id="icon" >
+            <div class="btn-group-vertical boton" role="group" aria-label="Basic example" id="">
+                <button type="button" class="btn btn-outline-secondary boton" id="model">
+                          
                     <a>
                         MODELOS
                     </a>
                     
                 </button>
-                <button type="button" class="btn btn-outline-secondary" id="boton">
+                <button type="button" class="btn btn-outline-secondary boton" id="carros">
                     <a>
                         
                   CARROS
                     </a>
                     <br>
                 </button>
-                <button type="button" class="btn btn-outline-secondary" id="boton">
+                <button type="button" class="btn btn-outline-secondary boton" id="promo">
                         <img class="card-img-top" src="" id="icon" >
                        
                     <a>
@@ -27,7 +26,7 @@
                     </a>
                     <br>
                 </button>
-                <button type="button" class="btn btn-outline-secondary" id="boton">
+                <button type="button" class="btn btn-outline-secondary boton" id="punto-venta">
                         <img class="card-img-top" src="" id="icon">
                     <a>
                     PUNTO-VENTA
@@ -36,10 +35,10 @@
                 </button>
               </div>
         </div>
-            <div class="col-10">
-                <app-modelo-list [modelos]="marcaDetail.modelos"></app-modelo-list>
+            <div class="col-10" >
+                <app-modelo-list [modelos]="marcaDetail.modelos" [marcaId] = "marca_id"></app-modelo-list>
             </div>
-        </div>   
+    </div>   
 </div>
 </diV>  
 
