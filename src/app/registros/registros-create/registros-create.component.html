@@ -6,9 +6,9 @@
         <br>
         <form name="registro" (ngSubmit)="f.form.valid && createRegistro()" #f="ngForm" novalidate>
             <div class="form-group">
-                <label for="precioComprado"><b>Precio</b></label>
-                <input type="number" name="precioComprado" class="form-control" id="precioComprado" [(ngModel)]="registro.precioComprado"
-                    #precioComprado="ngModel" [ngClass]="{ 'is-invalid': f.submitted && precioComprado?.invalid }" required>
+                <label for="precioAcordado"><b>Precio</b></label>
+                <input type="number" name="precioAcordado" class="form-control" id="precioAcordado" [(ngModel)]="registro.precioAcordado"
+                    #precioComprado="ngModel" [ngClass]="{ 'is-invalid': f.submitted && precioAcordado?.invalid }" required>
                 <div class="invalid-feedback">
                     <div>Hace falta el precio</div>
                 </div>
@@ -19,14 +19,6 @@
                     #nombreVendedor="ngModel" [ngClass]="{ 'is-invalid': f.submitted && nombreVendedor.invalid }" required>
                 <div class="invalid-feedback">
                     <div>Hace falta el nombre del vendedor</div>
-                </div>
-            </div>
-            <div class="form-group">
-                <label for="fechaCompra"><b>Fecha</b></label>
-                <input type="date" name=fechaCompra class="form-control" id="fechaCompra" [(ngModel)]="registro.fechaCompra"
-                    #fechaCompra="ngModel" [ngClass]="{ 'is-invalid': f.submitted && fechaCompra.invalid }" required>
-                <div class="invalid-feedback">
-                    <div>Hace falta la fecha</div>
                 </div>
             </div>
             <div class="row form-inline justify-content-center align-self-center">

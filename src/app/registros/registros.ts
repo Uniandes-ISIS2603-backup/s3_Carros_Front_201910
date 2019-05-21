@@ -1,7 +1,8 @@
+import { Automovil } from '../automovil/automovil';
 export class Registros {
 
   CompraID: number;
-  precioComprado: number;
-  fechaCompra: Date;
+  precioAcordado: number;
   nombreVendedor: String;
+  auto: Automovil;
 }
