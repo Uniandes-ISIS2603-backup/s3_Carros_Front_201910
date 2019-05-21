@@ -36,11 +36,7 @@ export class RegistrosListComponent implements OnInit {
 
   getRegistroDetail(): void
   {
-    console.log(this.registro_id);
-    this.registrosService.getRegistrosDetail(this.registro_id).subscribe(selectedRegistro => { 
-      this.selectedRegistro = selectedRegistro
-      console.log(selectedRegistro);
-    });
+    this.registrosService.getRegistrosDetail(this.registro_id).subscribe(selectedRegistro => { this.selectedRegistro = selectedRegistro});
   }
 
   onSelected(registro_id: number): void {
@@ -54,13 +50,15 @@ export class RegistrosListComponent implements OnInit {
   }
 
   showHideCreate(): void {
-        this.showEdit = false;
-        this.showCreate = !this.showCreate!;
+        if (this.selectedRegistro) {
+            this.selectedRegistro = undefined;
+            this.registro_id = undefined;
+        }
+        this.showCreate = !this.showCreate;
     }
 
   showHideEdit(registro_id: number): void {
-    
-        if (!this.showEdit || (this.showEdit && registro_id != this.selectedRegistro.compraId)) {
+        if (!this.showEdit || (this.showEdit && registro_id != this.selectedRegistro.CompraID)) {
             this.showView = false;
             this.showCreate = false;
             this.showEdit = true;
@@ -70,6 +68,7 @@ export class RegistrosListComponent implements OnInit {
         }
         else {
             this.showEdit = false;
+            this.showView = true;
         }
     }
   

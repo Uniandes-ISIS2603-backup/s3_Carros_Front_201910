@@ -22,6 +22,15 @@
                     <div>Falta el nombre del vendedor</div>
                 </div>
             </div>
+            <div class="form-group">
+                <label for="fechaCompra"><b>Fecha</b></label>
+                <input type="date" name="fechaCompra" class="form-control" id="fechaCompra" [(ngModel)]="registro.fechaCompra"
+                          #fechaCompra="ngModel" [ngClass]="{ 'is-invalid': f.submitted && fechaCompra.invalid }"
+                          required>
+                <div class="invalid-feedback">
+                    <div>Falta la fecha</div>
+                </div>
+            </div>
         <div class="row form-inline justify-content-center align-self-center">
                 
                 
