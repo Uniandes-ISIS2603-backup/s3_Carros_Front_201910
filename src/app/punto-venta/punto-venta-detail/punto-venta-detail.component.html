@@ -1,70 +1,84 @@
 
-    <p class="h4 p-4"> Punto Venta : </p>
-    <p class="h4 p4-4"> {{puntoVentaDetail.direccion}}</p>
-    <p class="h4 p-4"> {{puntoVentaDetail.telefono}}</p>
 
- 
-
-    <div class="btn-group btn-group-toggle" data-toggle="buttons">
-            <a class="btn btn-dark" data-toggle="collapse" href="#MarcasList" role="button" aria-expanded="false" aria-controls="MarcasList ">
-              Marcas
-            </a>
-            
-            <a class="btn btn-dark" data-toggle="collapse" href="#ComprasList" role="button" aria-expanded="false" aria-controls="ComprasList">
-                    Compras
-            </a>
-            <a class="btn btn-dark" data-toggle="collapse" href="#VentasList" role="button" aria-expanded="false" aria-controls="VentasList">
-                    Ventas
-            </a>
-
-            <a class="btn btn-dark" data-toggle="collapse" href="#EmpleadosList" role="button" aria-expanded="false" aria-controls="EmpleadosList">
-                    Empleados
-            </a>
-
-            <a class="btn btn-dark" data-toggle="collapse" href="#ClientesList" role="button" aria-expanded="false" aria-controls="ClientesList">
-                    Clientes
-            </a>
-
-    </div>
-
-          <div class="collapse" id="MarcasList">
-            <div class="card card-body">
-                    <p class="h3 p-3">Marcas del punto de venta : </p>
-                    <app-marca-list [marcas]="puntoVentaDetail.marcas"></app-marca-list>
-                    <div *ngFor="let item of puntoVentaDetail.marcas">
-                        <p>{{item.idMarca}}</p>
-                    </div>
+<p class="h4 p-4" id="titulo" > {{puntoVentaDetail.nombre}} </p>
+<p class="" id="info">Direccion: {{puntoVentaDetail.direccion}}</p>
+<p class="" id="info">Telefono: {{puntoVentaDetail.telefono}}</p>
+<div class="btn-group btn-group-toggle" data-toggle="buttons" *ngxPermissionsOnly="['ADMIN']">
+   <a class="btn btn-dark" data-toggle="collapse" href="#MarcasList" role="button" aria-expanded="false" aria-controls="MarcasList ">
+   Marcas
+   </a>
+   <a class="btn btn-dark" data-toggle="collapse" href="#ComprasList" role="button" aria-expanded="false" aria-controls="ComprasList" *ngxPermissionsOnly="['ADMIN']">
+   Compras
+   </a>
+   <a class="btn btn-dark" data-toggle="collapse" href="#VentasList" role="button" aria-expanded="false" aria-controls="VentasList" *ngxPermissionsOnly="['ADMIN']">
+   Ventas
+   </a>
+   <a class="btn btn-dark" data-toggle="collapse" href="#EmpleadosList" role="button" aria-expanded="false" aria-controls="EmpleadosList" *ngxPermissionsOnly="['ADMIN']">
+   Empleados
+   </a>
+   <a class="btn btn-dark" data-toggle="collapse" href="#ClientesList" role="button" aria-expanded="false" aria-controls="ClientesList" *ngxPermissionsOnly="['ADMIN']">
+   Clientes
+   </a>
+</div>
+<div *ngxPermissionsOnly="['GUEST', 'CLIENT']" >
+                <div class="card card-body">
+                   <p class="h3 p-3">Marcas del punto de venta : </p>
+                   <div class="row">
+                      <div *ngFor="let item of puntoVentaDetail.marcas" class="col-lg-5 col-md-6 mb-4">
+                         <div class="card h-100"  >
+                            <img class="card-img-top" src="{{item.logo}}" alt="" height="350px;"   >
+                            <div class="card-body" >
+                               <h5 class="card-title" >{{item.nombreMarca}}</h5>
+                               <div class="card-footer">
+                                  <a href="../marca/{{item.idMarca}}" class="btn btn-success">Conoce mas</a>
+                               </div>
+                            </div>
+                         </div>
+                      </div>
+                   </div>
+                </div>
+</div>
+<div class="collapse" id="MarcasList">
+   <div class="card card-body">
+      <p class="h3 p-3">Marcas del punto de venta : </p>
+      <div class="row">
+           <div *ngFor="let item of puntoVentaDetail.marcas" class="col-lg-5 col-md-6 mb-4">
+         <div class="card h-100">
+                        
+            <img class="card-img-top" src="{{item.logo}}" alt="" >
+            <div class="card-body" >
+               <h5 class="card-title" >{{item.nombreMarca}}</h5>
+              
+               <div class="card-footer">
+                  <a href="../marca/{{item.idMarca}}" class="btn btn-success">Conoce mas</a>
+               </div>
             </div>
-          </div>
-          
-          <div class="collapse" id="ComprasList">
-                <div class="card card-body">
-                        <p class="h3 p-3">Compras del punto de venta : </p>
-                        <app-compraVenta-list [compraVentas]="puntoVentaDetail.CompraVenta"></app-compraVenta-list>
-                 </div>
-          </div>
-
-           
-          <div class="collapse" id="VentasList">
-                <div class="card card-body">
-                        <p class="h3 p-3">Ventas del punto de venta : </p>
-                        <app-registros [registros]="puntoVentaDetail.RegistroCompra"></app-registros>
-                 </div>
-          </div>
-
-           
-          <div class="collapse" id="EmpleadosList">
-                <div class="card card-body">
-                        <p class="h3 p-3">Empleados del punto de venta : </p>
-                        <app-empleado-list [empleados]="puntoVentaDetail.empleados"></app-empleado-list>
-                 </div>
-          </div>
-
-           
-          <div class="collapse" id="ClientesList">
-                <div class="card card-body">
-                        <p class="h3 p-3">Clientes del punto de venta : </p>
-                        <app-cliente-list [clientes]="puntoVentaDetail.clientes"></app-cliente-list>
-                 </div>
-          </div>
-       
+         </div>
+           </div>
+      </div>
+   </div>
+</div>
+<div class="collapse" id="ComprasList">
+   <div class="card card-body">
+      <p class="h3 p-3">Compras del punto de venta : </p>
+      <app-compraVenta-list [compraVentas]="puntoVentaDetail.CompraVenta"></app-compraVenta-list>
+   </div>
+</div>
+<div class="collapse" id="VentasList">
+   <div class="card card-body">
+      <p class="h3 p-3">Ventas del punto de venta : </p>
+      <app-registros [registros]="puntoVentaDetail.RegistroCompra"></app-registros>
+   </div>
+</div>
+<div class="collapse" id="EmpleadosList">
+   <div class="card card-body">
+      <p class="h3 p-3">Empleados del punto de venta : </p>
+      <app-empleado-list [empleados]="puntoVentaDetail.empleados"></app-empleado-list>
+   </div>
+</div>
+<div class="collapse" id="ClientesList">
+   <div class="card card-body">
+      <p class="h3 p-3">Clientes del punto de venta : </p>
+      <app-cliente-list [clientes]="puntoVentaDetail.clientes"></app-cliente-list>
+   </div>
+</div>

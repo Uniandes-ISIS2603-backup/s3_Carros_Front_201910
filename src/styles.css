@@ -1,1 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
+@font-face {
+    font-family: gloos and bloom;
+    src: url(./assets/FUENTES/Gloss_And_Bloom.ttf);
+ }
+
+ @font-face {
+    font-family:strude;
+    src: url(./assets/FUENTES/strude.ttf);
+ }
+  
+  
+ @font-face {
+    font-family:button shield;
+    src: url(./assets/FUENTES/ButtonShield.ttf);
+ }
+   
+ @font-face {
+    font-family:Thundergood;
+    src: url(./assets/FUENTES/Thundergood.ttf);
+ }
+  
