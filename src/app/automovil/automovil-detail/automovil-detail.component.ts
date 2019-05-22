@@ -4,8 +4,8 @@ import { ActivatedRoute, Params } from '@angular/router';
 
 import { AutomovilService } from '../automovil.service';
 import { Automovil } from '../automovil';
-
-
+import { PuntoVentaService } from '../../punto-venta/punto-venta.service';
+import { PuntoVenta } from '../../punto-venta/punto-venta';
 
 @Component({
   selector: 'app-automovil-detail',
@@ -19,12 +19,25 @@ export class AutomovilDetailComponent implements OnInit {
   
   constructor(
     private autoService: AutomovilService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private pvService: PuntoVentaService
   ) { }
 
   auto_id: number;
+  pv: PuntoVenta;
+
+  showBuy: boolean;
+
+  showHideBuy():void{
+    this.showBuy = !this.showBuy;
+  }
+
   
-  
+  getPuntoVenta():void{
+    this.pvService.getPuntoVentaDetail(this.automovil.puntoVentaID).subscribe(obser => {
+      this.pv = obser
+    });
+  }
 
   getAutomovil(): void
   {
@@ -35,11 +48,15 @@ export class AutomovilDetailComponent implements OnInit {
 
   ngOnInit() 
   {
-      this.auto_id = +this.route.snapshot.paramMap.get('autoID');
-        if (this.auto_id){
-            this.automovil = new Automovil();
-            this.getAutomovil();    
-        }
+    this.showBuy = false;
+    this.auto_id = +this.route.snapshot.paramMap.get('id');
+    console.log(this.auto_id);
+    this.automovil = new Automovil();
+    this.getAutomovil();
+    this.pv = new PuntoVenta();
+    console.log("Entre pv");
+    console.log(this.automovil.puntoVentaID);
+    this.getPuntoVenta(); 
+    console.log(this.pv);    
   }
-
 }

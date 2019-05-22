@@ -26,7 +26,7 @@ export class Automovil
 
  precioVenta: number; 
 
- puntoventaID: number;
+ puntoVentaID: number;
 
  imagen: String;
 
