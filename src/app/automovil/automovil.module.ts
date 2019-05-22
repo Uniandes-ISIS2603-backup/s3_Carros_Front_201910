@@ -10,6 +10,7 @@ import{AppRoutingModule} from '../app-routing/app-routing.module';
 import { AutomovilCreateComponent } from './automovil-create/automovil-create.component';
 import { AutomovilEditComponent } from './automovil-edit/automovil-edit.component';
 import { CompraVentaModule } from '../compraVenta/compraVenta.module';
+import { AuthModule } from '../auth/auth.module';
 
 
 
@@ -18,7 +19,8 @@ import { CompraVentaModule } from '../compraVenta/compraVenta.module';
     CommonModule, 
     FormsModule,
     AppRoutingModule,
-    CompraVentaModule
+    CompraVentaModule,
+    AuthModule
   ],
   declarations: [AutomovilListComponent, AutomovilDetailComponent, AutomovilCreateComponent, AutomovilEditComponent],
     exports: [AutomovilListComponent, AutomovilCreateComponent],

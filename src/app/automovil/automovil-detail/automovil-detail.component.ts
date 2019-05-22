@@ -6,6 +6,7 @@ import { AutomovilService } from '../automovil.service';
 import { Automovil } from '../automovil';
 import { PuntoVentaService } from '../../punto-venta/punto-venta.service';
 import { PuntoVenta } from '../../punto-venta/punto-venta';
+import { NullVisitor } from '@angular/compiler/src/render3/r3_ast';
 
 @Component({
   selector: 'app-automovil-detail',
@@ -27,9 +28,17 @@ export class AutomovilDetailComponent implements OnInit {
   pv: PuntoVenta;
 
   showBuy: boolean;
+  showLogin: boolean;
 
   showHideBuy():void{
-    this.showBuy = !this.showBuy;
+    var rol = localStorage.getItem('role');
+    console.log(rol);
+    if(rol == null){
+      this.showLogin = !this.showLogin;
+    }
+    else{
+      this.showBuy = !this.showBuy;
+    }
   }
 
   
@@ -49,6 +58,7 @@ export class AutomovilDetailComponent implements OnInit {
   ngOnInit() 
   {
     this.showBuy = false;
+    this.showLogin = false;
     this.auto_id = +this.route.snapshot.paramMap.get('id');
     console.log(this.auto_id);
     this.automovil = new Automovil();
