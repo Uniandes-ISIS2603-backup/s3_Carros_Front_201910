@@ -39,7 +39,7 @@ import { FacturaModule } from '../factura/factura.module';
     CompraVentaCreateComponent, 
     CompraVentaEditComponent
   ],
-  exports: [CompraVentaListComponent, CompraVentaDetailComponent],
+  exports: [CompraVentaListComponent, CompraVentaDetailComponent, CompraVentaCreateComponent],
   providers: [CompraVentaService]
 })
 export class CompraVentaModule { }
