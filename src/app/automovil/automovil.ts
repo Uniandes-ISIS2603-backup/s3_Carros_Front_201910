@@ -20,7 +20,7 @@ export class Automovil
 
  idChasis: number; 
 
- matricula: String; 
+ matrcula: String; 
 
  ciudadMatricula: String; 
 

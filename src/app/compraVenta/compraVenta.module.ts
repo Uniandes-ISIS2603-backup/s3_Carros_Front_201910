@@ -30,7 +30,6 @@ import { FacturaModule } from '../factura/factura.module';
       QuejasReclamosModule,
       ClienteModule,
       EmpleadoModule,
-      AutomovilModule,
       FacturaModule
   ],
   declarations: [ 
