@@ -1,61 +1,180 @@
 <div id="papa">
-    <br>
-    <br>
-    <div class="row justify-content-center align-self-center" *ngxPermissionsOnly="['ADMIN']">
-       <button [ngClass]="{ 'btn-primary': !showCreate, 'btn-danger': showCreate }" type="button" class="btn"
-       (click)="showHideCreate()">Agregar un Modelo</button>
-    </div>
-    <br>
-    <br>
-    <div class="container">
-    <div *ngIf="showCreate">
-       <app-modelo-create (cancel)="showHideCreate()" (create)="ngOnInit()"></app-modelo-create>
-    </div>
-    <!--<div class="card mb-3" style="max-width: 40%;" *ngFor="let i of modelos">
-       <div class="row no-gutters">
-         <div class="col-md-4">
-           <img src="..." class="card-img" alt="...">
-         </div>
-         <div class="col-md-8">
-           <div class="card-body">
-             <h5 class="card-title">{{i.nombre}}</h5>
-             <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-             <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+      <br>
+      <br>
+      <div class="row justify-content-center align-self-center" *ngxPermissionsOnly="['ADMIN']">
+         <button [ngClass]="{ 'btn-primary': !showCreate, 'btn-danger': showCreate }" type="button" class="btn"
+         (click)="showHideCreate()">Agregar un Modelo</button>
+      </div>
+      <br>
+      <br>
+      <div class="container">
+      <div *ngIf="showCreate">
+         <app-modelo-create (cancel)="showHideCreate()" (create)="ngOnInit()"></app-modelo-create>
+      </div>
+      <!--<div class="card mb-3" style="max-width: 40%;" *ngFor="let i of modelos">
+         <div class="row no-gutters">
+           <div class="col-md-4">
+             <img src="..." class="card-img" alt="...">
+           </div>
+           <div class="col-md-8">
+             <div class="card-body">
+               <h5 class="card-title">{{i.nombre}}</h5>
+               <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+               <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+             </div>
            </div>
          </div>
-       </div>
-       </div>-->
-    <div class="row text-center text-lg-left">
-       <div class="col-lg-3 col-md-6 mb-4" *ngFor="let i of modelos">
-          <div class="card h-100"style="background: #cccccc;">
-             <img class="card-img-top" src="{{i.imagen}}" alt="" >
-             <div class="card-body" >
-                <h5 class="card-title" >{{i.nombre}}</h5>
-                <ul>
-                   <!---<li>Numero Puertas: {{i.numeroPuertas}}</li>
-                      <li>Trasmision : {{i.trasmision}}</li>
-                      <li>Cilindraje : {{i.cilindraje}}</li>
-                      <li>Combustible : {{i.combustible}}</li>
-                      <li>Traccion : {{i.traccion}}</li>
-                      <li>Direccion : {{i.direccion}}</li>
-                      <li>Frenos ABS : {{i.frenosABS}}</li>
-                      <li>AirBag : {{i.airBag}}</li>
-                      <li>Aire Acondicionado : {{i.aireAc}}</li>
-                      <li>Asientos : {{i.asientos}}</li>
-                      <li>Vidrios : {{i.vidrios}}</li>-->
-                </ul>
-             </div>
-             <div class="card-footer">
-               
-                <a href="/modelos/{{i.modeloId}}" class="btn btn-success" style="margin: 2px">Info</a>
-                <a href="/home" class="btn btn-danger">Automoviles</a>
-             </div>
-          </div>
-       </div>
-    </div>
-    <div class="col-8">
-       <div *ngIf="selectedModelo">
-          <app-modelo-detail [modeloDetail]="selectedModelo"></app-modelo-detail>
-       </div>
-       <div></div>
-    </div>
+         </div>-->
+      <div class="row text-center text-lg-left">
+         <div class="col-lg-3 col-md-6 mb-4" *ngFor="let i of modelos" >
+            <div class="card h-100"style="background: #999999;" id="tarjeta">
+               <img class="card-img-top" src="{{i.imagen}}" alt="" >
+               <div class="card-body" >
+                  <h5 class="card-title" >{{i.nombre}}</h5>
+                  <ul>
+                     <!--<li>Numero Puertas: {{i.modeloID}}</li>
+                        <li>Trasmision : {{i.trasmision}}</li>
+                        <li>Cilindraje : {{i.cilindraje}}</li>
+                        <li>Combustible : {{i.combustible}}</li>
+                        <li>Traccion : {{i.traccion}}</li>
+                        <li>Direccion : {{i.direccion}}</li>
+                        <li>Frenos ABS : {{i.frenosABS}}</li>
+                        <li>AirBag : {{i.airBag}}</li>
+                        <li>Aire Acondicionado : {{i.aireAc}}</li>
+                        <li>Asientos : {{i.asientos}}</li>
+                        <li>Vidrios : {{i.vidrios}}</li>-->
+                  </ul>
+               </div>
+               <div class="card-footer">
+                 <!-- <a class="btn btn-success" style="margin: 2px"(click)="onSelected(i.modeloID)" data-toggle="collapse" href="#Detail" role="button" aria-expanded="false" aria-controls="Detail" >Info</a>-->
+                  
+                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter" (click)="onSelected(i.modeloID)" style="margin: 4px;" id="info">
+                        Info
+                       </button>
+                  <a href="/home" class="btn btn-danger" id="info">Automoviles</a>    
+                  <div class="collapse" id="Detail">
+                     <div *ngIf="selectedModelo">
+                        <app-modelo-detail [modeloDetail]="selectedModelo" ></app-modelo-detail>
+                     </div>
+                     <div></div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+
+           <!-- Modal -->
+          
+           <div class="modal fade bd-example-modal-lg mod" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true"   >
+            <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+              <div class="modal-content">
+               <div class="modal-header">
+                  <div class="row">
+                     <div class="col-1">
+                     </div>
+                     <div class="col">
+                           <h5 class="modal-title" id="exampleModalCenterTitle"><p id="nombreModal">{{selectedModelo.nombre}}</p></h5>
+                     </div>
+                     
+                  </div>
+                 
+                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                 </button>
+               </div>
+               <div class="modal-body">
+                 <div class="row">
+                    <div class="col-5" id="imagenCarro">
+                        <img src="{{selectedModelo.imagen}}" alt="" width="800" height="520" >
+                    </div>
+
+                    <div class="col-7">
+                        <table class="table">
+                              <thead class="thead-dark">
+                                <tr>
+                                  <th scope="col">@</th>
+                                  <th scope="col">Caracteristica</th>
+                                  <th scope="col">Valor</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <th scope="row"><img src="https://image.flaticon.com/icons/svg/59/59802.svg" alt="" width="20" height="20"  ></th>
+                                  <td>Numero Puertas</td>
+                                  <td>{{selectedModelo.numeroPuertas}}</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><i class="material-icons">
+                                          build
+                                          </i></th>
+                                    <td>Trasmisión</td>
+                                    <td>{{selectedModelo.trasmision}}</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><img src="https://img.icons8.com/wired/64/000000/engine.png" width="20" height="20"></th>
+                                    <td>Cilindraje </td>
+                                    <td>{{selectedModelo.cilindraje}}</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><i class="material-icons">
+                                          local_gas_station
+                                          </i></th>
+                                    <td>Combustible</td>
+                                    <td>{{selectedModelo.combustible}}</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><img src="https://img.icons8.com/ios/50/000000/traction-control-filled.png"  width="20" height="20"></th>
+                                    <td>Traccion</td>
+                                    <td>{{selectedModelo.traccion}}</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><img src="http://www.vinilosmania.com/5898-thickbox_default/timon-marinero.jpg"  width="20" height="20"></th>
+                                    <td>Direccion</td>
+                                    <td>{{selectedModelo.direccion}}</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><img src="https://img.icons8.com/ios-glyphs/50/000000/private.png"  width="20" height="20"></th>
+                                    <td>Frenos ABS</td>
+                                    <td>{{selectedModelo.frenosABS}}</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><i class="material-icons">
+                                          cloud
+                                          </i></th>
+                                    <td>AirBag</td>
+                                    <td>{{selectedModelo.airBag}}</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><img src="http://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Aire%3BAvatar_The_Last_Airbender.svg/200px-Aire%3BAvatar_The_Last_Airbender.svg.png"  width="30" height="30"></th>
+                                    <td>Aire Acondicionado</td>
+                                    <td>{{selectedModelo.aireAc}}</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><i class="material-icons">
+                                          airline_seat_recline_normal
+                                          </i></th>
+                                    <td>Asientos</td>
+                                    <td>{{selectedModelo.asientos}}</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><img src="https://img.icons8.com/ios/30/000000/open-window-filled.png"  width="20" height="20"></th>
+                                    <td>Vidrios</td>
+                                    <td>{{selectedModelo.vidrios}}</td>
+                                </tr>
+
+                              </tbody>
+                            </table>
+                            
+                            
+                  
+                     </div>
+                     
+                 </div>
+               </div>
+               <div class="modal-footer">
+                 <button type="button" class="btn btn-success" data-dismiss="modal">Close</button>
+                
+               </div>
+              </div>
+            </div>
+           </div>

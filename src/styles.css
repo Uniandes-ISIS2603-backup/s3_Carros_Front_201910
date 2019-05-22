@@ -20,3 +20,9 @@
     src: url(./assets/FUENTES/Thundergood.ttf);
  }
   
+ @import "../node_modules/ngx-toastr/toastr.css";
+
+ #toast-continer > div
+ {
+    opacity: 1;
+ }

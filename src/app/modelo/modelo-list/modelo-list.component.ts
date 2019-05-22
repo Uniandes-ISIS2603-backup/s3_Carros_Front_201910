@@ -15,6 +15,8 @@ export class ModeloListComponent implements OnInit {
 
  @Input() modelos: Modelo[];
  @Input() marcaId: string;
+
+  ids: Number[];
  
   showView: boolean; 
 
@@ -22,10 +24,18 @@ export class ModeloListComponent implements OnInit {
 
   selectedModelo: Modelo;
 
-  modelo_id: number
+  modelo_id: number;
   
   
-  
+ /** modeloId(): void
+  {
+    var i =0;
+    for(; i< this.modelos.length; i++)
+    {
+      this.ids[i+1] = this.modelos[i].modeloId; 
+    }
+  }
+   */
   onSelected(modelo_id: number): void
   {
     this.showCreate = false; 
@@ -47,6 +57,7 @@ export class ModeloListComponent implements OnInit {
   getModelos(): void
   {
     this.modeloService.getModelosPorMarca(this.marcaId).subscribe(mode => this.modelos = mode);
+   
   }
   
   
@@ -63,6 +74,7 @@ export class ModeloListComponent implements OnInit {
     this.selectedModelo= undefined;
     this.modelo_id = undefined;
       this.getModelos();
+      //this.modeloId();
   }
 
 }

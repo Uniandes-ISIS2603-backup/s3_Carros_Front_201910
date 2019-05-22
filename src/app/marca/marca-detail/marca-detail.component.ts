@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import {MarcaService} from '../marca.service';
 import {MarcaDetail} from '../marca-detail'; 
+import {Marca} from '../marca';
 
 @Component({
   selector: 'app-marca-detail',
@@ -11,6 +12,8 @@ import {MarcaDetail} from '../marca-detail';
 export class MarcaDetailComponent implements OnInit {
 
   @Input() marcaDetail: MarcaDetail;
+
+  @Input() marcas: Marca[];
 
   constructor(
     private marcaService: MarcaService,
@@ -24,6 +27,16 @@ export class MarcaDetailComponent implements OnInit {
       this.marcaDetail=obser
     });
   }
+
+  getMarcas():void
+  {
+    this.marcaService.getMarcas().subscribe(
+      obser => 
+      {
+        this.marcas = obser
+      }
+    );
+  }
   ngOnInit() 
   {
     this.marca_id =+ this.route.snapshot.paramMap.get('id');
@@ -31,6 +44,7 @@ export class MarcaDetailComponent implements OnInit {
     {
       this.marcaDetail = new MarcaDetail();
       this.getMarcaDetail();
+      this.getMarcas();
     }
   }
 
