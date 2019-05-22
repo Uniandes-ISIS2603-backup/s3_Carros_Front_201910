@@ -26,8 +26,12 @@ export class AuthService {
             this.setGuestRole();
         } else if (role === 'ADMIN') {
             this.setAdministratorRole();
-        } else {
+        } else if(role== 'CLIENT') {
             this.setClientRole();
+        }
+        else
+        {
+            this.setEmployerRole();
         }
     }
 
@@ -48,6 +52,12 @@ export class AuthService {
         localStorage.setItem('role', 'ADMIN');
     }
 
+    setEmployerRole():void
+    {
+        this.roleService.flushRoles();
+        this.roleService.addRole('EMPLOY',['leave_review']);
+        localStorage.setItem('role','EMPLOY');
+    }
     printRole (): void {
         console.log(this.roleService.getRoles());
     }
@@ -59,8 +69,12 @@ export class AuthService {
     login (role): void {
         if (role === 'Administrator') {
             this.setAdministratorRole();
-        } else {
+        } else if(role == 'Client') {
             this.setClientRole()
+        }
+        else
+        {
+            this.setEmployerRole();
         }
         this.router.navigateByUrl('/');
     }

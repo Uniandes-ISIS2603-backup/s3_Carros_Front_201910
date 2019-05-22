@@ -34,6 +34,7 @@ import {ClienteCreateComponent} from '../cliente/cliente-create/cliente-create.c
 
 import {CompraVentaListComponent} from '../compraVenta/compraVenta-list/compraVenta-list.component';
 import {CompraVentaDetailComponent} from '../compraVenta/compraVenta-detail/compraVenta-detail.component';
+import {CompraVentaCreateComponent} from '../compraVenta/compraVenta-create/compraVenta-create.component':
 
 import {FacturaDetailComponent} from '../factura/factura-detail/factura-detail.component';
 import {FacturaListComponent} from '../factura/factura-list/factura-list.component';
@@ -54,7 +55,11 @@ const routes: Routes = [
     },
      {
       path: ':id',
-      component: PuntoVentaDetailComponent
+      component: PuntoVentaDetailComponent,
+      children:[{
+        path:'marca',
+        redirectTo:'marca'
+      }]
       
     }
   ]
@@ -142,7 +147,11 @@ const routes: Routes = [
   children:[
     {
       path: 'list',
-      component: CompraVentaListComponent
+      component: CompraVentaListComponent,
+    },
+    {
+      path: 'create',
+      component: CompraVentaCreateComponent
     },
     {
       path: ':id',

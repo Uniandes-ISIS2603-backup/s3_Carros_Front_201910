@@ -20,6 +20,12 @@ export class ModeloService {
     return this.http.get<Modelo[]>(API_BACK + resource);
   }
 
+  getModelosPorMarca(marca:string): Observable<Modelo[]>
+  {
+    return this.http.get<Modelo[]>(`${API_BACK}/marcas/${marca}${resource}`);
+  }
+
+
   getModeloDetail(modeloId): Observable<ModeloDetail>
   {
     return this.http.get<ModeloDetail>(API_BACK+ resource+ '/' + modeloId);

@@ -14,8 +14,9 @@ export class ModeloListComponent implements OnInit {
 //
 
  @Input() modelos: Modelo[];
+ @Input() marcaId: string;
  
-    showView: boolean; 
+  showView: boolean; 
 
   showCreate: boolean; 
 
@@ -45,7 +46,7 @@ export class ModeloListComponent implements OnInit {
 
   getModelos(): void
   {
-    this.modeloService.getModelos().subscribe(mode => this.modelos = mode);
+    this.modeloService.getModelosPorMarca(this.marcaId).subscribe(mode => this.modelos = mode);
   }
   
   

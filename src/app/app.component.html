@@ -27,7 +27,7 @@
             <!-- Dropdown -->
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
-                    aria-haspopup="true" aria-expanded="false" style="color: #ffffff">Catalogo</a>
+                    aria-haspopup="true" aria-expanded="false" style="color: #ffffff" >Catalogo</a>
                 <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
                     <a class="dropdown-item" routerLink="marca/list">Marcas</a>
                     <a class="dropdown-item" routerLink="modelo/list">Modelo</a>
@@ -38,7 +38,7 @@
 
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
-                    aria-haspopup="true" aria-expanded="false" style="color: #ffffff">Compras</a>
+                    aria-haspopup="true" aria-expanded="false" style="color: #ffffff"  *ngxPermissionsOnly="['ADMIN']">Compras</a>
                 <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
                     <a class="dropdown-item" routerLink="factura/list">Facturas</a>
                     <a class="dropdown-item" routerLink="compraVentas/list">Todas las compras</a>
@@ -46,19 +46,32 @@
                 </div>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#" style="color: #ffffff" routerLink="quejasReclamos/list">Quejas</a>
+                <a class="nav-link" href="#" style="color: #ffffff" routerLink="quejasReclamos/list"  *ngxPermissionsOnly="['ADMIN']">Quejas</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#" style="color: #ffffff" routerLink="clientes/list">Clientes</a>
+                <a class="nav-link" href="#" style="color: #ffffff" routerLink="clientes/list"  *ngxPermissionsOnly="['ADMIN']">Clientes</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#" style="color: #ffffff" routerLink="empleados/list">Empleados</a>
+                <a class="nav-link" href="#" style="color: #ffffff" routerLink="empleados/list"  *ngxPermissionsOnly="['ADMIN']" >Empleados</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#" style="color: #ffffff" routerLink="registros/list">Registros</a>
+                <a class="nav-link" href="#" style="color: #ffffff" routerLink="registros/list"  *ngxPermissionsOnly="['ADMIN']">Ventas</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#" style="color: #ffffff" routerLink="compraVentas/list"  *ngxPermissionsOnly="['EMPLOY']">Verficique sus ventas</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#" style="color: #ffffff" routerLink="compraVentas/create"  *ngxPermissionsOnly="['EMPLOY']">Crear una nueva venta</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#" style="color: #ffffff" routerLink="automovil/list"  *ngxPermissionsOnly="['CLIENT']">Tus carros</a>
+            </li>
+            
             <li class="nav-item">
                 <a class="nav-link" routerLink="punto-venta/list" style="color: #ffffff">Puntos de venta</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#" style="color: #ffffff" routerLink="clientes/1"  *ngxPermissionsOnly="['CLIENT']">Mi perfil</a>
             </li>
         </ul>
 
@@ -70,9 +83,9 @@
                             <li ><a id="login-navbar-item" routerLink="/auth/login"  id="rolusuario"><span class="fa fa-sign-in"></span>Login</a></li>
                         </div>
                     </div>
-                    <div class="flex-row" *ngxPermissionsOnly="['CLIENT', 'ADMIN']">
+                    <div class="flex-row" *ngxPermissionsOnly="['CLIENT', 'ADMIN', 'EMPLOY']">
                         <div class="form-inline">
-                            <li><a id="logout-navbar-item" (click)="logout()"  routerLink="/home"id="rolusuario"><span class="fa fa-sign-out"></span>Logout</a></li>
+                            <li><a id="logout-navbar-item" (click)="logout()"  routerLink="home"id="rolusuario"><span class="fa fa-sign-out"></span>Logout</a></li>
                         </div>
                     </div>
                     

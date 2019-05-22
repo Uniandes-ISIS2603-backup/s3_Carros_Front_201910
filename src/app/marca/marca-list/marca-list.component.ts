@@ -1,4 +1,6 @@
 import { Component, OnInit, Input, OnChanges } from '@angular/core';
+import {ActivatedRoute} from '@angular/router';
+import 'rxjs/add/operator/filter';
 import {Marca} from '../marca';
 import {MarcaService} from '../marca.service';
 import {MarcaDetail} from '../marca-detail';
@@ -8,11 +10,11 @@ import {MarcaDetail} from '../marca-detail';
   templateUrl: './marca-list.component.html',
   styleUrls: ['./marca-list.component.css']
 })
-export class MarcaListComponent implements OnInit, OnChanges {
-
-  constructor(private marcaService: MarcaService) { }
+export class MarcaListComponent implements OnInit, OnChanges 
+{
 
   @Input() marcas: Marca[];
+  constructor(private marcaService: MarcaService, private route: ActivatedRoute) { }
 
   showView: boolean; 
 
@@ -21,6 +23,8 @@ export class MarcaListComponent implements OnInit, OnChanges {
   slectedMarca: Marca;
 
   marca_id: number; 
+
+  allmarcas: string = 'no';
 
   onSelected(marca_id: number): void
   {
@@ -55,17 +59,24 @@ export class MarcaListComponent implements OnInit, OnChanges {
 
 
   ngOnInit() {
-    if(this.marcas == null)
-    {
-    this.showCreate= false; 
-    this.slectedMarca= undefined;
-    this.marca_id = undefined;
-    this.getMarcas();
-    }
-  }
+    //console.log("--------------");
+    //this.route.queryParams.filter(params => params.allmarcas == 'yes').subscribe(params => {
+      //      console.log(params);
+        //    console.log("mkkkkkkkkkkkkkkkk!");
+         //   this.allmarcas = params.allmarcas;
+          //  console.log(this.allmarcas);
+        //});
+      //console.log("NO LLEGO DEPUES DEL ROUTE");
+    /* if (this.allmarcas == 'yes') {
+        console.log("allbooks");
 
-  ngOnChanges(){
-    console.log("paso por aca" + this.marcas);
-  }
+        this.getMarcas();
+        }
+      */
+
+     this.slectedMarca= undefined;
+     this.marca_id = undefined;
+     this.getMarcas();
+    }
 
 }
