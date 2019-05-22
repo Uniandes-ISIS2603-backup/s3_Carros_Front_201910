@@ -2,13 +2,16 @@
     <div class="container-fluid"> 
         <p class="h4 p-3"> CompraVenta número {{compraVentaDetail.ventaID}}</p>
         <div class="row border margin">
-            <p>{{compraVentaDetail.calificacionCompra}}</p>
-            <p>{{compraVentaDetail.fecha}}</p>
-            <p>{{compraVentaDetail.pagado}}</p>
-            <p>{{compraVentaDetail.factura}}</p>
-            <p>{{compraVentaDetail.Automovil}}</p>
-            <p>{{compraVentaDetail.Empleado}}</p>
-            <p>{{compraVentaDetail.Cliente}}</p>
+          <table class="table">
+            <tr>Calificación: {{compraVentaDetail.calificacionCompra}}</tr>
+            <tr>Fecha Compra: {{compraVentaDetail.fecha}} </tr>
+            <tr>Pagado: {{compraVentaDetail.pagado}} </tr>
+            <tr>Factura ID: {{compraVentaDetail.factura.facturaID}}</tr>
+            <tr>Automovil ID: {{compraVentaDetail.Automovil.autoID}}</tr>
+            <tr>Empleado ID: {{compraVentaDetail.Empleado.empleadoID}}</tr>
+            <tr>Cliente ID: {{compraVentaDetail.Cliente}}</tr>
+            <tr>Punto de venta ID: {{compraVentaDetail.puntoVenta.id}}</tr>
+          </table>
         </div>
         <div class="btn-group btn-group-toggle" data-toggle="buttons">
                 <a class="btn btn-danger" data-toggle="collapse" href="#QuejasList" role="button" aria-expanded="false" aria-controls="QuejasList">

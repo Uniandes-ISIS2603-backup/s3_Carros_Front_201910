@@ -45,6 +45,9 @@ export class CompraVentaCreateComponent implements OnInit {
     this.compraVentaService.createCompraVenta(this.compraVenta)
         .subscribe((laCompraVenta) => {
             this.compraVenta = laCompraVenta;
+            var f = new Date();
+            var fechaCompra = f.getFullYear() + "-" + (f.getMonth()+1) + "-" + f.getDate()
+            this.compraVenta.fecha = fechaCompra;
             this.create.emit();
             this.toastrService.success("The compraVenta was created", "CompraVenta creation");
         }, err => {
