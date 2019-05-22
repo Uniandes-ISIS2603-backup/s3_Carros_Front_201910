@@ -8,6 +8,32 @@ th{
 }
 
 #papa{
-  background: #cccccc;
+  background:none;
+}
+
+#info
+{
+  align-self: center;
+}
+
+#nombreModal
+{
+  font-family: strude;
+  text-align: center;
+  font-size: 1.5em; 
+ 
+}
+
+#imagenCarro
+{
+  position: relative;  right: 500px; bottom: 35px;
+  float: left;
+  
+}
+
+#tarjeta
+{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  opacity: 0.9;
 }
 

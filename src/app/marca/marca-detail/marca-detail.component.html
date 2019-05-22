@@ -1,7 +1,36 @@
-<diV id="fondo">
-<div class="continer-fluid" >
-  <div class="row">
-        <div id="botones">
+<diV id="fondo" >
+    <div class="continer-fluid" id="marcaAgua">
+        <div class="row" style="align-content: center" >
+            <div class="col">
+                <img class="card-img-top" src="" id="icon">
+                <p id="marcaName"> {{marcaDetail.nombreMarca}}</p>
+            </div>
+        </div>
+        <div class="row" >
+                <img src="{{marcaDetail.logo}}"  width="550" height="700" id="logo">
+            <div class="col-11"  id="oscuro" >
+                <app-modelo-list [modelos]="marcaDetail.modelos" [marcaId]="marca_id"></app-modelo-list>
+            </div>
+            <div id="myNav" class="overlay">
+                <!-- Button to close the overlay navigation -->
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <!-- Overlay content -->
+                <div class="row">
+                    <div class="overlay-content col " *ngFor="let i of marcas">
+                        <a href="./marca/{{i.idMarca}}"><img class="cachom" src="{{i.logo}}" width="250"
+                                height="175"></a>
+                    </div>
+                </div>
+            </div>
+            <!-- Use any element to open/show the overlay navigation menu -->
+            <div id="mySidenav" class="sidenav">
+                <a id="blog"> <span onclick="openNav()">MARCAS</span></a>
+            </div>
+            
+        </div>
+    </div>
+</diV>
+<!-- <div id="botones">
             <img class="card-img-top" src="{{marcaDetail.logo}}" id="icon" >
             <div class="btn-group-vertical boton" role="group" aria-label="Basic example" id="">
                 <button type="button" class="btn btn-outline-secondary boton" id="model">
@@ -35,13 +64,4 @@
                 </button>
               </div>
         </div>
-            <div class="col-10" >
-                <app-modelo-list [modelos]="marcaDetail.modelos" [marcaId] = "marca_id"></app-modelo-list>
-            </div>
-    </div>   
-</div>
-</diV>  
-
-
-
-    
+    -->

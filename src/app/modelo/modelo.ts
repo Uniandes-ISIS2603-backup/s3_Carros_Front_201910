@@ -1,6 +1,6 @@
 export class Modelo 
 {
-  modeloId:number; 
+  modeloID:number; 
   
   nombre: String;
   
