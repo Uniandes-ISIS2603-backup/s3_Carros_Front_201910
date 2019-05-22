@@ -26,11 +26,11 @@ export class AutomovilService {
   
   getAutomovilDetail(autoID): Observable<Automovil>
   {
-      return this.http.get<Automovil>(API_BACK+ resource+ '/' + autoID);
+      return this.http.get<Automovil>(API_BACK+ resource + '/' + autoID);
   }
   
     updateAutomovil(auto): Observable<Automovil> {
-        return this.http.put<Automovil>(API_BACK + resource + '/' + auto.autoID, auto);
+        return this.http.put<Automovil>(API_BACK + resource + '/' + auto.autoId, auto);
     } 
 
 }

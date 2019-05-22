@@ -1,10 +1,12 @@
+import { Modelo } from "../modelo/modelo";
+import { Registros } from "../registros/registros";
 
 
 export class Automovil 
 {
- autoID: number;
+ autoId: number;
  
- rutaImagen: String;
+ imagen: String;
 
  disponible: boolean; 
 
@@ -12,7 +14,7 @@ export class Automovil
 
  referencia: String; 
 
- anio: Date; 
+ anio: number; 
 
  recorrido: number; 
 
@@ -20,16 +22,15 @@ export class Automovil
 
  idChasis: number; 
 
- matricula: String; 
+ matrcula: String; 
 
- ciudadMatricula: String; 
+ cuidadMatricula: String; 
 
  precioVenta: number; 
 
- puntoventaID: number;
+ puntoVentaID: number;
+ 
+ modelo: Modelo;
 
-
-getAnio(){
-    this.anio.getFullYear();
-}
+ registroCompra: Registros;
 }

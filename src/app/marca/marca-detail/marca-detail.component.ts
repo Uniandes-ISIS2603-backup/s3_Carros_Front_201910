@@ -3,6 +3,7 @@ import { ActivatedRoute, Params } from '@angular/router';
 import {MarcaService} from '../marca.service';
 import {MarcaDetail} from '../marca-detail'; 
 
+
 @Component({
   selector: 'app-marca-detail',
   templateUrl: './marca-detail.component.html',
@@ -18,12 +19,15 @@ export class MarcaDetailComponent implements OnInit {
   ) { }
 
   marca_id: number; 
+
   getMarcaDetail():void
   {
     this.marcaService.getMarcasDetail(this.marca_id).subscribe(obser => {
       this.marcaDetail=obser
     });
   }
+
+
   ngOnInit() 
   {
     this.marca_id =+ this.route.snapshot.paramMap.get('id');

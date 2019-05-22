@@ -14,7 +14,6 @@ import { CompraVentaEditComponent } from './compraVenta-edit/compraVenta-edit.co
 import { QuejasReclamosModule } from '../quejasReclamos/quejas-reclamos.module';
 import { ClienteModule } from '../cliente/cliente.module';
 import { EmpleadoModule } from '../empleado/empleado.module';
-import { AutomovilModule } from '../automovil/automovil.module';
 import { FacturaModule } from '../factura/factura.module';
 
 //import { Router, RouterModule} from '@angular/router';
@@ -30,7 +29,6 @@ import { FacturaModule } from '../factura/factura.module';
       QuejasReclamosModule,
       ClienteModule,
       EmpleadoModule,
-      AutomovilModule,
       FacturaModule
   ],
   declarations: [ 
@@ -39,7 +37,7 @@ import { FacturaModule } from '../factura/factura.module';
     CompraVentaCreateComponent, 
     CompraVentaEditComponent
   ],
-  exports: [CompraVentaListComponent, CompraVentaDetailComponent],
+  exports: [CompraVentaListComponent, CompraVentaDetailComponent, CompraVentaCreateComponent],
   providers: [CompraVentaService]
 })
 export class CompraVentaModule { }

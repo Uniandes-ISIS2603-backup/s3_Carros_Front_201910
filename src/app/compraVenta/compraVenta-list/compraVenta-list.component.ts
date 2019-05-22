@@ -34,7 +34,7 @@ export class CompraVentaListComponent implements OnInit {
   /**
    * Shows or hides the create component
    */
-  showCreate: boolean;
+  @Input() showCreate: boolean;
 
   /**
    * Shows or hides the edit component.
@@ -112,7 +112,7 @@ export class CompraVentaListComponent implements OnInit {
    * This method will be called when the component is created
    */
   ngOnInit() {
-    this.showCreate = false;
+    this.showCreate = true;
     this.showEdit = false;
     this.getCompraVentas();
    }

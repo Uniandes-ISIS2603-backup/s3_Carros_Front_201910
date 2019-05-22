@@ -6,34 +6,19 @@
 <br>
 <br>
 <div class="container">
-    <div *ngIf="showCreate">
-        <app-automovil-create (cancel)="showHideCreate()" (create)="ngOnInit()"></app-automovil-create>
-        </div>
-        <div class="row text-center text-lg-left">
-                <div class="col-lg-3 col-md-6 mb-4" *ngFor="let i of automoviles">
-         
-                    <div class="card h-100">   
-                        <a routerLink="/marcas/{{i.autoID}}">
-                            <img class="card-img-top" src="{{i.rutaImagen}}" alt="">
-                            
-                        </a>
-                        <div class="card-body">
-                            <h4 class="card-title">{{i.matricula}}</h4>
-                            <h5 class="card-text">{{i.precioVenta}}</h5>
-                            <h6 class="card-text">{{i.anio}}</h6>
-                        </div>
-                        <div class="card-footer">
-                            
-                            <a class="btn btn-danger btn-block"  (click) ="onSelected(i.id)">Detalles</a>
-                        </div>
-                              
+    <div class="row text-center text-lg-left">
+        <div class="col-lg-3 col-md-6 mb-4" *ngFor="let auto of automoviles">
+            <div class="card h-100">   
+                <img class="card-img-top" src="https://postmediadriving.files.wordpress.com/2019/04/chrome-image-402046.png?w=800&h=520&crop=1" alt="">
+                <div class="card-body">
+                    <h4 class="card-title">${{auto.precioVenta}} COP</h4>
+                    <h6 class="card-text">{{auto.anio}} | {{auto.recorrido}} km</h6>
+                    <h6 class="card-text"></h6>
+                </div>
+                <div class="card-footer text-center">
+                    <button type="button" class="figure-caption btn btn-info" routerLink="/automovil/{{auto.autoId}}">Detalles</button>
                 </div>
             </div>
-    <div class="col-8">
-            <div *ngIf="selectedAuto">
-                    <app-automovil-detail [automovil]="selectedAuto"></app-automovil-detail>
-                </div>
-               
-    <div></div>
-
-
+        </div>
+    </div>
+</div>

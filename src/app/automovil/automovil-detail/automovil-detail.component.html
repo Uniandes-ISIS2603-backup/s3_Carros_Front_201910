@@ -1,3 +1,66 @@
-<p>
-punt-venta-detail works!
-</p>
+<br>
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col-7">
+            <div class="card">
+                <img class="card-img-top" src="https://postmediadriving.files.wordpress.com/2019/04/chrome-image-402046.png?w=800&h=520&crop=1" width="500" height="500"> 
+                <div class="card-body">
+                        <table class="table">
+                                <tr>
+                                    <td><strong>Matrícula</strong></td>
+                                    <td>{{automovil.matrcula}}</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Modelo</strong></td>
+                                    <td>{{automovil.modelo.nombre}}</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Año</strong></td>
+                                    <td>{{automovil.anio}}</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Tipo</strong></td>
+                                    <td>{{automovil.tipo}}</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Referencia</strong></td>
+                                    <td>{{automovil.referencia}}</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Color</strong></td>
+                                    <td>{{automovil.color}}</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Chasis</strong></td>
+                                    <td>{{automovil.idChasis}}</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Ciudad matrícula</strong></td>
+                                    <td>{{automovil.cuidadMatricula}}</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Punto de venta</strong></td>
+                                    <td>{{automovil.puntoVentaID}}</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Recorrido</strong></td>
+                                    <td>{{automovil.recorrido}}</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Disponible</strong></td>
+                                    <td *ngIf="{{automovil.disponible}}; else noDis ">Sí <ng-template #noDis>No</ng-template></td>                                    
+                                </tr>
+                                </table>
+                </div>               
+            </div>
+        </div>
+        <div class="col-5">
+            <button type="button" class="btn btn-primary" (click)="showHideBuy()">Comprar</button>
+            <div *ngIf="showBuy">
+                <app-compraVenta-create></app-compraVenta-create>
+            </div> 
+        </div>
+    </div>   
+</div>
+

@@ -33,8 +33,8 @@ export class AutomovilListComponent implements OnInit {
   {
     this.showCreate = false; 
     this.auto_id = auto_id;
-      this.selectedAuto = new Automovil();
-      this.getAutomovilDetail();
+    this.selectedAuto = new Automovil();
+    this.getAutomovilDetail();
   }
   
   
@@ -63,7 +63,10 @@ export class AutomovilListComponent implements OnInit {
     this.showCreate= false; 
     this.selectedAuto= undefined;
     this.auto_id = undefined;
-      this.getAutomoviless();
+    console.log("ANTES DEL GET ngOnInit");
+    this.getAutomoviless();
+    console.log("DESPUES DEL GET ngOnInit");
+    
   }
 
 }

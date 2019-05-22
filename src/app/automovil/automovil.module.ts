@@ -9,6 +9,8 @@ import { AutomovilDetailComponent } from './automovil-detail/automovil-detail.co
 import{AppRoutingModule} from '../app-routing/app-routing.module';
 import { AutomovilCreateComponent } from './automovil-create/automovil-create.component';
 import { AutomovilEditComponent } from './automovil-edit/automovil-edit.component';
+import { CompraVentaModule } from '../compraVenta/compraVenta.module';
+
 
 
 
@@ -16,9 +18,10 @@ import { AutomovilEditComponent } from './automovil-edit/automovil-edit.componen
   imports: [
     CommonModule, 
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    CompraVentaModule
   ],
-  declarations: [AutomovilListComponent, AutomovilDetailComponent, AutomovilCreateComponent, AutomovilEditComponent],
+  declarations: [AutomovilListComponent, AutomovilDetailComponent, AutomovilCreateComponent, AutomovilEditComponent ],
     exports: [AutomovilListComponent, AutomovilCreateComponent],
   providers: [AutomovilService]
 })
