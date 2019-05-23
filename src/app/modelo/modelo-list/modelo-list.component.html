@@ -33,7 +33,7 @@
               (click)="onSelected(i.modeloID)" style="margin: 4px;" id="info">
               Info
             </button>
-            <a href="/home" class="btn btn-danger" id="info">Automoviles</a>
+            <a href="../automovil/list" class="btn btn-danger" id="info">Automoviles</a>
             <div class="collapse" id="Detail">
               <div *ngIf="selectedModelo">
                 <app-modelo-detail [modeloDetail]="selectedModelo"></app-modelo-detail>
@@ -188,7 +188,7 @@
             </div>
             <div class="modal-body">
                 <div *ngIf="showCreate">
-                    <app-modelo-create (cancel)="showHideCreate()" (create)="ngOnInit()"></app-modelo-create>
+                    <app-modelo-create (cancel)="showHideCreate()" (create)="ngOnInit()" [marcaId]="marcaId"></app-modelo-create>
                   </div>
             </div>
             

@@ -1,9 +1,11 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { DatePipe } from '@angular/common';
 import {ToastrService} from 'ngx-toastr';
+import { ActivatedRoute, Params } from '@angular/router';
 
 import { ModeloService } from '../modelo.service';
 import { Modelo } from '../modelo';
+import { Marca } from '../../marca/marca';
 
 @Component({
     selector: 'app-modelo-create',
@@ -21,7 +23,8 @@ export class ModeloCreateComponent implements OnInit {
     constructor(
         private dp : DatePipe,
         private modeloService: ModeloService,
-        private toastrService: ToastrService
+        private toastrService: ToastrService,
+        private route: ActivatedRoute
       
     ) { }
 
@@ -29,6 +32,8 @@ export class ModeloCreateComponent implements OnInit {
     * The new modelo
     */
     modelo: Modelo;
+
+    marca: number; 
 
     /**
     * The output which tells the parent component
@@ -41,7 +46,7 @@ export class ModeloCreateComponent implements OnInit {
     * that the user created a new modelo
     */
     @Output() create = new EventEmitter();
-
+    @Input() marcaId: string;
 
     prueba(){
         console.log(this.modelo);
@@ -54,7 +59,8 @@ export class ModeloCreateComponent implements OnInit {
     */
     createModelo(): Modelo {
         console.log(this.modelo);
-        this.modeloService.createModelo(this.modelo).subscribe((model)=>
+        
+        this.modeloService.createModelo(this.modelo, this.marcaId).subscribe((model)=>
         { 
           this.modelo = model; 
           this.create.emit();
@@ -62,6 +68,11 @@ export class ModeloCreateComponent implements OnInit {
     
         });
         return this.modelo; 
+    }
+
+    asignarMarca()
+    {
+        
     }
 
     /**
