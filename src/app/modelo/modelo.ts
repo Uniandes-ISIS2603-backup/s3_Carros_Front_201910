@@ -1,5 +1,3 @@
-import { Marca } from "../marca/marca";
-
 export class Modelo 
 {
   modeloID:number; 
@@ -29,6 +27,4 @@ export class Modelo
   asientos: String; 
 
   vidrios: String; 
-
-  
 }

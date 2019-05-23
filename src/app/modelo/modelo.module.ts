@@ -16,14 +16,12 @@ import { AutomovilModule } from '../automovil/automovil.module';
 
 
 
-
 @NgModule({
   imports: [
     CommonModule, 
     FormsModule,
     AppRoutingModule,
     AutomovilModule,
-    
     NgxPermissionsModule    
 
   ],

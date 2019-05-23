@@ -156,7 +156,7 @@ const routes: Routes = [
     },
     {
       path: 'compro',
-      component: CompraAutoComponent 
+      component: CompraAutoComponent
     },
     {
       path: ':id',
