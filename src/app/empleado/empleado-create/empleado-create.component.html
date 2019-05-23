@@ -28,7 +28,7 @@
       </div>
       <div class="form-group">
         <label for="pvEmpleado"><b>Punto de Venta</b></label>
-        <select class="custom-select" name="pvEmpleado" id="pvEmpleado" [(ngModel)]="empleado.puntoVenta.id"  #pvEmpleado="ngModel" [ngClass]="{ 'is-invalid': f.submitted && pvEmpleado.invalid }" required>
+        <select class="custom-select" name="pvEmpleado" id="pvEmpleado" [(ngModel)]="empleadoNuevo.puntoVenta.id"  #pvEmpleado="ngModel" [ngClass]="{ 'is-invalid': f.submitted && pvEmpleado.invalid }" required>
           <option [value]="puntoVenta.id" *ngFor="let puntoVenta of puntosVenta ">{{puntoVenta.direccion}}</option>
         </select>
         <div class="invalid-feedback"> 

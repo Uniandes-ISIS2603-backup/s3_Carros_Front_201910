@@ -50,7 +50,7 @@ export class CompraVentaDetailComponent implements OnInit
    * We need to initialize the editorial so it is never considered as undefined
    */
   ngOnInit() {
-    this.ventaID = +this.route.snapshot.paramMap.get('ventaID');
+    this.ventaID = +this.route.snapshot.paramMap.get('id');
     this.compraVentaDetail = new CompraVentaDetail();
     this.getCompraVentaDetail();
   }

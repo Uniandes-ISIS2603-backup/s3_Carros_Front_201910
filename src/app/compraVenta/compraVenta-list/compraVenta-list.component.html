@@ -19,7 +19,7 @@
                 <tbody>
                     <tr *ngFor="let q of compraVentas">
                         <td style="cursor: pointer;"> 
-                            <a class="figure-caption" (click)="onSelected(q.ventaID)">Venta {{q.ventaID}}</a>
+                            <a class="figure-caption" routerLink="/compraVentas/{{q.ventaID}}" >Venta {{q.ventaID}}</a>
                         </td>
                         <td >
                             <button class="btn btn-primary" (click)="showHideEdit(q.ventaID)"><span class="fa fa-pencil"></span></button>
@@ -43,3 +43,4 @@
         </div>
     </div>
 </div>
+<!--(click)="onSelected(q.ventaID)"-->
