@@ -31,11 +31,15 @@ export class ModeloService {
     return this.http.get<ModeloDetail>(API_BACK+ resource+ '/' + modeloId);
   }
   
-  createModelo(modelo): Observable<Modelo>
+  createModelo(modelo, marcaid: string): Observable<Modelo>
   {
-      return this.http.post<Modelo>(API_BACK + resource, modelo);
+      return this.http.post<Modelo>(`${API_BACK}/marcas/${marcaid}${resource}`, modelo);
   }
   
+  asignarMarca()
+  {
+    
+  }
     updateModelo(modelo): Observable<ModeloDetail> {
         return this.http.put<ModeloDetail>(API_BACK + resource + '/' + modelo.modeloId, modelo);
     } 
