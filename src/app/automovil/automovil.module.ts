@@ -13,7 +13,6 @@ import { CompraVentaModule } from '../compraVenta/compraVenta.module';
 import { AuthModule } from '../auth/auth.module';
 
 
-
 @NgModule({
   imports: [
     CommonModule, 

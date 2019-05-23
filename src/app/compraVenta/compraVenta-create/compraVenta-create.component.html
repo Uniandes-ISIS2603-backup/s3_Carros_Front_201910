@@ -33,7 +33,7 @@
                   <div class="form-group">
                       <label for="pvCompraVenta"><b>Punto de Venta</b></label>
                       <select class="custom-select" name="pvCompraVenta" id="pvCompraVenta" [(ngModel)]="compraVenta.puntoVenta.id"  #pvCompraVenta="ngModel" [ngClass]="{ 'is-invalid': f.submitted && pvCompraVenta.invalid }" required>
-                        <option [value]="puntoVenta.id" *ngFor="let puntoVenta of puntosVenta ">{{puntoVenta.direccion}}</option>
+                        <option [value]="puntoVenta.id" *ngFor="let puntoVenta of puntosVenta" >{{puntoVenta.direccion}}</option>
                       </select>
                       <div class="invalid-feedback"> 
                         <div>Debe asignar un punto de venta a la compra</div>
@@ -116,7 +116,7 @@
             </div>
             <br>
             <div class="row form-inline justify-content-center align-self-center">
-                <button type="submit" class="btn btn-primary" routerLink="/compraVentas/{{compraVenta.ventaID}}">Crear</button>
+                <button type="submit" class="btn btn-primary" routerLink="/compraVentas/compro">Crear</button>
                 <div class="divider"></div>
                 <button type="button" class="btn btn-danger" (click)="cancelCreation()">Cancelar</button>
             </div>

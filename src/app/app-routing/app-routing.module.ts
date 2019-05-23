@@ -40,6 +40,7 @@ import {FacturaDetailComponent} from '../factura/factura-detail/factura-detail.c
 import {FacturaListComponent} from '../factura/factura-list/factura-list.component';
 
 import {HomeComponent} from '../home/home-main/home.component';
+import { CompraAutoComponent } from '../compraVenta/compra-auto/compra-auto.component';
 
 const routes: Routes = [
   {
@@ -154,9 +155,14 @@ const routes: Routes = [
       component: CompraVentaCreateComponent
     },
     {
+      path: 'compro',
+      component: CompraAutoComponent
+    },
+    {
       path: ':id',
       component: CompraVentaDetailComponent
     }
+    
   ]
 },
 {

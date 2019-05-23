@@ -16,6 +16,7 @@ import { ClienteModule } from '../cliente/cliente.module';
 import { EmpleadoModule } from '../empleado/empleado.module';
 import { AutomovilModule } from '../automovil/automovil.module';
 import { FacturaModule } from '../factura/factura.module';
+import { CompraAutoComponent } from './compra-auto/compra-auto.component';
 
 //import { Router, RouterModule} from '@angular/router';
 
@@ -36,9 +37,9 @@ import { FacturaModule } from '../factura/factura.module';
     CompraVentaListComponent, 
     CompraVentaDetailComponent, 
     CompraVentaCreateComponent, 
-    CompraVentaEditComponent
+    CompraVentaEditComponent, CompraAutoComponent
   ],
-  exports: [CompraVentaListComponent, CompraVentaDetailComponent, CompraVentaCreateComponent],
+  exports: [CompraVentaListComponent, CompraVentaDetailComponent, CompraVentaCreateComponent, CompraAutoComponent],
   providers: [CompraVentaService]
 })
 export class CompraVentaModule { }
