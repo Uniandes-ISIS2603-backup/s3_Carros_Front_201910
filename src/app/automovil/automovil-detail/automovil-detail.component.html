@@ -8,6 +8,10 @@
                 <div class="card-body">
                         <table class="table">
                                 <tr>
+                                    <td><strong>Id</strong></td>
+                                    <td>{{automovil.autoId}}</td>
+                                </tr>
+                                <tr>
                                     <td><strong>Matrícula</strong></td>
                                     <td>{{automovil.matrcula}}</td>
                                 </tr>
@@ -56,7 +60,12 @@
             </div>
         </div>
         <div class="col-5">
-            <button type="button" class="btn btn-primary" (click)="showHideBuy()">Comprar</button>
+            <div class="row">
+                <div class="text-center"> 
+                    <button type="button" class="btn btn-primary" (click)="showHideBuy()">Comprar</button>
+                </div>
+            </div>
+                       
             <div *ngIf="showLogin">
                 <app-auth-login></app-auth-login>
             </div>

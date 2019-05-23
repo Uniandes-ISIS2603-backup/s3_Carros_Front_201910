@@ -2,10 +2,8 @@
 
 export class Automovil 
 {
- autoID: number;
+ autoId: number;
  
- rutaImagen: String;
-
  disponible: boolean; 
 
  tipo: String; 

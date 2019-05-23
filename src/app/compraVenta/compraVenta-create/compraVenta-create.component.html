@@ -7,7 +7,7 @@
         <br>
         <form name="compraVenta" (ngSubmit)="f.form.valid && createCompraVenta()" #f="ngForm" novalidate>
 
-            <!--<div class="form-group">
+            <div class="form-group">
                 <label for="compraVentaFecha">
                   <b>Fecha de la compraVenta</b>
                 </label>
@@ -16,71 +16,107 @@
                 <div class="invalid-feedback">
                     <div>La fecha de la compraVenta falta.</div>
                 </div>
-            </div>-->
+            </div>
             <br>
             <div class="form-check">
                 <input type="checkbox" class="form-check-input" id="exampleCheck1">
                 <label class="form-check-label" for="exampleCheck1">Pago realizado</label>
             </div>
             <br>
-            <div class="form-group">
+            <!--<div class="form-group">
                     <label for="pvCompraVenta"><b>Punto de Venta</b></label>
-                    <input type="number" name="pvCompraVenta" class="form-control" id="pvCompraVenta" [(ngModel)]="compraVenta.puntoVenta" #pvCompraVenta="ngModel" [ngClass]="{ 'is-invalid': f.submitted && pvCompraVenta.invalid }" required>
+                    <input type="number" name="pvCompraVenta" class="form-control" id="pvCompraVenta" [(ngModel)]="compraVenta.puntoVenta.id" #pvCompraVenta="ngModel" [ngClass]="{ 'is-invalid': f.submitted && pvCompraVenta.invalid }" required>
                     <div class="invalid-feedback"> 
                       <div>Debe asignar un punto de venta a la compraVenta</div>
                     </div>
-                  </div>
+                  </div>-->
+                  <div class="form-group">
+                      <label for="pvCompraVenta"><b>Punto de Venta</b></label>
+                      <select class="custom-select" name="pvCompraVenta" id="pvCompraVenta" [(ngModel)]="compraVenta.puntoVenta.id"  #pvCompraVenta="ngModel" [ngClass]="{ 'is-invalid': f.submitted && pvCompraVenta.invalid }" required>
+                        <option [value]="puntoVenta.id" *ngFor="let puntoVenta of puntosVenta ">{{puntoVenta.direccion}}</option>
+                      </select>
+                      <div class="invalid-feedback"> 
+                        <div>Debe asignar un punto de venta a la compra</div>
+                      </div>
+                    </div>
             <br>
-            <div class="collapse" id="ComprasList">
+            <!--<div class="collapse" id="ComprasList">
                     <div class="card card-body">
                             <p class="h3 p-3">Compras del punto de venta : </p>
                             <app-compraVenta-list [compraVentas]="puntoVentaDetail.CompraVenta"></app-compraVenta-list>
                      </div>
-            </div>
-            <div class="form-group">
+            </div>-->
+            <!--<div class="form-group">
                     <label for="empCompraVenta"><b>Empleado</b></label>
-                    <input type="number" name="empCompraVenta" class="form-control" id="empCompraVenta" [(ngModel)]="compraVenta.empleado" #empCompraVenta="ngModel" [ngClass]="{ 'is-invalid': f.submitted && empCompraVenta.invalid }" required>
+                    <input type="number" name="empCompraVenta" class="form-control" id="empCompraVenta" [(ngModel)]="compraVenta.empleado.empleadoID" #empCompraVenta="ngModel" [ngClass]="{ 'is-invalid': f.submitted && empCompraVenta.invalid }" required>
                     <div class="invalid-feedback"> 
                       <div>Debe asignar un empleado a la compraVenta</div>
                     </div>
-                  </div>
+                  </div>-->
+                  <div class="form-group">
+                      <label for="empCompraVenta"><b>Empleado</b></label>
+                      <select class="custom-select" name="empCompraVenta" id="empCompraVenta" [(ngModel)]="compraVenta.empleado.empleadoID"  #empCompraVenta="ngModel" [ngClass]="{ 'is-invalid': f.submitted && empCompraVenta.invalid }" required>
+                        <option [value]="e.empleadoID" *ngFor="let e of empleados ">{{e.correo}}</option>
+                      </select>
+                      <div class="invalid-feedback"> 
+                        <div>Debe asignar un empleado a la compra</div>
+                      </div>
+                    </div>   
             <br>
-            <div class="form-group">
+            <!--<div class="form-group">
                     <label for="clntCompraVenta"><b>Cliente</b></label>
-                    <input type="number" name="clntCompraVenta" class="form-control" id="clntCompraVenta" [(ngModel)]="compraVenta.cliente" #clntCompraVenta="ngModel" [ngClass]="{ 'is-invalid': f.submitted && clntCompraVenta.invalid }" required>
+                    <input type="number" name="clntCompraVenta" class="form-control" id="clntCompraVenta" [(ngModel)]="compraVenta.cliente.clienteID" #clntCompraVenta="ngModel" [ngClass]="{ 'is-invalid': f.submitted && clntCompraVenta.invalid }" required>
                     <div class="invalid-feedback"> 
                       <div>Debe asignar un cliente a la compraVenta</div>
                     </div>
-                  </div>
+                  </div>-->
+              <div class="form-group">
+                      <label for="cliCompraVenta"><b>Cliente</b></label>
+                      <select class="custom-select" name="cliCompraVenta" id="cliCompraVenta" [(ngModel)]="compraVenta.cliente.clienteID"  #cliCompraVenta="ngModel" [ngClass]="{ 'is-invalid': f.submitted && cliCompraVenta.invalid }" required>
+                        <option [value]="c.clienteID" *ngFor="let c of clientes ">{{c.correo}}</option>
+                      </select>
+                      <div class="invalid-feedback"> 
+                        <div>Debe asignar un cliente a la compra</div>
+                      </div>
+                    </div>  
             <br>
-            <div class="form-group">
+            <!--<div class="form-group">
                     <label for="autCompraVenta"><b>Automovil</b></label>
-                    <input type="number" name="autCompraVenta" class="form-control" id="autCompraVenta" [(ngModel)]="compraVenta.automovil" #autCompraVenta="ngModel" [ngClass]="{ 'is-invalid': f.submitted && autCompraVenta.invalid }" required>
+                    <input type="number" name="autCompraVenta" class="form-control" id="autCompraVenta" [(ngModel)]="compraVenta.automovil.autoId" #autCompraVenta="ngModel" [ngClass]="{ 'is-invalid': f.submitted && autCompraVenta.invalid }" required>
                     <div class="invalid-feedback"> 
                       <div>Debe asignar un automovil a la compraVenta</div>
                     </div>
-                  </div>
+                  </div>-->
+                  <div class="form-group">
+                      <label for="aCompraVenta"><b>Automovil</b></label>
+                      <select class="custom-select" name="aCompraVenta" id="aCompraVenta" [(ngModel)]="compraVenta.automovilFacturado.autoId"  #aCompraVenta="ngModel" [ngClass]="{ 'is-invalid': f.submitted && aCompraVenta.invalid }" required>
+                        <option [value]="a.autoId" *ngFor="let a of autos ">{{a.autoId}}</option>
+                      </select>
+                      <div class="invalid-feedback"> 
+                        <div>Debe asignar un automovil a la compra</div>
+                      </div>
+                    </div> 
             <br>
             <div class="form-group">
                 <label for="compraVentaCalificacion">
                   <b>Calificación de la compraVenta</b>
                 </label>
-                <p class="clasificacion">
-                    <input id="radio1" type="radio" name="estrellas" value="5"><label for="radio1" class="que">★</label>
-                    <input id="radio2" type="radio" name="estrellas" value="4"><label for="radio2" class="que">★</label>
-                    <input id="radio3" type="radio" name="estrellas" value="3"><label for="radio3" class="que">★</label>
-                    <input id="radio4" type="radio" name="estrellas" value="2"><label for="radio4" class="que">★</label>
-                    <input id="radio5" type="radio" name="estrellas" value="1"><label for="radio5" class="que">★</label>
-                  </p>
-                <!--<input type="text" name="compraVentaCalificacion" class="form-control" id="compraVentaCalificacion" [(ngModel)]="compraVenta.calificacion"
-                    #compraVentaCalificacion="ngModel" [ngClass]="{ 'is-invalid': f.submitted && compraVentaCalificacion.invalid }" required>-->
+                <!--<p class="clasificacion">
+                    <input id="radio1" type="radio" name="estrellas" value="5" [(ngModel)]="compraVenta.calificacion"><label for="radio1" class="que">★</label>
+                    <input id="radio2" type="radio" name="estrellas" value="4" [(ngModel)]="compraVenta.calificacion"><label for="radio2" class="que">★</label>
+                    <input id="radio3" type="radio" name="estrellas" value="3" [(ngModel)]="compraVenta.calificacion"><label for="radio3" class="que">★</label>
+                    <input id="radio4" type="radio" name="estrellas" value="2" [(ngModel)]="compraVenta.calificacion"><label for="radio4" class="que">★</label>
+                    <input id="radio5" type="radio" name="estrellas" value="1" [(ngModel)]="compraVenta.calificacion"><label for="radio5" class="que">★</label>
+                  </p>-->
+                <input type="text" name="compraVentaCalificacion" class="form-control" id="compraVentaCalificacion" [(ngModel)]="compraVenta.calificacion"
+                    #compraVentaCalificacion="ngModel" [ngClass]="{ 'is-invalid': f.submitted && compraVentaCalificacion.invalid }" unrequired>
                 <div class="invalid-feedback">
                     <div>La calificación de la compraVenta falta.</div>
                 </div>
             </div>
             <br>
             <div class="row form-inline justify-content-center align-self-center">
-                <button type="submit" class="btn btn-primary">Crear</button>
+                <button type="submit" class="btn btn-primary" routerLink="/compraVentas/{{compraVenta.ventaID}}">Crear</button>
                 <div class="divider"></div>
                 <button type="button" class="btn btn-danger" (click)="cancelCreation()">Cancelar</button>
             </div>

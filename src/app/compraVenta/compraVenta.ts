@@ -24,7 +24,7 @@ export class CompraVenta
     /**
      * Indica si la compraVenta fue pagada.
      */
-    pagado: String;
+    pagado: boolean;
  
     /**
      * El cliente asociado a la compraVenta.
