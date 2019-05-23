@@ -39,7 +39,7 @@ export class CompraVenta
     /**
      * El automovil asociado a la compraVenta.
      */
-    automovil: Automovil;
+    automovilFacturado: Automovil;
 
     /**
      * El punto de venta al que esta asociada la compraVenta.
