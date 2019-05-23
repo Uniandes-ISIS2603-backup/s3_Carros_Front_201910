@@ -79,4 +79,8 @@ export class MarcaListComponent implements OnInit, OnChanges
      this.getMarcas();
     }
 
+    ngOnChanges()
+    {
+      
+    }
 }

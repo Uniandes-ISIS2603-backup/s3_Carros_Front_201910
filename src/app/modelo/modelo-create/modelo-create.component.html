@@ -1,125 +1,280 @@
 <div class="row">
-	<div class="col-3"></div>
-	<div class="col-6">
-		<br>
-        <h2 class="text-center">Crear un modelo</h2>
+
+  <div class="col">
+    
+    <form name="modelo" (ngSubmit)="f.form.valid && createModelo()" #f="ngForm" novalidate>
+     <!-- <div class="form-group row">
+        <label for="modeloName">
+          <b>Nombre</b>
+        </label>
+        <input type="text" name="modeloName" class="form-control" id="modelolName" [(ngModel)]="modelo.nombre"
+          #modeloName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && modeloName.invalid }" required>
+        <div class="invalid-feedback">
+          <div>Falta el id del modelo</div>
+        </div>
+        <label for="numeroPuertas">
+          <b>Numero Puertas</b>
+        </label>
+        <select class="form-control">
+          <option>Selecciona una opcion</option>
+          <option>2</option>
+          <option>4</option>
+          <option>5</option>
+        </select>
+        <label for="Transmision">
+          <b>Transmision</b>
+        </label>
         <br>
-        <form name="modelo" (ngSubmit)="f.form.valid && createModelo()" #f="ngForm" novalidate>
-            <div class="form-group">
-                <label for="modeloName">
-                  <b>Nombre</b>
-                  </label>
-                <input type="text" name="modeloName" class="form-control" id="modelolName" [(ngModel)]="modelo.nombre"
-                    #modeloName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && modeloName.invalid }" required>
-                <div class="invalid-feedback">
-                    <div>Falta el id del modelo</div>
-                </div>
-                <label for="numeroPuertas">
-                  <b>Numero Puertas</b>
-                </label>
-                <select class="form-control">
-                <option>Selecciona una opcion</option>
-                <option>2</option>
-                <option>4</option>
-                <option>5</option>
-                </select>
-                <label for="numeroPuertas">
-                  <b>Transmision</b>
-                </label>
-                <br>
-                <div class="form-check form-check-inline">
-               <input class="form-check-input" type="radio"   name="inlineRadioOptions" id="inlineRadio1" value="option1">
-               <label class="form-check-label" for="inlineRadio1">Automatica</label>
-                </div>
-                <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-              <label class="form-check-label" for="inlineRadio2">Mecanica </label>
-              </div>
-                  <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-              <label class="form-check-label" for="inlineRadio2">Secuencial </label>
-              </div>
-              <br>
-              <label for="cilindraje">
-                  <b>Clindraje</b>
-                </label>
-              <input type="text" name="cilindraje" class="form-control" id="modelolName" [(ngModel)]="modelo.cilindraje"
-                    #cilindraje="ngModel" [ngClass]="{ 'is-invalid': f.submitted && cilindraje.invalid }" required>
-                <div class="invalid-feedback">
-                    <div>Falta el id del modelo</div>
-                </div> 
-                    
-                    
-               <label for="combustible">
-                  <b>Combustible</b>
-                </label>
-                <select class="form-control">
-                <option>Selecciona una opcion</option>
-                <option value="Corriente">Corriente</option>
-                <option value="Disel">Disel</option>
-                <option value="Gas">Gas</option>
-                <option value="ACPM">ACPM</option>
-                
-                </select>
-              <label for="traccion">
-               <b> Traccion </b> 
-              </label>
-              <BR>
-              <div class="form-check form-check-inline">
-               <input class="form-check-input" type="radio"   name="inlineRadioOptions" id="inlineRadio1" value="option1">
-               <label class="form-check-label" for="inlineRadio1">RWD</label>
-                </div>
-                <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-              <label class="form-check-label" for="inlineRadio2">FWD </label>
-              </div>
-                  <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-              <label class="form-check-label" for="inlineRadio2">AWD </label>
-              </div>
-              <div class="form-check form-check-inline">
-               <input class="form-check-input" type="radio"   name="inlineRadioOptions" id="inlineRadio1" value="option1">
-               <label class="form-check-label" for="inlineRadio1">4WD</label>
-                </div>
-                <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-              <label class="form-check-label" for="inlineRadio2">4X4 </label>
-              </div>
-              <br>
-              <label for="Direccion">
-               <b> Direccion </b> 
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+          <label class="form-check-label" for="inlineRadio1">Automatica</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+          <label class="form-check-label" for="inlineRadio2">Mecanica </label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+          <label class="form-check-label" for="inlineRadio2">Secuencial </label>
+        </div>
+        <br>
+        <label for="cilindraje">
+          <b>Clindraje</b>
+        </label>
+        <input type="text" name="cilindraje" class="form-control" id="modelolName" [(ngModel)]="modelo.cilindraje"
+          #cilindraje="ngModel" [ngClass]="{ 'is-invalid': f.submitted && cilindraje.invalid }" required>
+        <div class="invalid-feedback">
+          <div>Falta el id del modelo</div>
+        </div>
+
+
+        <label for="combustible">
+          <b>Combustible</b>
+        </label>
+        <select class="form-control">
+          <option>Selecciona una opcion</option>
+          <option value="Corriente">Corriente</option>
+          <option value="Disel">Disel</option>
+          <option value="Gas">Gas</option>
+          <option value="ACPM">ACPM</option>
+
+        </select>
+        <label for="traccion">
+          <b> Traccion </b>
+        </label>
+        <BR>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+          <label class="form-check-label" for="inlineRadio1">RWD</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+          <label class="form-check-label" for="inlineRadio2">FWD </label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+          <label class="form-check-label" for="inlineRadio2">AWD </label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+          <label class="form-check-label" for="inlineRadio1">4WD</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+          <label class="form-check-label" for="inlineRadio2">4X4 </label>
+        </div>
+        <br>
+        <label for="Direccion">
+          <b> Direccion </b>
+        </label>
+        <input type="text" name="direccion" class="form-control" id="direccion" [(ngModel)]="modelo.direccion"
+          #direccion="ngModel" [ngClass]="{ 'is-invalid': f.submitted && direccion.invalid }" required>
+        <BR>
+        <div class="custom-control custom-checkbox mb-1">
+          <input type="checkbox" class="custom-control-input" id="customControlValidation1" required>
+          <label class="custom-control-label" for="customControlValidation1">FrenosABS</label>
+        </div>
+        <div class="custom-control custom-checkbox mb-1">
+          <input type="checkbox" class="custom-control-input" id="customControlValidation1" required>
+          <label class="custom-control-label" for="customControlValidation1">Aire Acondicionado</label>
+        </div>
+
+        <label for="asientos">
+          <b> Asientos </b>
+        </label>
+        <input type="text" name="asientos" class="form-control" id="modelolName" [(ngModel)]="modelo.asientos"
+          #asientos="ngModel" [ngClass]="{ 'is-invalid': f.submitted && asientos.invalid }" required>
+        <br>
+        <label for="vidrios">
+          <b> Vidrios </b>
+        </label>
+        <input type="text" name="vidrios" class="form-control" id="vidrios" [(ngModel)]="modelo.vidrios"
+          #vidrios="ngModel" [ngClass]="{ 'is-invalid': f.submitted && vidrios.invalid }" required>
+
+      </div>
+      -->
+      <div class="form-group row">
+        <div class="col">
+          <label for="modeloName">
+            <b>Nombre</b>
+          </label>
+          <input type="text" name="modeloName" class="form-control" id="modelolName" [(ngModel)]="modelo.nombre"
+            #modeloName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && modeloName.invalid }" required>
+          <div class="invalid-feedback">
+            <div>Falta el id del modelo</div>
+          </div>
+        </div>
+        <div class="col">
+          <label for="numeroPuertas">
+            <b>Numero Puertas</b>
+          </label>
+          <select name="numeroPuertas" class="form-control" id="numeroPuertas" [(ngModel)]="modelo.numeroPuertas"
+            #numeroPuertas="ngModel" [ngClass]="{ 'is-invalid': f.submitted && numeroPuertas.invalid }" required>
+            <option>Selecciona una opcion</option>
+            <option>2</option>
+            <option>4</option>
+            <option>5</option>
+          </select>
+        </div>
+        <div class="col">
+          <label for="Transmision">
+            <b>Transmision</b>
+          </label>
+          <br>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="Transmision" id="Transmision1" value="option1"
+              [(ngModel)]="modelo.trasmision" #Transmision="ngModel"
+              [ngClass]="{'is-invalid': f.submitted && trasmision.invalid}" required>
+            <label class="form-check-label" for="Transmision1">Automatica</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="Transmision" id="Transmision2" value="option2"
+              [(ngModel)]="modelo.trasmision" #Transmision="ngModel"
+              [ngClass]="{'is-invalid': f.submitted && trasmision.invalid}" required>
+            <label class="form-check-label" for="Transmision2">Mecanica </label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="Transmision" id="Transmision3" value="option3"
+              [(ngModel)]="modelo.trasmision" #Transmision="ngModel"
+              [ngClass]="{'is-invalid': f.submitted && trasmision.invalid}" required>
+            <label class="form-check-label" for="Transmision3">Secuencial </label>
+          </div>
+        </div>
+      </div>
+      <div class=" form-group row">
+        <div class="col">
+          <label for="cilindraje">
+            <b>Clindraje</b>
+          </label>
+          <input type="text" name="cilindraje" class="form-control" id="modelolName" [(ngModel)]="modelo.cilindraje"
+            #cilindraje="ngModel" [ngClass]="{ 'is-invalid': f.submitted && cilindraje.invalid }" required>
+          <div class="invalid-feedback">
+            <div>Falta el id del modelo</div>
+          </div>
+        </div>
+        <div class="col">
+          <label for="combustible">
+            <b>Combustible</b>
+          </label>
+          <select  name="combustible" class="form-control" id="combustible" [(ngModel)]="modelo.combustible"
+          #combustible="ngModel" [ngClass]="{ 'is-invalid': f.submitted && combustible.invalid }" required >
+            <option>Selecciona una opcion</option>
+            <option value="Corriente">Corriente</option>
+            <option value="Disel">Disel</option>
+            <option value="Gas">Gas</option>
+            <option value="ACPM">ACPM</option>
+
+          </select>
+        </div>
+        <div class="col">
+          <label for="traccion">
+            <b> Traccion </b>
+          </label>
+          <BR>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="traccion1" value="option1"              
+            [(ngModel)]="modelo.traccion" #traccion="ngModel"
+            [ngClass]="{'is-invalid': f.submitted && traccion.invalid}" required>
+            <label class="form-check-label" for="traccion1">RWD</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="traccion2" value="option2" [(ngModel)]="modelo.traccion" #traccion="ngModel"
+            [ngClass]="{'is-invalid': f.submitted && traccion.invalid}">
+            <label class="form-check-label" for="traccion2">FWD </label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="traccion3" value="option3" [(ngModel)]="modelo.traccion" #traccion="ngModel"
+            [ngClass]="{'is-invalid': f.submitted && traccion.invalid}">
+            <label class="form-check-label" for="traccion3">AWD </label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="traccion4" value="option4" [(ngModel)]="modelo.traccion" #traccion="ngModel"
+            [ngClass]="{'is-invalid': f.submitted && traccion.invalid}">
+            <label class="form-check-label" for="traccion4">4WD</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="traccion5" value="option5" [(ngModel)]="modelo.traccion" #traccion="ngModel"
+            [ngClass]="{'is-invalid': f.submitted && traccion.invalid}">
+            <label class="form-check-label" for="traccion5">4X4 </label>
+          </div>
+        </div>
+      </div>
+      <div class="form-group row">
+        <div class="col">
+            <label for="Direccion">
+                <b> Direccion </b>
               </label>
               <input type="text" name="direccion" class="form-control" id="direccion" [(ngModel)]="modelo.direccion"
-                    #direccion="ngModel" [ngClass]="{ 'is-invalid': f.submitted && direccion.invalid }" required>
-<BR>
-               <div class="custom-control custom-checkbox mb-1">
-    <input type="checkbox" class="custom-control-input" id="customControlValidation1" required>
-    <label class="custom-control-label" for="customControlValidation1">FrenosABS</label>
-  </div>
-  <div class="custom-control custom-checkbox mb-1">
-    <input type="checkbox" class="custom-control-input" id="customControlValidation1" required>
-    <label class="custom-control-label" for="customControlValidation1">Aire Acondicionado</label>
+                #direccion="ngModel" [ngClass]="{ 'is-invalid': f.submitted && direccion.invalid }" required>
+              <BR>
+              
+             
+        </div>
+        <div class="col">
+            <label for="asientos">
+                <b> Asientos </b>
+              </label>
+              <input type="text" name="asientos" class="form-control" id="asientos" [(ngModel)]="modelo.asientos"
+                #asientos="ngModel" [ngClass]="{ 'is-invalid': f.submitted && asientos.invalid }" required>
+              <br>
+        </div>
+        <div class="col">
+            <label for="vidrios">
+                <b> Vidrios </b>
+              </label>
+              <input type="text" name="vidrios" class="form-control" id="vidrios" [(ngModel)]="modelo.vidrios"
+                #vidrios="ngModel" [ngClass]="{ 'is-invalid': f.submitted && vidrios.invalid }" required>
+      
+        </div>
+      </div>
+      <div class="form-group row">
+        <div class="col">
+          <!--  <div class="custom-control custom-checkbox mb-1">
+                <input type="checkbox" class="custom-control-input" id="frenosABS" [(ngModel)]="modelo.frenosABS"
+                #frenosABS="ngModel" [ngClass]="{ 'is-invalid': f.submitted && frenosABS.invalid }" required>
+                <label class="custom-control-label" for="frenosABS">FrenosABS</label>
+              </div>
+        </div>
+        <div class="col">
+            <div class="custom-control custom-checkbox mb-1">
+                <input type="checkbox" class="custom-control-input" id="aireAc" [(ngModel)]="modelo.aireAc"
+                #aireAc="ngModel" [ngClass]="{ 'is-invalid': f.submitted && aireAc.invalid }" required>
+                <label class="custom-control-label" for="aireAc">Aire Acondicionado</label>
+              </div>-->
+        </div>
+        <div class="col"> 
+        
+        </div>
+      </div>
+      <div class="modal-footer row">
+          <button type="submit" class="btn btn-primary">Create</button>
+          <div class="divider"></div>
+          <button type="button" class="btn btn-danger" (click)="cancelCreation()">Cancel</button>
+        </div>
+      <div class="">
+        
+      </div>
+    </form>
   </div>
 
-              <label for="asientos">
-               <b> Asientos </b> 
-              </label>
-            <input type="text" name="asientos" class="form-control" id="modelolName" [(ngModel)]="modelo.asientos"
-                    #asientos="ngModel" [ngClass]="{ 'is-invalid': f.submitted && asientos.invalid }" required>
-                    <br>
-              <label for="vidrios">
-               <b> Vidrios </b> 
-              </label>
-            <input type="text" name="vidrios" class="form-control" id="vidrios" [(ngModel)]="modelo.vidrios"
-                    #vidrios="ngModel" [ngClass]="{ 'is-invalid': f.submitted && vidrios.invalid }" required>
-                  
-            </div>
-            <div class="row form-inline justify-content-center align-self-center">
-                <button type="submit" class="btn btn-primary">Create</button>
-                <div class="divider"></div>
-                <button type="button" class="btn btn-danger" (click)="cancelCreation()">Cancel</button>
-            </div>
-        </form>
-    </div>
-    <div class="col-3"></div>
 </div>

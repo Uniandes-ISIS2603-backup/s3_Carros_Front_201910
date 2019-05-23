@@ -2,7 +2,7 @@
         <div class="col-3"> </div>
         <div class="col-6">
             <br>
-            <h2 class="text-center"> Agregar una marca</h2>
+            <h2 class="text-center"> </h2>
             <br>
             <form name="puntoVenta" (ngSubmit)="f.form.valid && createMarca()" #f="ngForm" novalidate>
                 <div class="from-group">
@@ -20,6 +20,9 @@
 
                     <label for="marcaDescripcion">Ingrese la descripcion de la marca</label>
                     <input type="text" name="marcaDescripcion" class="form-control" id="marcaDescripcion"  [(ngModel)]="marca.descripcion" #marcaDescripcion="ngModel" [ngClass]="{ 'is-invalid': f.submitted && marcaDescripcion.invalid }" required>
+
+                    <label for="marcaLogo">Ingrese el logo de la marca</label>
+                    <input type="text" name="marcaLogo" class="form-control" id="marcaLogo"  [(ngModel)]="marca.logo" #marcaLogo="ngModel" [ngClass]="{ 'is-invalid': f.submitted && marcaLogo.invalid }" required>
                 </div>
                 <br>
                 <div class="row form-inline justify-content-center align-self-center">
